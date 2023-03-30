@@ -1,7 +1,20 @@
 ---
 import MyLayout from "../layouts/MyLayout.astro";
+const myName = "Efraim";
+const skills = ["HTML", "CSS", "JS", "Vue", "Astro"];
 ---
 
 <MyLayout title="About">
-  <h1>This is the about page</h1>
+  <h1>Tentang guwa</h1>
+  <p>Halo, nama gua {myName}.</p>
+  <p>
+    Selama gua menjadi web developer, gua udah belajar beberapa hal, termasuk:
+  </p>
+  <ul>
+    {
+      skills.map((skill) => {
+        return <li>{skill}</li>;
+      })
+    }
+  </ul>
 </MyLayout>
