@@ -1,0 +1,18 @@
+:root {
+  color-scheme: light dark;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f5f9;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #2a2f2f;
+  }
+}
