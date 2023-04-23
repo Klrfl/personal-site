@@ -3,11 +3,15 @@ import MyLayout from "../layouts/MyLayout.astro";
 ---
 
 <MyLayout title="blog">
-  <h1>Main blog page</h1>
-  <p>I will make blog posts here. probably.</p>
+  <main>
+    <section class="main-section">
+      <h1>Main blog page</h1>
+      <p>I will make blog posts here. probably.</p>
 
-  <ul>
-    <li><a href="posts/post-1">Post 1</a></li>
-    <li><a href="posts/post-2">Post 2</a></li>
-  </ul>
+      <ul>
+        <li><a href="posts/post-1">Post 1</a></li>
+        <li><a href="posts/post-2">Post 2</a></li>
+      </ul>
+    </section>
+  </main>
 </MyLayout>

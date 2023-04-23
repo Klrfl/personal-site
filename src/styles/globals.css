@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -9,6 +10,14 @@ body {
   background: #f1f5f9;
   margin: 0;
   padding: 0;
+}
+
+main {
+  padding: 2rem;
+}
+
+.main-section > :is(h1, h2, p) {
+  max-width: 75ch;
 }
 
 @media (prefers-color-scheme: dark) {

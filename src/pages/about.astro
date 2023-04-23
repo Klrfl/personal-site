@@ -5,16 +5,21 @@ const skills = ["HTML", "CSS", "JS", "Vue", "Astro"];
 ---
 
 <MyLayout title="About">
-  <h1>Tentang guwa</h1>
-  <p>Halo, nama gua {myName}.</p>
-  <p>
-    Selama gua menjadi web developer, gua udah belajar beberapa hal, termasuk:
-  </p>
-  <ul>
-    {
-      skills.map((skill) => {
-        return <li>{skill}</li>;
-      })
-    }
-  </ul>
+  <main>
+    <section class="main-section">
+      <h1>Tentang guwa</h1>
+      <p>Halo, nama gua {myName}.</p>
+      <p>
+        Selama gua menjadi web developer, gua udah belajar beberapa hal,
+        termasuk:
+      </p>
+      <ul>
+        {
+          skills.map((skill) => {
+            return <li>{skill}</li>;
+          })
+        }
+      </ul>
+    </section>
+  </main>
 </MyLayout>
