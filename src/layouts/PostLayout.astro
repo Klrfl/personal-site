@@ -13,7 +13,12 @@ const { frontmatter } = Astro.props;
   </header>
 
   <main>
-    <section class="main-section"></section>
     <slot />
   </main>
 </MyLayout>
+
+<style>
+  header {
+    padding: 2rem;
+  }
+</style>
