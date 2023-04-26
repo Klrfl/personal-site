@@ -9,3 +9,7 @@ openNavbarBtn.addEventListener("click", () => {
 closeNavbarBtn.addEventListener("click", () => {
   navlinks.classList.toggle("active");
 });
+
+navlinks.addEventListener("click", () => {
+  navlinks.classList.remove("active");
+});
