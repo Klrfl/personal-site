@@ -3,7 +3,16 @@
     <a href="/">logo</a>
   </div>
 
+  <button id="open-nav" title="open navbar">Open navbar</button>
+
   <ul class="nav-links">
+    <div class="nav-links__header">
+      <div class="logo">
+        <a href="/">logo</a>
+      </div>
+      <button id="close-nav" title="close navbar">close navbar</button>
+    </div>
+
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/blog">Blog</a></li>
@@ -11,40 +20,68 @@
 </nav>
 
 <style>
-  nav {
+  nav,
+  .nav-links__header {
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
+  .logo a,
+  nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  nav button {
+    cursor: pointer;
+  }
+
   .nav-links {
-    background: #000a;
-    backdrop-filter: blur(0.1rem);
     list-style-type: none;
     padding: 0;
     margin: 0;
 
     position: fixed;
-    top: 0;
-    right: 0;
+    inset: 0;
     display: flex;
     flex-direction: column;
+
+    transform: translateY(-100%);
+    transition: transform 200ms ease;
+  }
+
+  .nav-links.active {
+    background: #000a;
+    backdrop-filter: blur(0.5rem);
+    transform: none;
   }
 
   .nav-links li {
+    display: block;
+  }
+
+  .nav-links li a {
+    padding: 1rem;
     display: flex;
   }
 
-  .nav-links a {
-    padding: 1rem;
+  .nav-links a:hover {
+    background: #000a;
   }
 
   @media screen and (min-width: 50em) {
     .nav-links {
+      transform: none;
       background: transparent;
       position: relative;
       flex-direction: row;
+    }
+
+    #open-nav,
+    .nav-links__header {
+      display: none;
     }
   }
 </style>
