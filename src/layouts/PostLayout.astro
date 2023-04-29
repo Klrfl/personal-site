@@ -5,10 +5,19 @@ const { frontmatter } = Astro.props;
 
 <MyLayout title={frontmatter.title}>
   <header>
-    <h1>{frontmatter.title}</h1>
+    <h1 class="title">{frontmatter.title}</h1>
+    <p>{frontmatter.description}</p>
+
     <div class="metadata">
       <p>Written by {frontmatter.author}</p>
       <p>{frontmatter.pubDate.substring(0, 10)}</p>
+    </div>
+
+    <div class="tags">
+      <p>Tags:</p>
+      <ul>
+        {frontmatter.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
     </div>
   </header>
 
@@ -20,5 +29,10 @@ const { frontmatter } = Astro.props;
 <style>
   header {
     padding: 2rem;
+  }
+
+  .metadata {
+    display: flex;
+    gap: 0.5rem;
   }
 </style>
