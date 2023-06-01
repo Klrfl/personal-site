@@ -1,9 +1,12 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: "Progress on my Astro blog"
-author: "Efraim"
 pubDate: 2023-04-23
 description: "How I am doing as of now."
+author: "Efraim"
+image:
+  url: "https://docs.astro.build/assets/rays.webp"
+  alt: "Thumbnail of Astro rays."
 tags: ["blogging"]
 ---
 
