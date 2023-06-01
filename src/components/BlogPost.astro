@@ -1,7 +1,62 @@
 ---
-const { url, title } = Astro.props;
+const { post } = Astro.props;
+const frontmatter = post.frontmatter;
+const postImage = frontmatter.image;
 ---
 
-<li>
-  <a href={url}>{title}</a>
+<li class="blog-post-container">
+  <a class="blog-post" href={post.url}>
+    <div class="blog-post__preview">
+      <h2 class="blog-post__title">{frontmatter.title}</h2>
+      <p class="blog-post__description">{frontmatter.description}</p>
+      <p class="blog-post__pub-date">{frontmatter.pubDate.substring(0, 10)}</p>
+    </div>
+
+    <div class="blog-post__image-container">
+      <img
+        class="blog-post__image"
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+      />
+    </div>
+  </a>
 </li>
+
+<style>
+  .blog-post {
+    outline: 2px solid #343434;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .blog-post-container + .blog-post-container {
+    margin-block-start: 0.5rem;
+  }
+
+  .blog-post:hover {
+    background: #343434;
+  }
+
+  .blog-post__preview {
+    flex: 2 1 40ch;
+  }
+
+  .blog-post__pub-date {
+    margin-block: 0.2rem;
+    font-size: 0.85em;
+  }
+
+  .blog-post__image-container {
+    flex: 1 1 200px;
+  }
+  .blog-post__image {
+    max-height: 100%;
+  }
+</style>
