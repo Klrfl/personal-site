@@ -24,6 +24,12 @@ main {
   max-width: 75ch;
 }
 
+.blog-post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #2a2f2f;
