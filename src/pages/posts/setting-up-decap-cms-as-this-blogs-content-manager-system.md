@@ -1,11 +1,13 @@
 ---
-layout: blog
+layout: "../../layouts/PostLayout.astro"
 title: Setting up Decap CMS as this blog's Content Manager System
-publishDate: 2023-06-21T05:02:57.189Z
+pubDate: 2023-06-21T05:02:57.189Z
 description: I used Decap CMS for this blog
 author: Efraim
 image: /assets/screenshot-45-.png
+tags: ["astro"]
 ---
+
 Welcome to my blog! in this post I will tell you how I set up Decap CMS to power my blog.
 
 So first off I watched [this tutorial on setting up Decap CMS](https://www.youtube.com/watch?v=3yip2wSRX_4) by Kumail Pirzada.
