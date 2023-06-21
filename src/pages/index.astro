@@ -3,6 +3,11 @@ import MyLayout from "../layouts/MyLayout.astro";
 ---
 
 <MyLayout title="Home">
+  <script
+    slot="script"
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+  ></script>
+
   <main>
     <section class="main-section">
       <h1>Astro</h1>
@@ -15,8 +20,6 @@ import MyLayout from "../layouts/MyLayout.astro";
       </p>
     </section>
   </main>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-  ></script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", (user) => {
