@@ -6,7 +6,7 @@ description: This is the first post written from Decap
 author: Efraim
 image:
   url: /assets/uploads/screenshot-45-.png
-  alt: ""
+  alt: screenshot of an error on my blog. Idk what the frick it means
 tags:
   - astro
   - successes
