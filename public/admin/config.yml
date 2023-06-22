@@ -23,6 +23,13 @@ collections:
       - { label: "Publish Date", name: "pubDate", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
-      - { label: "image", name: "image", widget: "image" }
+      - {
+        label: "image",
+        name: "image",
+        widget: "object",
+        fields:
+          - {label: "Image URL", name: "url", widget: "string"}
+          - {label: "Alt text", name: "alt", widget: "string"}
+        }
       - { label: "tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
