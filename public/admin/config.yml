@@ -29,7 +29,7 @@ collections:
           widget: "object",
           fields:
             [
-              { label: "Image URL", name: "url", widget: "string" },
+              { label: "Image URL", name: "url", widget: "image" },
               { label: "Image alt text", name: "alt", widget: "string" },
             ],
         }
