@@ -15,7 +15,13 @@ const { frontmatter } = Astro.props;
 
     <div class="tags-wrapper">
       <ul class="tags">
-        {frontmatter.tags.map((tag) => <li class="tag">{tag}</li>)}
+        {
+          frontmatter.tags.map((tag) => (
+            <li class="tag">
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </li>
+          ))
+        }
       </ul>
     </div>
     <figure>
@@ -50,5 +56,14 @@ const { frontmatter } = Astro.props;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     outline: 2px solid purple;
+  }
+
+  .tag a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .tag a:hover {
+    text-decoration: underline;
   }
 </style>
