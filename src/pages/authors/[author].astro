@@ -1,0 +1,37 @@
+---
+import MyLayout from "../../layouts/MyLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../posts/*.md");
+
+  const uniqueAuthors = [
+    ...new Set(allPosts.map((post) => post.frontmatter.author).flat()),
+  ];
+
+  return uniqueAuthors.map((author) => {
+    const filteredPosts = allPosts.filter(
+      (post) => post.frontmatter.author == author
+    );
+
+    return {
+      params: { author },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { author } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<MyLayout title={author}>
+  <main>
+    <h1>{author}</h1>
+    <p>Posts from {author}</p>
+
+    <ul class="blog-list">
+      {posts.map((post) => <BlogPost post={post} />)}
+    </ul>
+  </main>
+</MyLayout>
