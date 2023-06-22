@@ -9,7 +9,10 @@ const { frontmatter } = Astro.props;
     <p>{frontmatter.description}</p>
 
     <div class="metadata">
-      <p>Written by {frontmatter.author}</p>
+      <p>
+        Written by <a href=`/authors/${frontmatter.author}`
+          >{frontmatter.author}</a>
+      </p>
       <p>{frontmatter.pubDate.substring(0, 10)}</p>
     </div>
 
