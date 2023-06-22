@@ -11,7 +11,7 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
       <h1>Main blog page</h1>
       <p>Here is the list of all blog posts I made on this project.</p>
 
-      <ul class="blog-post-list">
+      <ul class="blog-list">
         {allPosts.map((post) => <BlogPost post={post} />)}
       </ul>
     </section>
