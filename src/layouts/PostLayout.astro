@@ -18,6 +18,9 @@ const { frontmatter } = Astro.props;
         {frontmatter.tags.map((tag) => <li class="tag">{tag}</li>)}
       </ul>
     </div>
+    <figure>
+      <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+    </figure>
   </header>
 
   <main>
