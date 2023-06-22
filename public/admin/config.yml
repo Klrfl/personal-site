@@ -27,8 +27,11 @@ collections:
           label: "image",
           name: "image",
           widget: "object",
-          fields: { label: "Image URL", name: "url", widget: "string" },
-          { label: "Image alt text", name: "alt", widget: "string" },
+          fields:
+            [
+              { label: "Image URL", name: "url", widget: "string" },
+              { label: "Image alt text", name: "alt", widget: "string" },
+            ],
         }
       - { label: "tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
