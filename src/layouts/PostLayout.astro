@@ -5,29 +5,38 @@ const { frontmatter } = Astro.props;
 
 <MyLayout title={frontmatter.title}>
   <header>
-    <h1 class="title">{frontmatter.title}</h1>
-    <p>{frontmatter.description}</p>
+    <div class="header__text">
+      <h1 class="post-title">{frontmatter.title}</h1>
+      <p>{frontmatter.description}</p>
 
-    <div class="metadata">
-      <p>
-        Written by <a href=`/authors/${frontmatter.author}`
-          >{frontmatter.author}</a>
-      </p>
-      <p>{frontmatter.pubDate.substring(0, 10)}</p>
+      <div class="post-metadata">
+        <p class="">
+          By
+          <a
+            class="post-metadata__author"
+            href=`/authors/${frontmatter.author}`>
+            {frontmatter.author}
+          </a>
+        </p>
+        <p class="post-metadata__date">
+          {frontmatter.pubDate.substring(0, 10)}
+        </p>
+      </div>
+
+      <div class="tags-wrapper">
+        <ul class="tags">
+          {
+            frontmatter.tags.map((tag) => (
+              <li class="tag">
+                <a href={`/tags/${tag}`}>{tag}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
 
-    <div class="tags-wrapper">
-      <ul class="tags">
-        {
-          frontmatter.tags.map((tag) => (
-            <li class="tag">
-              <a href={`/tags/${tag}`}>{tag}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <figure>
+    <figure class="header__image-wrapper">
       <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
     </figure>
   </header>
@@ -39,12 +48,32 @@ const { frontmatter } = Astro.props;
 
 <style>
   header {
-    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .metadata {
+  header > * {
+    flex: 1 0 40ch;
+  }
+
+  .header__text {
+    padding: 2rem;
+  }
+  .post-title {
+    font-size: 2.8rem;
+  }
+  .post-metadata {
     display: flex;
     gap: 0.5rem;
+  }
+
+  .post-metadata p {
+    margin: 0;
+  }
+
+  .post-metadata__author {
+    font-weight: bold;
   }
 
   .tags {
@@ -53,12 +82,13 @@ const { frontmatter } = Astro.props;
     margin: 0;
     display: flex;
     gap: 0.5rem;
+    padding-block: 1rem;
   }
 
   .tag {
     padding: 0.5rem 1rem;
     border-radius: 1rem;
-    outline: 2px solid purple;
+    outline: 2px solid rgb(59, 78, 175);
   }
 
   .tag a {
@@ -68,5 +98,15 @@ const { frontmatter } = Astro.props;
 
   .tag a:hover {
     text-decoration: underline;
+  }
+
+  .header__image-wrapper {
+    margin: 0;
+  }
+
+  main {
+    padding: 2rem;
+    max-width: 85ch;
+    margin: 0;
   }
 </style>
