@@ -2,6 +2,9 @@
 
 :root {
   color-scheme: light dark;
+
+  --navbar-bg: #dfdfdfaa;
+  --body-bg: #f1f5f9;
 }
 
 * {
@@ -9,7 +12,7 @@
 }
 
 body {
-  background: #f1f5f9;
+  background: var(--body-bg);
   padding: 0;
 }
 
@@ -26,7 +29,8 @@ main {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #2a2f2f;
+  :root {
+    --navbar-bg: #0004;
+    --body-bg: #2a2f2f;
   }
 }
