@@ -5,11 +5,11 @@ import BlogPost from "../components/BlogPost.astro";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
-<MyLayout title="blog">
+<MyLayout title="Latest Posts">
   <main>
     <section class="main-section">
-      <h1>Main blog page</h1>
-      <p>Here is the list of all blog posts I made on this project.</p>
+      <h1>Latest Posts</h1>
+      <p>Here is the latest blog posts I made.</p>
 
       <ul class="blog-list">
         {allPosts.map((post) => <BlogPost post={post} />)}

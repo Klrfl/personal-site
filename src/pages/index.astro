@@ -28,7 +28,7 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
         {allPosts.map((post) => <BlogPost post={post} />)}
       </ul>
 
-      <a href="/blogs">See more of my blogs</a>
+      <a href="/latest">See more of my blogs</a>
     </section>
   </main>
   <script>
