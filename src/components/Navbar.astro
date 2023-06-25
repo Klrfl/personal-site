@@ -9,17 +9,17 @@ import BurgerMenu from "../components/BurgerMenu.astro";
 
   <BurgerMenu />
 
-  <ul class="nav-links">
-    <div class="nav-links__header">
+  <ul class="nav-links-wrapper">
+    <div class="nav-links-wrapper__header">
       <div class="logo">
         <a href="/">logo</a>
       </div>
       <button id="close-nav" title="close navbar">close navbar</button>
     </div>
 
-    <li><a href="/about">About</a></li>
-    <li><a href="/latest">Latest</a></li>
-    <li><a href="/tags">Posts</a></li>
+    <li><a class="nav-links" href="/about">About</a></li>
+    <li><a class="nav-links" href="/latest">Latest</a></li>
+    <li><a class="nav-links" href="/tags">Posts</a></li>
   </ul>
 </nav>
 
@@ -27,18 +27,17 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   nav {
     background: var(--navbar-bg);
     backdrop-filter: blur(10px);
+    user-select: none;
     position: sticky;
     top: 0;
   }
   nav,
-  .nav-links__header {
-    padding: 1rem;
+  .nav-links-wrapper__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .logo a,
   nav a {
     color: inherit;
     text-decoration: none;
@@ -48,13 +47,14 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     cursor: pointer;
   }
 
-  .nav-links {
+  .nav-links-wrapper {
+    background: #000a;
     list-style-type: none;
     padding: 0;
     margin: 0;
 
     position: fixed;
-    inset: 0;
+    inset: 0 0 auto 0;
     display: flex;
     flex-direction: column;
 
@@ -62,34 +62,33 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     transition: transform 200ms ease;
   }
 
-  .nav-links.active {
-    background: #000a;
+  .nav-links-wrapper.active {
     backdrop-filter: blur(0.5rem);
     transform: none;
   }
 
-  .nav-links li {
-    display: block;
-  }
-
-  .nav-links li a {
+  nav > *,
+  .nav-links-wrapper__header > *,
+  .nav-links {
     padding: 1rem;
+  }
+  .nav-links {
     display: flex;
   }
 
-  .nav-links a:hover {
+  .nav-links-wrapper a:hover {
     background: #000a;
   }
 
   @media screen and (min-width: 50em) {
-    .nav-links {
+    .nav-links-wrapper {
       transform: none;
       background: transparent;
       position: relative;
       flex-direction: row;
     }
 
-    .nav-links__header {
+    .nav-links-wrapper__header {
       display: none;
     }
   }
