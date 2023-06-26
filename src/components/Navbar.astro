@@ -14,7 +14,9 @@ import BurgerMenu from "../components/BurgerMenu.astro";
       <div class="logo">
         <a href="/">logo</a>
       </div>
-      <button id="close-nav" title="close navbar">close navbar</button>
+      <button id="close-nav" title="close navbar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
 
     <li><a class="nav-links" href="/about">About</a></li>
@@ -23,10 +25,13 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   </ul>
 </nav>
 
-<style>
+<style is:inline>
   nav {
+    outline: 2px solid var(--outline-color);
     background: var(--navbar-bg);
     backdrop-filter: blur(10px);
+    color: var(--nav-link-color);
+
     user-select: none;
     position: sticky;
     top: 0;
@@ -40,7 +45,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
 
   nav a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: unset;
   }
 
   nav button {
@@ -48,7 +53,8 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   }
 
   .nav-links-wrapper {
-    background: #000a;
+    outline: 2px solid var(--outline-color);
+    background: var(--navbar-bg);
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -70,14 +76,15 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   nav > *,
   .nav-links-wrapper__header > *,
   .nav-links {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   .nav-links {
     display: flex;
   }
 
-  .nav-links-wrapper a:hover {
-    background: #000a;
+  .nav-links:hover,
+  nav button:hover {
+    color: var(--nav-link-color-hover);
   }
 
   @media screen and (min-width: 50em) {
