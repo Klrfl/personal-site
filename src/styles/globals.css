@@ -3,8 +3,14 @@
 :root {
   color-scheme: light dark;
 
-  --navbar-bg: #dfdfdfaa;
   --body-bg: #f1f5f9;
+  --outline-color: #dfdfdf;
+  --link-color: rgb(67, 67, 220);
+  --link-color-hover: rgb(147, 147, 220);
+
+  --navbar-bg: #ababab22;
+  --nav-link-color: black;
+  --nav-link-color-hover: rgb(94, 94, 94);
 }
 
 * {
@@ -28,9 +34,31 @@ main {
   padding: 0;
 }
 
+.astro-code {
+  padding: 1rem;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-color-hover);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --navbar-bg: #0004;
     --body-bg: #2a2f2f;
+    --outline-color: #444;
+    --link-color: rgb(140, 140, 250);
+    --link-color-hover: rgb(150, 150, 255);
+
+    --navbar-bg: #0004;
+    --nav-link-color: #cecece;
+    --nav-link-color-hover: #dfdfdf;
   }
 }
