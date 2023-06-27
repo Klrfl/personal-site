@@ -4,6 +4,7 @@
   color-scheme: light dark;
 
   --body-bg: #f1f5f9;
+  --accent: rgb(59, 78, 175);
   --outline-color: #dfdfdf;
   --link-color: rgb(67, 67, 220);
   --link-color-hover: rgb(147, 147, 220);
