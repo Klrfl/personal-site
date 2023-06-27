@@ -9,7 +9,7 @@
   --link-color: rgb(67, 67, 220);
   --link-color-hover: rgb(147, 147, 220);
 
-  --navbar-bg: #ababab22;
+  --navbar-bg: #000d;
   --nav-link-color: black;
   --nav-link-color-hover: rgb(94, 94, 94);
 }
@@ -37,6 +37,7 @@ main {
 
 .astro-code {
   padding: 1rem;
+  font-size: 1rem;
 }
 
 a {
