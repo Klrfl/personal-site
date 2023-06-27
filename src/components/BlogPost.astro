@@ -3,17 +3,27 @@ const { post } = Astro.props;
 const frontmatter = post.frontmatter;
 ---
 
-<li class="blog-post-container">
-  <a class="blog-post" href={post.url}>
-    <div class="blog-post__preview">
-      <h2 class="blog-post__title">{frontmatter.title}</h2>
-      <p class="blog-post__description">{frontmatter.description}</p>
-      <p class="blog-post__pub-date">{frontmatter.pubDate.substring(0, 10)}</p>
+<li class="post-container">
+  <a class="post" href={post.url}>
+    <div class="post__metadata">
+      <h2 class="post__title">{frontmatter.title}</h2>
+      <p class="post__author-date">
+        <span class="post__author">{frontmatter.author}</span>
+        <span class="post__pub-date">
+          {frontmatter.pubDate.substring(0, 10)}
+        </span>
+      </p>
+
+      <p class="post__description">{frontmatter.description}</p>
+
+      <ul class="post__tag-wrapper">
+        {post.frontmatter.tags.map((tag) => <li class="post__tag">{tag}</li>)}
+      </ul>
     </div>
 
-    <div class="blog-post__image-container">
+    <div class="post__image-container">
       <img
-        class="blog-post__image"
+        class="post__image"
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
       />
@@ -22,7 +32,7 @@ const frontmatter = post.frontmatter;
 </li>
 
 <style>
-  .blog-post {
+  .post {
     outline: 2px solid #343434;
     text-decoration: none;
     color: inherit;
@@ -35,27 +45,49 @@ const frontmatter = post.frontmatter;
     flex-wrap: wrap;
   }
 
-  .blog-post-container + .blog-post-container {
+  .post-container + .post-container {
     margin-block-start: 0.5rem;
   }
 
-  .blog-post:hover {
+  .post:hover {
     background: #343434;
   }
 
-  .blog-post__preview {
+  .post__metadata {
     flex: 2 1 40ch;
   }
 
-  .blog-post__pub-date {
-    margin-block: 0.2rem;
-    font-size: 0.85em;
+  .post__title {
+    margin-block: 0.5rem 0.1rem;
   }
 
-  .blog-post__image-container {
+  .post__author-date {
+    margin-block: 0.4em;
+    font-size: 0.9em;
+  }
+
+  .post__description {
+    margin-block: 0.5em;
+  }
+
+  .post__tag-wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .post__tag {
+    outline: 2px solid var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+  }
+
+  .post__image-container {
     flex: 1 1 200px;
   }
-  .blog-post__image {
+  .post__image {
     max-height: 100%;
   }
 </style>
