@@ -37,7 +37,11 @@ const { frontmatter } = Astro.props;
     </div>
 
     <figure class="header__image-wrapper">
-      <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+      <img
+        class="header__image"
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+      />
     </figure>
   </header>
 
@@ -87,7 +91,7 @@ const { frontmatter } = Astro.props;
 
   .tag {
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 10rem;
     outline: 2px solid var(--accent);
   }
 
@@ -102,6 +106,12 @@ const { frontmatter } = Astro.props;
 
   .header__image-wrapper {
     margin: 0;
+  }
+
+  .header__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   main {
