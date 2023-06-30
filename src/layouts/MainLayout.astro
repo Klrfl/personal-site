@@ -1,0 +1,17 @@
+---
+import MyLayout from "./MyLayout.astro";
+const { title } = Astro.props;
+---
+
+<MyLayout title={title}>
+  <main>
+    <slot />
+  </main>
+</MyLayout>
+
+<style>
+  main {
+    padding: 2rem;
+    max-width: 85ch;
+  }
+</style>
