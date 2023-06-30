@@ -14,19 +14,9 @@
   --nav-link-color-hover: rgb(94, 94, 94);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: var(--body-bg);
   padding: 0;
-}
-
-main {
-  padding: 2rem;
-  max-width: 85ch;
-  margin: 0 auto;
 }
 
 .blog-list {
