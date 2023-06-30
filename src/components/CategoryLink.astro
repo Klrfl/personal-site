@@ -1,0 +1,16 @@
+---
+const { tag } = Astro.props;
+---
+
+<li class="tag"><a href={`tags/${tag}`}>{tag}</a></li>
+
+<style>
+  .tag {
+    padding: 1rem;
+    outline: 1px solid;
+  }
+
+  .tag a {
+    color: inherit;
+  }
+</style>
