@@ -1,6 +1,8 @@
 ---
-import MyLayout from "../../layouts/MyLayout.astro";
+import MyLayout from "../../layouts/MainLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
+
+import CTA from "../../components/CTA.astro";
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("../posts/*.md");
@@ -26,11 +28,11 @@ const { posts } = Astro.props;
 ---
 
 <MyLayout title={tag}>
-  <main>
-    <p>Posts tagged with {tag}</p>
+  <p>Posts tagged with {tag}</p>
 
-    <ul class="blog-list">
-      {posts.map((post) => <BlogPost post={post} />)}
-    </ul>
-  </main>
+  <ul class="blog-list">
+    {posts.map((post) => <BlogPost post={post} />)}
+  </ul>
+
+  <CTA href="/latest">See more of my blogs</CTA>
 </MyLayout>
