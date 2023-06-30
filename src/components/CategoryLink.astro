@@ -6,11 +6,17 @@ const { tag } = Astro.props;
 
 <style>
   .tag {
-    padding: 1rem;
-    outline: 1px solid;
+    margin-block-end: 0.5rem;
+    outline: 1px solid var(--outline-color);
   }
 
   .tag a {
     color: inherit;
+    padding: 1rem;
+    display: block;
+  }
+
+  .tag a:hover {
+    background: var(--block-bg-hover);
   }
 </style>
