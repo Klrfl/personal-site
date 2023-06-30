@@ -13,6 +13,8 @@
   --navbar-bg: #ababab22;
   --nav-link-color: black;
   --nav-link-color-hover: rgb(94, 94, 94);
+
+  --tag-color: #444;
 }
 
 body {
@@ -54,5 +56,7 @@ a:hover {
     --navbar-bg: #000c;
     --nav-link-color: #cecece;
     --nav-link-color-hover: #dfdfdf;
+
+    --tag-color: #bbb;
   }
 }
