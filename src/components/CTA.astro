@@ -1,0 +1,16 @@
+---
+const { href } = Astro.props;
+---
+
+<a href={href} class="cta">
+  <slot />
+</a>
+
+<style>
+  .cta {
+    outline: 2px solid var(--accent);
+    margin: 1rem auto;
+    padding: 1.5rem;
+    display: inline-block;
+  }
+</style>
