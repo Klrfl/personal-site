@@ -25,7 +25,7 @@ const { author } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<MyLayout title={author}>
+<MyLayout title={author} description={`Posts from ${author}`}>
   <main>
     <h1>{author}</h1>
     <p>Posts from {author}</p>

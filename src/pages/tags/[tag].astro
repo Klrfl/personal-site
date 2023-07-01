@@ -27,7 +27,8 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<MyLayout title={tag}>
+<MyLayout title={tag} description={`Posts tagged with ${tag}`}>
+  <h1>{tag}</h1>
   <p>Posts tagged with {tag}</p>
 
   <ul class="blog-list">

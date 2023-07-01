@@ -7,7 +7,7 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
 const sortedPosts = sortPostsByDate(allPosts);
 ---
 
-<MyLayout title="Latest Posts">
+<MyLayout title="Latest Posts" description="Latest posts from Klrfl's blog.">
   <main>
     <section class="main-section">
       <h1>Latest Posts</h1>
