@@ -6,7 +6,7 @@ import { Image } from "@astrojs/image/components";
 const { frontmatter } = Astro.props;
 ---
 
-<MyLayout title={frontmatter.title}>
+<MyLayout title={frontmatter.title} description={frontmatter.description}>
   <header>
     <div class="header__text">
       <h1 class="post-title">{frontmatter.title}</h1>
