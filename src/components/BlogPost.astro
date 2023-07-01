@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 const { post } = Astro.props;
 const frontmatter = post.frontmatter;
 ---
@@ -22,75 +23,78 @@ const frontmatter = post.frontmatter;
     </div>
 
     <div class="post__image-container">
-      <img
+      <Image
         class="post__image"
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
+        width={700}
+        aspectRatio="16:9"
+        format="webp"
       />
     </div>
   </a>
+
+  <style>
+    .post {
+      outline: 2px solid var(--outline-color);
+      text-decoration: none;
+      color: inherit;
+      padding: 1.5rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .post-container + .post-container {
+      margin-block-start: 0.5rem;
+    }
+
+    .post:hover {
+      background: var(--block-bg-hover);
+    }
+
+    .post__metadata {
+      flex: 2 1 40ch;
+    }
+
+    .post__title {
+      margin-block: 1rem;
+    }
+
+    .post__author-date {
+      margin-block: 0.4em;
+      font-size: 0.9em;
+    }
+
+    .post__description {
+      margin-block: 0.5em;
+    }
+
+    .post__tag-wrapper {
+      list-style: none;
+      margin-block: 1rem 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .post__tag {
+      outline: 2px solid var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 10rem;
+      color: var(--tag-color);
+      font-size: 0.9rem;
+    }
+
+    .post__image-container {
+      flex: 1 1 200px;
+    }
+    .post__image {
+      max-height: 100%;
+    }
+  </style>
 </li>
-
-<style>
-  .post {
-    outline: 2px solid var(--outline-color);
-    text-decoration: none;
-    color: inherit;
-    padding: 1.5rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .post-container + .post-container {
-    margin-block-start: 0.5rem;
-  }
-
-  .post:hover {
-    background: var(--block-bg-hover);
-  }
-
-  .post__metadata {
-    flex: 2 1 40ch;
-  }
-
-  .post__title {
-    margin-block: 1rem;
-  }
-
-  .post__author-date {
-    margin-block: 0.4em;
-    font-size: 0.9em;
-  }
-
-  .post__description {
-    margin-block: 0.5em;
-  }
-
-  .post__tag-wrapper {
-    list-style: none;
-    margin-block: 1rem 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .post__tag {
-    outline: 2px solid var(--accent);
-    padding: 0.5rem 1rem;
-    border-radius: 10rem;
-    color: var(--tag-color);
-    font-size: 0.9rem;
-  }
-
-  .post__image-container {
-    flex: 1 1 200px;
-  }
-  .post__image {
-    max-height: 100%;
-  }
-</style>

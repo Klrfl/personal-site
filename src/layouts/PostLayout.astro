@@ -1,5 +1,8 @@
 ---
 import MyLayout from "../layouts/MyLayout.astro";
+
+import { Image } from "@astrojs/image/components";
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -37,10 +40,13 @@ const { frontmatter } = Astro.props;
     </div>
 
     <figure class="header__image-wrapper">
-      <img
+      <Image
         class="header__image"
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
+        width={700}
+        aspectRatio="16:9"
+        format="webp"
       />
     </figure>
   </header>
