@@ -3,6 +3,8 @@ import MyLayout from "../layouts/MyLayout.astro";
 
 import { Image } from "@astrojs/image/components";
 
+import { formatDate } from "../scripts/utils";
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -22,7 +24,7 @@ const { frontmatter } = Astro.props;
           </a>
         </p>
         <p class="post-metadata__date">
-          {frontmatter.pubDate.substring(0, 10)}
+          {formatDate(frontmatter.pubDate)}
         </p>
       </div>
 
@@ -72,6 +74,7 @@ const { frontmatter } = Astro.props;
   }
   .post-title {
     font-size: 2.8rem;
+    line-height: 1;
   }
   .post-metadata {
     display: flex;

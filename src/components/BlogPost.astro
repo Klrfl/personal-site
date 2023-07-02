@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 const { post } = Astro.props;
+import { formatDate } from "../scripts/utils";
 const frontmatter = post.frontmatter;
 ---
 
@@ -11,7 +12,7 @@ const frontmatter = post.frontmatter;
       <p class="post__author-date">
         <span class="post__author">{frontmatter.author}</span>
         <span class="post__pub-date">
-          {frontmatter.pubDate.substring(0, 10)}
+          {formatDate(frontmatter.pubDate)}
         </span>
       </p>
 
@@ -62,11 +63,16 @@ const frontmatter = post.frontmatter;
 
     .post__title {
       margin-block: 1rem;
+      line-height: 1;
     }
 
     .post__author-date {
       margin-block: 0.4em;
-      font-size: 0.9em;
+      font-size: 0.85em;
+    }
+
+    .post__author-date > * {
+      display: block;
     }
 
     .post__description {
