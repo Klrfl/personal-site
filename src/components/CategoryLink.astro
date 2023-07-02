@@ -1,8 +1,8 @@
 ---
-const { tag } = Astro.props;
+const { tag, amount } = Astro.props;
 ---
 
-<li class="tag"><a href={`tags/${tag}`}>{tag}</a></li>
+<li class="tag"><a href={`tags/${tag}`}>{tag} ({amount})</a></li>
 
 <style>
   .tag {

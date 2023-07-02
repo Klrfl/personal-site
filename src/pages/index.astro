@@ -10,9 +10,16 @@ import { sortPostsByDate } from "../scripts/utils";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const sortedPosts = sortPostsByDate(allPosts);
 
-const allTags = [
-  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
-];
+const allTags = allPosts.map((post) => post.frontmatter.tags).flat();
+
+const processedTags = allTags.reduce((acc, tag) => {
+  const value = acc[tag] || 0;
+
+  return {
+    ...acc,
+    [tag]: value + 1,
+  };
+}, {});
 ---
 
 <MyLayout title="Home" description="Klrfl's blog">
@@ -46,7 +53,12 @@ const allTags = [
     <aside>
       <h2>Tags</h2>
       <ul class="tag-list">
-        {allTags.map((tag) => <CategoryLink tag={tag} />)}
+        {
+          // Object.entries returns an array
+          Object.entries(processedTags).map(([tag, amount]) => (
+            <CategoryLink tag={tag} amount={amount} />
+          ))
+        }
       </ul>
     </aside>
   </div>
