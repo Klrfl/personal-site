@@ -4,6 +4,7 @@
   color-scheme: light dark;
 
   --body-bg: #f1f5f9;
+  --body-color: #222;
   --accent: rgb(59, 78, 175);
   --outline-color: #dfdfdf;
   --block-bg-hover: #ededed;
@@ -15,10 +16,12 @@
   --nav-link-color-hover: rgb(94, 94, 94);
 
   --tag-color: #444;
+  --heading-color: #ddd;
 }
 
 body {
   background: var(--body-bg);
+  color: var(--body-color);
   padding: 0;
 }
 
@@ -48,6 +51,7 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   :root {
     --body-bg: #2a2f2f;
+    --body-color: #dfdfdf;
     --outline-color: #444;
     --block-bg-hover: #343434;
     --link-color: rgb(140, 140, 250);
@@ -58,5 +62,6 @@ a:hover {
     --nav-link-color-hover: #dfdfdf;
 
     --tag-color: #bbb;
+    --heading-color: #ddd;
   }
 }
