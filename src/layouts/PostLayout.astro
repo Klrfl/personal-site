@@ -60,13 +60,9 @@ const { frontmatter } = Astro.props;
 
 <style>
   header {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
     gap: 1rem;
-  }
-
-  header > * {
-    flex: 1 0 40ch;
   }
 
   .header__text {
@@ -129,5 +125,11 @@ const { frontmatter } = Astro.props;
     padding: 2rem;
     max-width: 85ch;
     margin: 0;
+  }
+  h2 {
+    border-bottom: 2px solid var(--heading-border);
+    margin-block: 2rem 0;
+    padding-block: 0 0.5rem;
+    line-height: 1;
   }
 </style>
