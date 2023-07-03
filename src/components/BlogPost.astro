@@ -37,9 +37,9 @@ const frontmatter = post.frontmatter;
 
   <style>
     .post {
-      outline: 2px solid var(--outline-color);
+      border-bottom: 2px solid var(--outline-color);
       text-decoration: none;
-      color: inherit;
+      color: var(--body-color);
       padding: 1.5rem;
 
       display: flex;
@@ -55,6 +55,7 @@ const frontmatter = post.frontmatter;
 
     .post:hover {
       background: var(--block-bg-hover);
+      color: inherit;
     }
 
     .post__metadata {
