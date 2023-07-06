@@ -101,7 +101,6 @@ const projects = [
         }
       </div>
     </section>
-
     <section class="main-section" id="projects">
       <div class="main-section__text">
         <h2>Projects</h2>
@@ -187,10 +186,8 @@ const projects = [
     font-size: min(2rem, 8vmin);
     color: #ddd;
     width: max-content;
-    height: 2rem;
-    margin: 0.1em auto;
+    margin: 0 auto;
     position: relative;
-    overflow: hidden;
   }
 
   .hero__text h1::before,
@@ -198,7 +195,6 @@ const projects = [
     content: "";
     position: absolute;
     inset: 0;
-    height: calc(min(2rem, 8vmin) + 2px);
   }
 
   .hero__text h1::before {
@@ -273,27 +269,6 @@ const projects = [
 
   .about__text {
     max-width: 75ch;
-  }
-
-  .about-divider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-  }
-
-  .about-divider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 69px;
-  }
-
-  .about-divider .shape-fill {
-    fill: var(--about-bg);
   }
 
   /* about section */
