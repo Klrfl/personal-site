@@ -19,6 +19,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
       </button>
     </div>
 
+    <li><a class="nav-links" href="/">Home</a></li>
     <li><a class="nav-links" href="/about">About</a></li>
     <li><a class="nav-links" href="/blog">Blog</a></li>
   </ul>
@@ -35,6 +36,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 10;
   }
   nav,
   .nav-links-wrapper__header {
