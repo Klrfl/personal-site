@@ -120,6 +120,7 @@ const projects = [
                 <img
                   src={project.image}
                   alt={`Screenshot of my project ${project.heading}`}
+                  width="700"
                 />
               </a>
               <div class="project-text">
@@ -129,7 +130,6 @@ const projects = [
             </div>
           ))
         }
-        <div class="project"></div>
       </div>
     </section>
 
@@ -143,16 +143,20 @@ const projects = [
 </MyLayout>
 
 <style>
+  :root {
+    --transition: ease-out 200ms;
+    --transblack: rgb(0, 0, 0, 0.5);
+    --blur: blur(2rem);
+    --about-bg: #bf170b;
+    --light-blue: #267ee6;
+  }
+
   /* main section, hero */
   .main-section {
-    padding-block: 10em;
-    padding-inline: 2em;
+    padding: 4rem 2rem;
     background: #1c1b22;
 
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .main-section > div:first-of-type {
@@ -237,6 +241,19 @@ const projects = [
     max-height: 100%;
     position: relative;
   }
+  .skills-section {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%);
+  }
+
+  .skills__cards-container {
+    text-align: center;
+    align-self: stretch;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+  }
 
   .skill-card {
     font-size: 1.2em;
@@ -274,6 +291,35 @@ const projects = [
   /* about section */
   .about-section {
     background: var(--about-bg);
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card {
+    border-radius: 0.5em;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform var(--transition);
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-text {
+    padding: 1rem;
+    background: #444;
+    flex-grow: 1;
   }
 
   @media screen and (min-width: 50em) {
