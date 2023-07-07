@@ -1,9 +1,20 @@
 <footer>
-  <p><a href="https://github.com/Klrfl">Klrfl</a>, 2023.</p>
-  <div class="social-media-links">
+  <div class="footer-text">
+    <p>Made by <a href="https://github.com/Klrfl">Klrfl</a>, 2023.</p>
+  </div>
+  <div class="footer-socials">
     <ul>
       <li>
+        <i class="fa-brands fa-github"></i>
         <a href="https://github.com/Klrfl/blog-tutorial">This blog on GitHub</a>
+      </li>
+      <li>
+        <i class="fa-brands fa-codepen"></i>
+        <a href="https://codepen.com/codepen.io/Klrfl">Codepen</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="https://mailto:efrayanglain@gmail.com">Email me</a>
       </li>
     </ul>
   </div>
@@ -11,17 +22,34 @@
 
 <style>
   footer {
-    outline: 2px solid var(--outline-color);
+    background: #202021;
+    color: #ddd;
     padding: 2rem;
-
+    text-align: center;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
-  footer ul {
-    list-style-type: none;
+  .footer-socials ul {
     margin: 0;
     padding: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .footer-socials a {
+    display: inline-block;
+    color: #aaa;
+    padding: 1em 0.25em;
+    transition: color var(--transition);
+  }
+
+  .footer-socials a:hover {
+    color: #ddd;
   }
 </style>
