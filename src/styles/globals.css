@@ -1,7 +1,7 @@
 @import "./resets.css";
-
+/* 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
 
   --body-bg: #f1f5f9;
   --body-color: #222;
@@ -17,7 +17,7 @@
 
   --tag-color: #444;
   --heading-border-color: #bbb;
-}
+} */
 
 body {
   background: var(--body-bg);
@@ -48,20 +48,20 @@ a:hover {
   color: var(--link-color-hover);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg: #2a2f2f;
-    --body-color: #dfdfdf;
-    --outline-color: #444;
-    --block-bg-hover: #343434;
-    --link-color: rgb(140, 140, 250);
-    --link-color-hover: rgb(150, 150, 255);
+/* @media (prefers-color-scheme: dark) { */
+:root {
+  --body-bg: #2a2f2f;
+  --body-color: #dfdfdf;
+  --outline-color: #444;
+  --block-bg-hover: #343434;
+  --link-color: rgb(140, 140, 250);
+  --link-color-hover: rgb(150, 150, 255);
 
-    --navbar-bg: #000c;
-    --nav-link-color: #cecece;
-    --nav-link-color-hover: #dfdfdf;
+  --navbar-bg: #000c;
+  --nav-link-color: #cecece;
+  --nav-link-color-hover: #dfdfdf;
 
-    --tag-color: #bbb;
-    --heading-border-color: #555;
-  }
+  --tag-color: #bbb;
+  --heading-border-color: #555;
 }
+/* } */
