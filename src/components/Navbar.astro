@@ -4,7 +4,9 @@ import BurgerMenu from "../components/BurgerMenu.astro";
 
 <nav>
   <div class="logo">
-    <a href="/">logo</a>
+    <a href="/">
+      <i class="fa-solid fa-k"></i>
+    </a>
   </div>
 
   <BurgerMenu />
@@ -25,11 +27,9 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   </ul>
 </nav>
 
-<style is:inline>
+<style>
   nav {
-    outline: 2px solid var(--outline-color);
-    background: var(--navbar-bg);
-    backdrop-filter: blur(10px);
+    padding-inline: 0.5rem;
     color: var(--nav-link-color);
 
     user-select: none;
@@ -38,6 +38,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     top: 0;
     z-index: 10;
   }
+
   nav,
   .nav-links-wrapper__header {
     display: flex;
@@ -48,15 +49,21 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   nav a {
     color: inherit;
     text-decoration: unset;
+    display: block;
+    position: relative;
   }
 
   nav button {
     cursor: pointer;
   }
 
+  .logo,
   .nav-links-wrapper {
-    outline: 2px solid var(--outline-color);
     background: var(--navbar-bg);
+  }
+
+  .nav-links-wrapper {
+    backdrop-filter: blur(10px);
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -80,25 +87,52 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   .nav-links {
     padding: 1.5rem;
   }
+
   .nav-links {
-    display: flex;
+    text-align: right;
   }
 
-  .nav-links:hover,
-  nav button:hover {
-    color: var(--nav-link-color-hover);
+  .nav-links::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0.5rem;
+    height: 100%;
+    background: #ddd;
+    transform: scale(0);
+    transition: transform var(--transition);
+  }
+
+  .nav-links:focus::before {
+    transform: scale(1);
+  }
+
+  @media (hover: hover) {
+    .nav-links:hover,
+    nav button:hover {
+      color: var(--nav-link-color-hover);
+    }
+
+    .nav-links:hover::before {
+      transform: scale(1);
+    }
   }
 
   @media screen and (min-width: 50em) {
     .nav-links-wrapper {
       transform: none;
-      background: transparent;
       position: relative;
       flex-direction: row;
     }
 
     .nav-links-wrapper__header {
       display: none;
+    }
+
+    .nav-links::before {
+      width: 100%;
+      height: 0.1rem;
     }
   }
 </style>
