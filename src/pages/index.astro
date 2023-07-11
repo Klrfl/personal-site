@@ -163,7 +163,8 @@ const projects = [
   /* main section, hero */
   .main-section {
     padding: 4rem 2rem;
-    background: #1c1b22;
+    /* background: #1c1b22; */
+    background: var(--body-bg);
 
     position: relative;
   }
@@ -250,6 +251,7 @@ const projects = [
     max-height: 100%;
     position: relative;
   }
+
   .skills-section {
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%);
   }
@@ -309,6 +311,7 @@ const projects = [
   }
 
   .project-card {
+    outline: 2px solid var(--outline-color);
     border-radius: 0.5em;
     user-select: none;
     cursor: pointer;
@@ -327,7 +330,6 @@ const projects = [
 
   .project-text {
     padding: 1rem;
-    background: #444;
     flex-grow: 1;
   }
 
@@ -359,6 +361,7 @@ const projects = [
     padding: 0.5em;
     width: 100%;
   }
+
   @media screen and (min-width: 50em) {
     .hero__text {
       padding: 10em 10em 10em 5em;
