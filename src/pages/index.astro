@@ -136,7 +136,16 @@ const projects = [
     <section class="main-section" id="contact">
       <div class="main-section__text">
         <h2>Contact</h2>
-        <p>Not functional</p>
+        <p>Not functional at the moment. I am working on it please wait!!!</p>
+      </div>
+      <div class="form-container">
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" required />
+          <label for="email">Email</label>
+          <input type="email" required />
+          <input type="submit" />
+        </form>
       </div>
     </section>
   </main>
@@ -322,6 +331,34 @@ const projects = [
     flex-grow: 1;
   }
 
+  #contact {
+    background: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    gap: 1rem;
+  }
+
+  #contact > * {
+    flex: 1 1 0;
+  }
+
+  .form-container {
+    background: #1c1b22;
+    outline: 1px solid black;
+    padding: 1em;
+    align-self: stretch;
+  }
+
+  .form-container label {
+    display: block;
+    padding: 0.5em 0 1em 0;
+  }
+
+  .form-container input {
+    padding: 0.5em;
+    width: 100%;
+  }
   @media screen and (min-width: 50em) {
     .hero__text {
       padding: 10em 10em 10em 5em;
@@ -344,11 +381,11 @@ const projects = [
       padding-inline: 4em;
     }
 
-    .contact-section > div {
+    #contact > div {
       flex: 1 1 0;
     }
 
-    .contact-section {
+    #contact {
       flex-direction: row;
     }
   }
