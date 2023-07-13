@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://klrfl.netlify.app/sitemap-index.xml
