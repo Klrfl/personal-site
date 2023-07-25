@@ -1,16 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 const myName = "Efraim";
-const skills = ["HTML", "CSS", "JS", "Vue", "Astro"];
+const skills = ["Python", "HTML", "CSS", "JS", "Vue", "Astro"];
 ---
 
 <MainLayout title="About" description="A little bit about Klrfl">
   <section class="main-section">
-    <h1>Tentang guwa</h1>
-    <p>Halo, nama gua {myName}.</p>
+    <h1>About me</h1>
     <p>
-      Selama gua menjadi web developer, gua udah belajar beberapa hal, termasuk:
+      Hello, my name is {myName}. I am a student from Indonesia currently
+      learning web development. I have 2 years of experience using various
+      technologies such as JavaScript, Vue and Astro.
     </p>
+    <p>In the frontend space, I have picked up various things, including:</p>
     <ul>
       {
         skills.map((skill) => {
@@ -18,5 +20,25 @@ const skills = ["HTML", "CSS", "JS", "Vue", "Astro"];
         })
       }
     </ul>
+    <p>
+      I am also interested in backend web development, so I have learned a
+      little bit of bash scripting. I have learned a little bit about Firebase,
+      PostgreSQL and also Node & Express.
+    </p>
+
+    <p>
+      when I'm not coding, I like editing Indonesian Wikipedia articles about
+      Formula One or playing chess.
+    </p>
+    <p>
+      I first got into software development when I was in 9th grade. At the time
+      I was looking at Python tutorial videos on YouTube, and out of curiosity I <a
+        href="https://youtu.be/_uQrJ0TkZlc">clicked one of them</a
+      > and learned Python. I remember when I first installed Python and Pycharm,
+      then printing hello world to the console. I was so happy that I can program
+      a computer to do something. From there, my curiosity peaked. I looked into
+      web development, learned HTML CSS and JS, and now here we are. Huge thanks
+      to Mosh for getting me to where I am now!
+    </p>
   </section>
 </MainLayout>

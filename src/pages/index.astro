@@ -79,7 +79,7 @@ const projects = [
       <div class="hero__image"></div>
     </section>
 
-    <section class="main-section main-section--skils" id="skills">
+    <section class="main-section" id="skills">
       <div class="main-section__text">
         <h2>Skills</h2>
         <p>
@@ -101,6 +101,7 @@ const projects = [
         }
       </div>
     </section>
+
     <section class="main-section" id="projects">
       <div class="main-section__text">
         <h2>Projects</h2>
@@ -135,6 +136,20 @@ const projects = [
       </div>
     </section>
 
+    <section class="main-section" id="about">
+      <div class="main-section__text">
+        <h2>About me</h2>
+        <p>
+          My name is Efraim Munthe, I am a student currently learning about
+          front-end web development and the JAMStack. I also recently got into
+          backend web development, dabbling in NodeJS, PostgreSQL and Express. I
+          haven't learned much about them, so I haven't put them into my skills
+          yet.
+        </p>
+        <button class="btn about-cta"><a href="/about">See more</a></button>
+      </div>
+    </section>
+
     <section class="main-section" id="contact">
       <div class="main-section__text">
         <h2>Contact</h2>
@@ -165,14 +180,14 @@ const projects = [
   /* main section, hero */
   .main-section {
     padding: 4rem 2rem;
-    /* background: #1c1b22; */
     background: var(--body-bg);
 
     position: relative;
   }
 
-  .main-section > div:first-of-type {
-    padding: 1em;
+  .main-section > * {
+    max-width: 120ch;
+    margin: auto;
   }
 
   .hero {
@@ -254,6 +269,7 @@ const projects = [
     position: relative;
   }
 
+  /* skills */
   .skills-section {
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%);
   }
@@ -301,11 +317,12 @@ const projects = [
     max-width: 75ch;
   }
 
-  /* about section */
-  .about-section {
+  /* about */
+  #about {
     background: var(--about-bg);
   }
 
+  /* projects */
   .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr));
@@ -324,8 +341,6 @@ const projects = [
     flex-direction: column;
   }
 
-  /* .project-card__image-container  */
-
   .project-card img {
     width: 100%;
     height: 100%;
@@ -339,6 +354,7 @@ const projects = [
     flex-grow: 1;
   }
 
+  /* contact */
   #contact {
     background: var(--light-blue);
     display: flex;
