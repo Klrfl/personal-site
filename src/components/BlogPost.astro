@@ -1,7 +1,8 @@
 ---
 import { Image } from "@astrojs/image/components";
+import { formatDate } from "@/scripts/utils";
+
 const { post } = Astro.props;
-import { formatDate } from "../scripts/utils";
 const frontmatter = post.frontmatter;
 ---
 

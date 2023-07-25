@@ -1,11 +1,11 @@
 ---
-import MyLayout from "../layouts/MyLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
+import MyLayout from "@layouts/MyLayout.astro";
+import BlogPost from "@components/BlogPost.astro";
 
-import CTA from "../components/CTA.astro";
-import CategoryLink from "../components/CategoryLink.astro";
+import CTA from "@components/CTA.astro";
+import CategoryLink from "@components/CategoryLink.astro";
 
-import { sortPostsByDate } from "../scripts/utils";
+import { sortPostsByDate } from "@/scripts/utils";
 
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const sortedPosts = sortPostsByDate(allPosts);

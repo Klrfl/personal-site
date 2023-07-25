@@ -1,8 +1,8 @@
 ---
-import MyLayout from "../../layouts/MainLayout.astro";
-import BlogPost from "../../components/BlogPost.astro";
+import MyLayout from "@layouts/MainLayout.astro";
+import BlogPost from "@components/BlogPost.astro";
 
-import CTA from "../../components/CTA.astro";
+import CTA from "@components/CTA.astro";
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("../posts/*.md");
