@@ -1,6 +1,9 @@
 ---
 import MyLayout from "../layouts/MyLayout.astro";
+
 import { Image } from "@astrojs/image/components";
+import CTA from "../components/CTA.astro";
+
 const title = "Hello! I'm Efraim.";
 
 const skillset = [
@@ -149,7 +152,8 @@ const projects = [
           haven't learned much about them, so I haven't put them into my skills
           yet.
         </p>
-        <button class="btn about-cta"><a href="/about">See more</a></button>
+        <!-- <button class="btn about-cta"><a href="/about">See more</a></button> -->
+        <CTA href="/about">See more</CTA>
       </div>
     </section>
 
