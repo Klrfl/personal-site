@@ -1,5 +1,6 @@
 ---
 import MyLayout from "../layouts/MyLayout.astro";
+import { Image } from "@astrojs/image/components";
 const title = "Hello! I'm Efraim.";
 
 const skillset = [
@@ -119,10 +120,12 @@ const projects = [
             <div class="project-card">
               <a href={project.link} target="_blank">
                 <div class="project-card__image-container">
-                  <img
+                  <Image
                     src={project.image}
-                    alt={`Screenshot of my project ${project.heading}`}
+                    alt={`Screenshot of my project, ${project.heading}.`}
                     width="700"
+                    aspectRatio="16:9"
+                    format="webp"
                   />
                 </div>
                 <div class="project-text">
