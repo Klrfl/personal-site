@@ -10,8 +10,6 @@ image:
 tags:
   - blog
 ---
-![perhotelan page.](/assets/uploads/smkmetland.net-perhotelan.png)
-
 Hello and welcome to my blog! As you have probably known, I am currently attempting to redesign [smkmetland.net](https://smkmetland.net). But of course like all things it doesn't go smoothly at all.
 
 ## THE REAL SITE IS DOWN!!!! and more
@@ -22,4 +20,6 @@ Because of this, I have decided to use another school's articles to fetch from a
 
 Here are some screenshots of the website:
 
-Yeah that's it for all.
+![perhotelan page.](/assets/uploads/smkmetland.net-perhotelan.png)
+
+Yeah that's it for all. Thank you for reading. I will provide more updates as I work more on the site.
