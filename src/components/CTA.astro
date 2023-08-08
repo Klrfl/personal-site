@@ -8,10 +8,21 @@ const { href } = Astro.props;
 
 <style>
   .cta {
-    outline: 2px solid var(--accent);
+    background: var(--primary);
+    color: var(--text-light);
     margin: 1rem auto;
     padding: 1em 2em;
     display: inline-block;
+
+    transition: background-color var(--transition), outline var(--transition);
+  }
+
+  .cta a {
     color: inherit;
+  }
+
+  .cta:hover {
+    outline: 2px solid var(--primary);
+    background: transparent;
   }
 </style>

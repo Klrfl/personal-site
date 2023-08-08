@@ -9,7 +9,7 @@ const frontmatter = post.frontmatter;
 <li class="post-container">
   <a class="post" href={post.url}>
     <div class="post__metadata">
-      <h2 class="post__title">{frontmatter.title}</h2>
+      <h3 class="post__title">{frontmatter.title}</h3>
       <p class="post__author-date">
         <span class="post__author">{frontmatter.author}</span>
         <span class="post__pub-date">
@@ -94,7 +94,6 @@ const frontmatter = post.frontmatter;
       outline: 2px solid var(--accent);
       padding: 0.5rem 1rem;
       border-radius: 10rem;
-      color: var(--tag-color);
       font-size: 0.9rem;
     }
 

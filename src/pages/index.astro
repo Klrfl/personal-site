@@ -233,15 +233,15 @@ const projects = [
   }
 
   .hero__text h1::before {
-    background: var(--accent);
+    background: var(--secondary);
     animation: typing 3s steps(18) 1000ms forwards;
   }
 
   .hero__text h1::after {
-    background: var(--text-light);
     width: 0.2rem;
     top: -5px;
-    animation: typing 3s steps(18) 1000ms forwards, blink 1000ms infinite;
+    animation: typing 3s steps(18) 1000ms forwards,
+      blink 500ms infinite alternate;
   }
 
   @keyframes typing {
@@ -251,11 +251,11 @@ const projects = [
   }
 
   @keyframes blink {
-    50% {
+    from {
       background: transparent;
     }
-    100% {
-      background: var(--text-light);
+    to {
+      background: var(--text);
     }
   }
 
@@ -342,6 +342,10 @@ const projects = [
 
     display: flex;
     flex-direction: column;
+  }
+
+  .project-card a {
+    color: inherit;
   }
 
   .project-card img {
