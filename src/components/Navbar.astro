@@ -29,8 +29,11 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 
 <style>
   nav {
+    background: var(--navbar-bg);
+    backdrop-filter: blur(0.5rem);
+
     padding-inline: 0.5rem;
-    color: var(--nav-link-color);
+    color: var(--text);
 
     user-select: none;
     position: fixed;
@@ -57,13 +60,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     cursor: pointer;
   }
 
-  .logo,
   .nav-links-wrapper {
-    background: var(--navbar-bg);
-  }
-
-  .nav-links-wrapper {
-    backdrop-filter: blur(10px);
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -99,7 +96,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     right: 0;
     width: 0.5rem;
     height: 100%;
-    background: #ddd;
+    background: var(--text);
     transform: scale(0);
     transition: transform var(--transition);
   }

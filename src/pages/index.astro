@@ -180,14 +180,12 @@ const projects = [
     --transition: ease-out 200ms;
     --transblack: rgb(0, 0, 0, 0.5);
     --blur: blur(2rem);
-    --about-bg: #bf170b;
-    --light-blue: #267ee6;
   }
 
   /* main section, hero */
   .main-section {
     padding: 4rem 2rem;
-    background: var(--body-bg);
+    background: var(--background);
 
     position: relative;
   }
@@ -199,7 +197,7 @@ const projects = [
 
   .hero {
     min-height: 100vh;
-    color: #ddd;
+    color: var(--text);
     position: sticky;
     top: 0;
     z-index: -2;
@@ -208,7 +206,8 @@ const projects = [
   }
 
   .hero__text {
-    background: #2d2d3f;
+    background: var(--secondary);
+    color: var(--text);
     text-align: center;
     padding-block: 1em;
     padding-inline: 1em;
@@ -222,9 +221,7 @@ const projects = [
 
   .hero__text h1 {
     font-size: min(2rem, 8vmin);
-    color: #ddd;
     width: max-content;
-    margin: 0 auto;
     position: relative;
   }
 
@@ -236,12 +233,12 @@ const projects = [
   }
 
   .hero__text h1::before {
-    background: #2d2d3f;
+    background: var(--accent);
     animation: typing 3s steps(18) 1000ms forwards;
   }
 
   .hero__text h1::after {
-    background: white;
+    background: var(--text-light);
     width: 0.2rem;
     top: -5px;
     animation: typing 3s steps(18) 1000ms forwards, blink 1000ms infinite;
@@ -258,7 +255,7 @@ const projects = [
       background: transparent;
     }
     100% {
-      background: white;
+      background: var(--text-light);
     }
   }
 
@@ -292,9 +289,9 @@ const projects = [
   }
 
   .skill-card {
+    outline: 1px solid var(--outline-color);
     font-size: 1.2em;
     border-radius: 0.5em;
-    outline: 1px solid #444;
     padding-block: 2rem;
     padding-inline: 4rem;
     max-width: 20ch;
@@ -324,9 +321,8 @@ const projects = [
     max-width: 75ch;
   }
 
-  /* about */
   #about {
-    background: var(--about-bg);
+    background: var(--secondary);
   }
 
   /* projects */
@@ -363,7 +359,6 @@ const projects = [
 
   /* contact */
   #contact {
-    background: var(--light-blue);
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
@@ -375,8 +370,7 @@ const projects = [
   }
 
   .form-container {
-    background: #1c1b22;
-    outline: 1px solid black;
+    background: var(--secondary);
     padding: 1em;
     align-self: stretch;
   }
@@ -402,9 +396,6 @@ const projects = [
       clip-path: polygon(100% 0, 50% 100%, 0% 100%, 0 0%);
     }
 
-    .hero__text h1 {
-      margin: 1em auto;
-    }
     .hero__text p {
       max-width: 40ch;
     }

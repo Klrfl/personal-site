@@ -1,28 +1,70 @@
 @import "./resets.css";
-
 :root {
   color-scheme: light dark;
 
-  --body-bg: #f1f5f9;
-  --body-color: #222;
-  --accent: rgb(59, 78, 175);
+  --african-violet: #a393bfff;
+  --african-violet-2: #9882acff;
+  --pomp-and-power: #73648aff;
+  --english-violet: #453750ff;
+  --night: #0c0910ff;
+
+  --white: #ddddfb;
+  --light-grey: #ebebef;
+  --dark-grey: #1d1d25;
+  --nice-purple: #8e83be;
+
+  --background-dark: var(--night);
+  --text-dark: var(--white);
+  --background-light: var(--white);
+  --text-light: var(--night);
+
+  --primary: var(--african-violet);
+  --secondary: var(--light-grey);
+  --accent: var(--nice-purple);
+}
+
+:root {
+  --background: var(--background-light);
+  --text: var(--text-light);
+
   --transition: 200ms ease;
-  --outline-color: #dfdfdf;
+  --outline-color: var(--secondary);
   --block-bg-hover: #ededed;
   --link-color: rgb(67, 67, 220);
   --link-color-hover: rgb(147, 147, 220);
 
-  --navbar-bg: #ababab22;
-  --nav-link-color: black;
+  --navbar-bg: var(--background);
   --nav-link-color-hover: rgb(94, 94, 94);
 
   --tag-color: #444;
   --heading-border-color: #bbb;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --secondary: var(--dark-grey);
+    --accent: #423a6e;
+  }
+
+  :root {
+    --background: var(--background-dark);
+    --text: var(--text-dark);
+
+    --block-bg-hover: #343434;
+    --link-color: rgb(140, 140, 250);
+    --link-color-hover: rgb(150, 150, 255);
+
+    --navbar-bg: #000c;
+    --nav-link-color-hover: #e6e6e6;
+
+    --tag-color: #bbb;
+    --heading-border-color: #555;
+  }
+}
+
 body {
-  background: var(--body-bg);
-  color: var(--body-color);
+  background: var(--background);
+  color: var(--text);
   padding: 0;
 }
 
@@ -47,22 +89,4 @@ a:link {
 
 a:hover {
   color: var(--link-color-hover);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg: #2a2f2f;
-    --body-color: #dfdfdf;
-    --outline-color: #444;
-    --block-bg-hover: #343434;
-    --link-color: rgb(140, 140, 250);
-    --link-color-hover: rgb(150, 150, 255);
-
-    --navbar-bg: #000c;
-    --nav-link-color: #cecece;
-    --nav-link-color-hover: #dfdfdf;
-
-    --tag-color: #bbb;
-    --heading-border-color: #555;
-  }
 }
