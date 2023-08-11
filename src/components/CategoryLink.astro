@@ -2,7 +2,9 @@
 const { tag, amount } = Astro.props;
 ---
 
-<li class="tag"><a href={`tags/${tag}`}>{tag} ({amount})</a></li>
+<li class="tag">
+  <a href={`/tags/${tag}`}>{tag} ({amount})</a>
+</li>
 
 <style>
   .tag {
