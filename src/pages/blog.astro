@@ -7,6 +7,8 @@ import CategoryLink from "@components/CategoryLink.astro";
 
 import { sortPostsByDate } from "@/scripts/utils";
 
+const title = "Efraim Munthe | Blog";
+
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const sortedPosts = sortPostsByDate(allPosts);
 
@@ -22,7 +24,7 @@ const processedTags = allTags.reduce((acc, tag) => {
 }, {});
 ---
 
-<MyLayout title="Blog" description="Klrfl's blog">
+<MyLayout title={title} description="Efraim Munthe's blog">
   <script
     slot="script"
     src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -30,7 +32,7 @@ const processedTags = allTags.reduce((acc, tag) => {
   <div class="main-grid">
     <main>
       <section class="main-section">
-        <h1>Klrfl's Blog</h1>
+        <h1>Efraim's Blog</h1>
         <p>I want to learn Astro, that's why I made this blog.</p>
         <p>
           Soo, I got bored of learning Vue and reading about stuff regarding
