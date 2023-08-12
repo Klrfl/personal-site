@@ -27,6 +27,7 @@ collections:
           label: "image",
           name: "image",
           widget: "object",
+          required: false,
           fields:
             [
               { label: "Image URL", name: "url", widget: "image" },
