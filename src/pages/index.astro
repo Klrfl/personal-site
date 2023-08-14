@@ -284,7 +284,7 @@ const projects = [
   }
 
   .skill-card {
-    outline: 1px solid var(--outline-color);
+    outline: 2px solid var(--outline-color-secondary);
     background: var(--secondary);
     font-size: 1.2em;
     border-radius: 0.5em;
@@ -294,7 +294,7 @@ const projects = [
     overflow: hidden;
     user-select: none;
 
-    transition: transform var(--transition), outline var(--transition);
+    transition: outline var(--transition), box-shadow var(--transition);
 
     display: flex;
     justify-content: center;
@@ -309,8 +309,8 @@ const projects = [
   }
 
   .skill-card:hover {
-    transform: scale(105%);
-    outline: 1px solid #aaa;
+    outline-color: var(--outline-color);
+    box-shadow: 0 5px 20px -2px var(--outline-color-mute);
   }
 
   .about__text {
@@ -329,16 +329,21 @@ const projects = [
   }
 
   .project-card {
-    outline: 2px solid var(--outline-color);
+    outline: 2px solid var(--outline-color-secondary);
     background: var(--secondary);
     border-radius: 0.5em;
     user-select: none;
     cursor: pointer;
     overflow: hidden;
-    transition: transform var(--transition);
+    transition: outline var(--transition), box-shadow var(--transition);
 
     display: flex;
     flex-direction: column;
+  }
+
+  .project-card:hover {
+    outline-color: var(--outline-color);
+    box-shadow: 0 5px 20px -2px var(--outline-color-mute);
   }
 
   .project-card a {
@@ -353,8 +358,6 @@ const projects = [
 
   .project-text {
     padding: 1rem;
-    color: var(--body-color);
-
     flex-grow: 1;
   }
 

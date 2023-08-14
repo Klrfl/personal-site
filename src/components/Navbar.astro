@@ -32,9 +32,9 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 <style>
   nav {
     background: var(--navbar-bg);
-    backdrop-filter: blur(0.5rem);
-    outline: 2px solid var(--outline-color);
+    outline: 2px solid var(--outline-color-mute);
     color: var(--text);
+    box-shadow: 0 5px 20px -2px var(--outline-color-mute);
 
     user-select: none;
     position: fixed;
@@ -101,7 +101,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     right: 0;
     width: 0.5rem;
     height: 100%;
-    background: var(--text);
+    background: var(--outline-color);
     transform: scale(0);
     transition: transform var(--transition);
   }

@@ -38,7 +38,7 @@ const frontmatter = post.frontmatter;
 
   <style>
     .post {
-      border-bottom: 2px solid var(--outline-color);
+      border-bottom: 2px solid var(--outline-color-mute);
       text-decoration: none;
       color: inherit;
       padding: 1.5rem;
@@ -58,6 +58,7 @@ const frontmatter = post.frontmatter;
     .post:hover {
       background: var(--block-bg-hover);
       color: var(--nav-link-color-hover);
+      box-shadow: 0 5px 20px -2px var(--outline-color-mute);
     }
 
     .post__metadata {
@@ -92,10 +93,10 @@ const frontmatter = post.frontmatter;
     }
 
     .post__tag {
-      outline: 2px solid var(--accent);
+      outline: 2px solid var(--outline-color);
       padding: 0.5rem 1rem;
       border-radius: 10rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .post__image-container {

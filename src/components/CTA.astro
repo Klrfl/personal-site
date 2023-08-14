@@ -14,7 +14,8 @@ const { href } = Astro.props;
     padding: 1em 2em;
     display: inline-block;
 
-    transition: background-color var(--transition), outline var(--transition);
+    transition: background-color var(--transition), outline var(--transition),
+      box-shadow var(--transition);
   }
 
   .cta a {
@@ -22,7 +23,8 @@ const { href } = Astro.props;
   }
 
   .cta:hover {
-    outline: 2px solid var(--primary);
+    outline: 1px solid var(--primary);
+    box-shadow: 0px 5px 20px -2px var(--outline-color-mute);
     background: transparent;
   }
 </style>

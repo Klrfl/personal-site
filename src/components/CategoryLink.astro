@@ -9,7 +9,7 @@ const { tag, amount } = Astro.props;
 <style>
   .tag {
     margin-block-end: 0.5rem;
-    outline: 1px solid var(--outline-color);
+    outline: 2px solid var(--outline-color-secondary);
   }
 
   .tag a {
@@ -17,6 +17,10 @@ const { tag, amount } = Astro.props;
     padding: 1rem;
     display: block;
     transition: background-color var(--transition), color var(--transition);
+  }
+
+  .tag:hover {
+    outline-color: var(--outline-color);
   }
 
   .tag a:hover {
