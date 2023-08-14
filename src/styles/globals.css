@@ -11,8 +11,7 @@
   --white: #eeeefa;
   --white-lighter: hsl(240, 10%, 80%);
   --light-grey: #e0e0e4;
-  --dark-grey: #1d1d25;
-  --grey: hsl(0, 0%, 35%);
+  --dark-grey: hsl(240, 25%, 8%);
 
   --background-dark: var(--night);
   --text-dark: var(--white-lighter);
@@ -20,41 +19,28 @@
   --text-light: var(--night);
 
   --primary: var(--african-violet);
-  --secondary: var(--light-grey);
-  --accent: var(--african-violet-2);
+  --secondary: var(--dark-grey);
+  --accent: #423a6e;
 }
 
 :root {
-  --background: var(--background-light);
-  --text: var(--text-light);
-
   --transition: 200ms ease;
-  --outline-color: var(--accent);
+
+  --background: var(--background-dark);
+  --text: var(--text-dark);
+
+  --outline-color: var(--primary);
+  --outline-color-secondary: var(--accent);
+  --outline-color-mute: var(--english-violet);
+
   --block-bg-hover: var(--secondary);
-  --link-color: rgb(67, 67, 220);
-  --link-color-hover: rgb(147, 147, 220);
-
   --navbar-bg: var(--background);
-  --nav-link-color: var(--grey);
-  --nav-link-color-hover: var(--dark-grey);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --secondary: var(--dark-grey);
-    --accent: #423a6e;
-  }
+  --link-color: rgb(140, 140, 250);
+  --link-color-hover: rgb(150, 150, 255);
 
-  :root {
-    --background: var(--background-dark);
-    --text: var(--text-dark);
-
-    --link-color: rgb(140, 140, 250);
-    --link-color-hover: rgb(150, 150, 255);
-
-    --nav-link-color: var(--text);
-    --nav-link-color-hover: var(--white);
-  }
+  --nav-link-color: var(--text);
+  --nav-link-color-hover: var(--white);
 }
 
 body {
@@ -86,7 +72,7 @@ a:hover {
 }
 
 h2 {
-  border-bottom: 2px solid var(--outline-color);
+  border-bottom: 2px solid var(--primary);
   margin-block: 2rem 1rem;
   padding-block: 0 0.5rem;
   width: max-content;
