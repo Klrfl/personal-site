@@ -1,8 +1,8 @@
-# My Personal Blog
+# Personal Site
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c47a0088-1102-47da-9130-0c0ae4aa9fdf/deploy-status)](https://app.netlify.com/sites/telltime/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/23dc4914-425c-4e64-bcce-6c3b4ebe0bd2/deploy-status)](https://app.netlify.com/sites/klrfl/deploys)
 
-This is my personal blog website, made with Astro. This website is still in development.
+This is my personal JAMStack website, made with Astro and powered by Decap CMS and Netlify.
 
 This project uses the MIT license.
 
@@ -21,4 +21,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Contributing
 
-Feel free to make fork of this repo, and make a pull request for this website!
+Feel free to make fork of this repo, and make a pull request for improvements on this website!
