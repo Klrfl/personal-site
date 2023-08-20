@@ -1,8 +1,10 @@
 ---
 import MyLayout from "@layouts/MyLayout.astro";
-
 import { Image } from "@astrojs/image/components";
 import CTA from "@components/CTA.astro";
+import BlogPost from "@components/BlogPost.astro";
+
+import { sortPostsByDate } from "@/scripts/utils.js";
 
 const title = "Efraim Munthe | Home";
 
@@ -85,6 +87,9 @@ const projects = [
     alt: "Screenshot of my URL Shortener app.",
   },
 ];
+
+const allPosts = await Astro.glob("./posts/*.md");
+const sortedPosts = sortPostsByDate(allPosts, 3);
 ---
 
 <MyLayout title={title}>
@@ -154,6 +159,21 @@ const projects = [
           ))
         }
       </div>
+    </section>
+    
+    <section class="main-section" id="blog">
+      <div class="main-section__text">
+        <h2>Blog Posts</h2>
+        <p>The newest posts from my personal blog.</p>
+      </div>
+
+      <div class="blog-posts-container">
+        <ul class="blog-list">
+          {sortedPosts.map((post, index) => <BlogPost post={post} />)}
+        </ul>
+        <CTA href="/blog">See more blog posts</CTA>
+      </div>
+
     </section>
 
     <section class="main-section" id="about">
