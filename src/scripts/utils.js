@@ -1,7 +1,12 @@
-export function sortPostsByDate(posts) {
-  return posts.sort((a, b) => {
+export function sortPostsByDate(posts, limit = null) {
+  const sortedPosts = posts.sort((a, b) => {
     return new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate);
   });
+
+  if (typeof limit === "number") {
+    return sortedPosts.slice(0, limit);
+  }
+  return sortedPosts;
 }
 
 export function formatDate(
