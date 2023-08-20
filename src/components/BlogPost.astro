@@ -37,6 +37,14 @@ const frontmatter = post.frontmatter;
   </a>
 
   <style>
+    .post-container {
+      list-style: none;
+    }
+
+    .post-container + .post-container {
+      margin-block-start: 0.5rem;
+    }
+
     .post {
       border-bottom: 2px solid var(--outline-color-mute);
       text-decoration: none;
@@ -49,10 +57,6 @@ const frontmatter = post.frontmatter;
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
-    }
-
-    .post-container + .post-container {
-      margin-block-start: 0.5rem;
     }
 
     .post:hover {
