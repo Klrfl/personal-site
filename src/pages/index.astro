@@ -86,6 +86,13 @@ const projects = [
     text: "My first Vue project I used to get to know the Vue router and state management (spoiler alert: there was no state management).",
     alt: "Screenshot of my URL Shortener app.",
   },
+  {
+    link: "https://pinia-tasks-2b2da.web.app/",
+    image: "/assets/pinia-tasks.png",
+    heading: "Pinia Tasks",
+    text: "A classic todo app made with Vue and Pinia for state management, powered by Firebase for authentication and hosting.",
+    alt: "Home page of Pinia Tasks",
+  },
 ];
 
 const allPosts = await Astro.glob("./posts/*.md");
@@ -106,7 +113,8 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       <div class="main-section__text">
         <h2>Skills</h2>
         <p>
-          Here are some technologies/skills I have learned over the last 2 years as a student.
+          Here are some technologies/skills I have learned over the last 2 years
+          as a student.
         </p>
       </div>
       <div class="skills__cards-container">
@@ -127,8 +135,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       <div class="main-section__text">
         <h2>Projects</h2>
         <p>
-          I strongly believe in learning by doing. So, when I learn a new technology,
-          I always do projects, be it large or small. Here are some of them.
+          I strongly believe in learning by doing. So, when I learn a new
+          technology, I always do projects, be it large or small. Here are some
+          of them.
         </p>
       </div>
 
@@ -156,7 +165,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
         }
       </div>
     </section>
-    
+
     <section class="main-section" id="blog">
       <div class="main-section__text">
         <h2>Blog Posts</h2>
