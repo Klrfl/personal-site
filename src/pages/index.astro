@@ -104,7 +104,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     <section class="hero">
       <div class="hero__text">
         <h1>Hello! I'm Efraim.</h1>
-        <p>I like making web experiences or something lol</p>
+        <p>I'm a student who is learning to be a frontend web developer.</p>
       </div>
       <div class="hero__image"></div>
     </section>
@@ -174,7 +174,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
       <div class="blog-posts-container">
         <ul class="blog-list">
-          {sortedPosts.map((post, index) => <BlogPost post={post} />)}
+          {sortedPosts.map((post) => <BlogPost post={post} />)}
         </ul>
         <CTA href="/blog">See more blog posts</CTA>
       </div>
@@ -439,6 +439,10 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       clip-path: polygon(100% 0, 50% 100%, 0% 100%, 0 0%);
     }
 
+    .hero__text h1 {
+      margin-inline: 0;
+    }
+
     .hero__text p {
       max-width: 40ch;
     }
@@ -453,6 +457,8 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
     #contact {
       flex-direction: row;
+      align-items: flex-start;
+      align-items: flex-start;
     }
   }
 </style>
