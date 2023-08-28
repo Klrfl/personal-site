@@ -73,6 +73,10 @@ a:hover {
   color: var(--link-color-hover);
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 h2 {
   border-bottom: 2px solid var(--primary);
   margin-block: 2rem 1rem;

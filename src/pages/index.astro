@@ -202,12 +202,17 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       </div>
 
       <div class="form-container">
-        <form action="">
+        <form action="/form-success" netlify>
           <label for="name">Name</label>
-          <input type="text" required />
+          <input type="text" name="name" placeholder="John Doe" required />
+
           <label for="email">Email</label>
-          <input type="email" required />
-          <input type="submit" />
+          <input type="email" name="email" placeholder="johndoe420@mail.com" required />
+
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" placeholder="Hi!!!"></textarea>
+
+          <CTA>Send a message</CTA>
         </form>
       </div>
     </section>
@@ -224,7 +229,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   .main-section > * {
-    max-width: 120ch;
+    max-width: 100ch;
     margin: auto;
   }
 
@@ -242,7 +247,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     background: var(--secondary);
     color: var(--text);
     text-align: center;
-    padding-block: 1em;
     padding-inline: 1em;
     z-index: 1;
     flex: 1 1 0;
@@ -253,9 +257,11 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   .hero__text h1 {
-    font-size: min(2rem, 8vmin);
+    font-size: min(2.5rem, 8vmin);
     width: max-content;
+    line-height: 0.9;
     margin-inline: auto;
+    margin-block: 0;
     position: relative;
   }
 
@@ -352,10 +358,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     box-shadow: 0 5px 20px -2px var(--outline-color-mute);
   }
 
-  .about__text {
-    max-width: 75ch;
-  }
-
   #about {
     background: var(--secondary);
   }
@@ -401,42 +403,43 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   /* contact */
-  #contact {
-    display: flex;
-    justify-content: center;
-    flex-flow: column wrap;
-    gap: 1rem;
-  }
-
-  #contact > * {
-    flex: 1 1 0;
-  }
-
+ 
   .form-container {
     background: var(--secondary);
     padding: 1em;
     align-self: stretch;
   }
 
+  .form-container :is(label, input, textarea) {
+    padding: 1em;
+  }
   .form-container label {
     display: block;
-    padding: 0.5em 0 1em 0;
+    padding-inline: 0;
   }
 
   .form-container input {
-    padding: 0.5em;
     width: 100%;
+  }
+
+  .form-container textarea {
+    display: block;
+    width: 100%;
+    resize: vertical;
   }
 
   @media screen and (min-width: 50em) {
     .hero__text {
-      padding: 10em 10em 10em 5em;
+      padding-inline: 4em 10em;
       text-align: left;
-      display: block;
       position: absolute;
       top: 0;
       bottom: 0;
-      clip-path: polygon(100% 0, 50% 100%, 0% 100%, 0 0%);
+      clip-path: polygon(100% 0, 70% 100%, 0% 100%, 0 0%);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero__text h1 {
@@ -449,16 +452,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
     .main-section {
       padding-inline: 4em;
-    }
-
-    #contact > div {
-      flex: 1 1 0;
-    }
-
-    #contact {
-      flex-direction: row;
-      align-items: flex-start;
-      align-items: flex-start;
     }
   }
 </style>
