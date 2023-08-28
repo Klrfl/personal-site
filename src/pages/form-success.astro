@@ -1,0 +1,22 @@
+---
+import MyLayout from "../layouts/MyLayout.astro";
+import CTA from "../components/CTA.astro";
+const title = "Success!";
+---
+
+<MyLayout title={title}>
+  <main>
+    <h1>{title}</h1>
+    <p>You can go back to home now.</p>
+    <CTA href="/">Go back home</CTA>
+  </main>
+</MyLayout>
+
+<style>
+  main {
+    max-width: 85ch;
+    padding: 15rem 2rem;
+    margin: auto;
+    text-align: center;
+  }
+</style>
