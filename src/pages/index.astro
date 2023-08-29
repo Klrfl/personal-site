@@ -174,7 +174,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
       <div class="blog-posts-container">
         <ul class="blog-list">
-          {sortedPosts.map((post) => <BlogPost post={post} />)}
+          {sortedPosts.map((post: object) => <BlogPost post={post} />)}
         </ul>
         <CTA href="/blog">See more blog posts</CTA>
       </div>
@@ -190,7 +190,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
           haven't learned much about them, so I haven't put them into my skills
           yet.
         </p>
-        <!-- <button class="btn about-cta"><a href="/about">See more</a></button> -->
         <CTA href="/about">See more</CTA>
       </div>
     </section>
@@ -202,17 +201,22 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       </div>
 
       <div class="form-container">
-        <form action="/form-success" netlify>
+        <form action="/form-success" method="POST" data-netlify="true">
           <label for="name">Name</label>
           <input type="text" name="name" placeholder="John Doe" required />
 
           <label for="email">Email</label>
-          <input type="email" name="email" placeholder="johndoe420@mail.com" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="johndoe420@mail.com"
+            required
+          />
 
           <label for="message">Your message</label>
           <textarea id="message" name="message" placeholder="Hi!!!"></textarea>
 
-          <CTA>Send a message</CTA>
+          <button type="submit"><CTA>Send a message</CTA></button>
         </form>
       </div>
     </section>
@@ -403,7 +407,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   /* contact */
- 
+
   .form-container {
     background: var(--secondary);
     padding: 1em;
