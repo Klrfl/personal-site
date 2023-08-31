@@ -26,6 +26,7 @@
 
 :root {
   --transition: 200ms ease;
+  --transition-slow: 600ms ease;
 
   --background: var(--background-dark);
   --text: var(--text-dark);

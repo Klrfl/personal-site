@@ -228,13 +228,20 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   .main-section {
     padding: 4rem 2rem;
     background: var(--background);
+    overflow-x: hidden;
 
     position: relative;
+  }
+
+  .main-section.hidden > * {
+    transform: translateX(50%);
+    opacity: 0;
   }
 
   .main-section > * {
     max-width: 100ch;
     margin: auto;
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
   }
 
   .hero {
@@ -459,3 +466,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     }
   }
 </style>
+
+<script>
+  import "../scripts/hero.js";
+</script>
