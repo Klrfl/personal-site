@@ -8,7 +8,8 @@ const mainSectionObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
         entry.target.classList.remove("hidden");
-      }
+      } else if (entry.boundingClientRect.top > 0)
+        entry.target.classList.add("hidden");
     });
   },
   observerOptions
