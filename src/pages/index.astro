@@ -1,6 +1,6 @@
 ---
 import MyLayout from "@layouts/MyLayout.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets"
 import CTA from "@components/CTA.astro";
 import BlogPost from "@components/BlogPost.astro";
 
@@ -150,8 +150,8 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
                   <Image
                     src={project.image}
                     alt={`Screenshot of my project, ${project.heading}.`}
-                    width="700"
-                    aspectRatio="16:9"
+                    width={900}
+                    height={450}
                     format="webp"
                   />
                 </div>

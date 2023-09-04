@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { formatDate } from "@/scripts/utils";
 
 const { post } = Astro.props;
@@ -29,8 +29,8 @@ const frontmatter = post.frontmatter;
         class="post__image"
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
-        width={700}
-        aspectRatio="16:9"
+        width={900}
+        height={450}
         format="webp"
       />
     </div>
