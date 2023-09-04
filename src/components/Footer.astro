@@ -16,6 +16,10 @@
         <i class="fa-solid fa-envelope"></i>
         <a href="https://mailto:efrayanglain@gmail.com">Email me</a>
       </li>
+      <li>
+        <i class="fa-brands fa-discord"></i>
+        <a href="discordapp.com/users/798010695102365696">Discord</a>
+      </li>
     </ul>
   </div>
 </footer>
@@ -25,10 +29,9 @@
     background: var(--secondary);
     color: var(--text);
     padding: 2rem;
-    text-align: center;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .footer-socials ul {
@@ -37,9 +40,19 @@
     list-style: none;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 1.5rem;
+  }
+
+  .footer-socials li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .footer-socials i {
+    font-size: 1.4rem;
   }
 
   .footer-socials a {
@@ -51,5 +64,16 @@
 
   .footer-socials a:hover {
     color: var(--link-color-hover);
+  }
+
+  @media screen and (min-width:50em) {
+    footer {
+      flex-direction: row;
+    }
+
+    .footer-socials ul {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 </style>
