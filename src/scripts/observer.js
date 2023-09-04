@@ -6,7 +6,7 @@ const observerOptions = {
 const mainSectionObserver = new IntersectionObserver(
   (entries, mainSectionObserver) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
         entry.target.classList.remove("hidden");
       }
     });
