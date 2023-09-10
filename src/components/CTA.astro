@@ -1,10 +1,13 @@
 ---
-const { href } = Astro.props;
+const { href, isButton } = Astro.props;
 ---
 
-<a href={href} class="cta">
-  <slot />
-</a>
+{isButton && <button class="cta"><slot></button> }
+{!isButton && (
+  <a href={href} class="cta">
+    <slot />
+  </a>)
+}
 
 <style>
   .cta {
@@ -16,16 +19,13 @@ const { href } = Astro.props;
     cursor: pointer;
 
     transition: background-color var(--transition), outline var(--transition),
-      box-shadow var(--transition);
+      box-shadow var(--transition), color var(--transition);
   }
 
-  .cta a {
-    color: inherit;
-  }
-
-  .cta:hover {
+  .cta:hover, .cta:focus-visible {
     outline: 1px solid var(--primary);
     box-shadow: 0px 5px 20px -2px var(--outline-color-mute);
     background: transparent;
+    color: var(--text);
   }
 </style>
