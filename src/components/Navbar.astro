@@ -1,15 +1,18 @@
 ---
+import ThemeButton from "@/components/ThemeButton.astro";
 import BurgerMenu from "@components/BurgerMenu.astro";
 ---
 
 <nav>
-  <div class="logo">
+  <section class="logo">
     <a href="/">
       <i class="fa-solid fa-k"></i>
     </a>
-  </div>
+  </section>
 
-  <BurgerMenu />
+
+  <section class="left">
+  <ThemeButton/>
 
   <ul class="nav-links-wrapper">
     <div class="nav-links-wrapper__header">
@@ -27,6 +30,9 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     <li><a class="nav-links" href="/about">About</a></li>
     <li><a class="nav-links" href="/blog">Blog</a></li>
   </ul>
+
+  <BurgerMenu />
+  </section>
 </nav>
 
 <style>
@@ -48,6 +54,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   }
 
   nav,
+  nav .left,
   .nav-links-wrapper__header {
     display: flex;
     align-items: center;
@@ -66,7 +73,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   }
 
   .nav-links-wrapper {
-    background: inherit;
+    background: var(--background);
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -88,7 +95,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     outline: 2px solid var(--outline-color-mute);
   }
 
-  nav > *,
+  nav > .logo a,
   .nav-links-wrapper__header > *,
   .nav-links {
     padding: 1.5rem;
