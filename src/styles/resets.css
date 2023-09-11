@@ -2,6 +2,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 body {
