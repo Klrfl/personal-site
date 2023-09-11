@@ -1,5 +1,5 @@
 ---
-import MyLayout from "@layouts/MainLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 import BlogPost from "@components/BlogPost.astro";
 
 import CTA from "@components/CTA.astro";
@@ -27,7 +27,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<MyLayout title={tag} description={`Posts tagged with ${tag}`}>
+<MainLayout title={tag} description={`Posts tagged with ${tag}`}>
   <h1>{tag}</h1>
   <p>Posts tagged with {tag}</p>
 
@@ -36,4 +36,4 @@ const { posts } = Astro.props;
   </ul>
 
   <CTA href="/latest">See more of my blogs</CTA>
-</MyLayout>
+</MainLayout>
