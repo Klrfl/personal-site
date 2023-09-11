@@ -38,14 +38,14 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 <style>
   nav,
   .nav-links-wrapper.active {
+    background: var(--navbar-bg);
     box-shadow: 0 5px 20px -2px var(--outline-color-mute);
     outline: 2px solid var(--outline-color-mute);
+    backdrop-filter: blur(.4rem);
   }
 
   nav {
-    background: var(--navbar-bg);
     color: var(--text);
-    backdrop-filter: blur(.4rem);
 
     user-select: none;
     position: fixed;
