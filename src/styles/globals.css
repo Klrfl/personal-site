@@ -42,7 +42,7 @@ body[data-theme="dark"] {
   --text: var(--text-dark);
 
   --secondary: var(--secondary-dark);
-  --navbar-bg: var(--background);
+  --navbar-bg: #000a;
 
   --nav-link-color: var(--text);
   --nav-link-color-hover: var(--white);
@@ -54,7 +54,7 @@ body[data-theme="light"] {
   --text: var(--text-light);
 
   --secondary: var(--secondary-light);
-  --navbar-bg: var(--background);
+  --navbar-bg: #ddd4;
 
   --nav-link-color: var(--text);
   --nav-link-color-hover: var(--dark-grey);

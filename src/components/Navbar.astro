@@ -45,6 +45,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   nav {
     background: var(--navbar-bg);
     color: var(--text);
+    backdrop-filter: blur(.4rem);
 
     user-select: none;
     position: fixed;
@@ -73,7 +74,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   }
 
   .nav-links-wrapper {
-    background: var(--background);
+    background: var(--navbar-bg);
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -135,7 +136,10 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   }
 
   @media screen and (min-width: 50em) {
+    
     .nav-links-wrapper {
+      background: transparent;
+      outline: none;
       transform: none;
       position: relative;
       flex-direction: row;
