@@ -1,13 +1,12 @@
 ---
-const { href, isButton } = Astro.props;
+const { href, isButton = false} = Astro.props;
 ---
 
-{isButton && <button class="cta"><slot></button> }
-{!isButton && (
-  <a href={href} class="cta">
-    <slot />
-  </a>)
-}
+{
+  isButton ? (
+    <button class="cta"><slot/></button>
+  ) :
+   (<a href={href} class="cta"><slot/></a>)}
 
 <style>
   .cta {
