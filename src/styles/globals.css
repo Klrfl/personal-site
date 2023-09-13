@@ -91,12 +91,12 @@ a:hover {
 
 h1 {
   font-size: 3rem;
+  line-height: 0.9;
 }
 
 h2 {
   border-bottom: 2px solid var(--primary);
   margin-block: 2rem 1rem;
   padding-block: 0 0.5rem;
-  width: max-content;
   line-height: 1;
 }
