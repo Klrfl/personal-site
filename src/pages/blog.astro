@@ -58,24 +58,12 @@ const processedTags = allTags.reduce((acc, tag) => {
         {
           // Object.entries returns an array
           Object.entries(processedTags).map(([tag, amount]) => (
-            <CategoryLink tag={tag} amount={amount} />
+            <CategoryLink {tag} {amount} />
           ))
         }
       </ul>
     </aside>
   </div>
-
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </MyLayout>
 
 <style>

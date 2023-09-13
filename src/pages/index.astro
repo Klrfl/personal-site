@@ -1,6 +1,6 @@
 ---
 import MyLayout from "@layouts/MyLayout.astro";
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 import Footer from "@/components/Footer.astro";
 import CTA from "@components/CTA.astro";
 import BlogPost from "@components/BlogPost.astro";
@@ -198,7 +198,10 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     <section class="main-section" id="contact">
       <div class="main-section__text">
         <h2>Contact</h2>
-        <p>You can contact me via email or Discord, but you can message me here directly if you want!</p>
+        <p>
+          You can contact me via email or Discord, but you can message me here
+          directly if you want!
+        </p>
       </div>
 
       <div class="form-container">
@@ -221,8 +224,20 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
         </form>
       </div>
     </section>
-    <Footer/>
+    <Footer />
   </main>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </MyLayout>
 
 <style>
@@ -256,7 +271,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   .main-section > * {
     max-width: 100ch;
     margin: auto;
-    transition: opacity var(--transition-slow), transform var(--transition-slow);
+    transition:
+      opacity var(--transition-slow),
+      transform var(--transition-slow);
   }
 
   .hero {
@@ -305,7 +322,8 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   .hero__text h1::after {
     width: 0.2rem;
     top: -5px;
-    animation: typing 3s steps(18) 1000ms forwards,
+    animation:
+      typing 3s steps(18) 1000ms forwards,
       blink 500ms infinite alternate;
   }
 
@@ -364,7 +382,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     overflow: hidden;
     user-select: none;
 
-    transition: outline var(--transition), box-shadow var(--transition);
+    transition:
+      outline var(--transition),
+      box-shadow var(--transition);
 
     display: flex;
     justify-content: center;
@@ -401,7 +421,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     user-select: none;
     cursor: pointer;
     overflow: hidden;
-    transition: outline var(--transition), box-shadow var(--transition);
+    transition:
+      outline var(--transition),
+      box-shadow var(--transition);
 
     display: flex;
     flex-direction: column;
