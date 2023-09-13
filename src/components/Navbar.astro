@@ -10,28 +10,27 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     </a>
   </section>
 
-
   <section class="left">
-  <ThemeButton/>
+    <ThemeButton />
 
-  <ul class="nav-links-wrapper">
-    <div class="nav-links-wrapper__header">
-      <div class="logo">
-        <a href="/">
-          <i class="fa-solid fa-k"></i>
-        </a>
+    <ul class="nav-links-wrapper">
+      <div class="nav-links-wrapper__header">
+        <div class="logo">
+          <a href="/">
+            <i class="fa-solid fa-k"></i>
+          </a>
+        </div>
+        <button id="close-nav" title="close navbar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
-      <button id="close-nav" title="close navbar">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
 
-    <li><a class="nav-links" href="/">Home</a></li>
-    <li><a class="nav-links" href="/about">About</a></li>
-    <li><a class="nav-links" href="/blog">Blog</a></li>
-  </ul>
+      <li><a class="nav-links" href="/">Home</a></li>
+      <li><a class="nav-links" href="/blog">Blog</a></li>
+      <li><a class="nav-links" href="/about">About</a></li>
+    </ul>
 
-  <BurgerMenu />
+    <BurgerMenu />
   </section>
 </nav>
 
@@ -41,7 +40,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     background: var(--navbar-bg);
     box-shadow: 0 5px 20px -2px var(--outline-color-mute);
     outline: 2px solid var(--outline-color-mute);
-    backdrop-filter: blur(.4rem);
+    backdrop-filter: blur(0.4rem);
   }
 
   nav {
@@ -136,7 +135,6 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   }
 
   @media screen and (min-width: 50em) {
-    
     .nav-links-wrapper {
       background: transparent;
       outline: none;
