@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: klrfl/personal-site
   branch: main # Branch to update (optional; defaults to master)
 
 publish_mode: editorial_workflow
