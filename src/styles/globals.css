@@ -100,3 +100,7 @@ h2 {
   padding-block: 0 0.5rem;
   line-height: 1;
 }
+
+p {
+  line-height: 1.7;
+}

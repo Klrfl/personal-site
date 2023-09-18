@@ -1,5 +1,6 @@
 ---
 import MyLayout from "../layouts/MyLayout.astro";
+import Footer from "@/components/Footer.astro";
 import { Image } from "astro:assets";
 
 import { formatDate } from "@/scripts/utils";
@@ -57,13 +58,14 @@ const { frontmatter } = Astro.props;
       <slot />
     </article>
   </main>
+  <Footer/>
 </MyLayout>
 
 <style>
   header {
     padding-block-start: 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(50ch, 100%), 1fr));
     gap: 1rem;
   }
 
@@ -72,7 +74,7 @@ const { frontmatter } = Astro.props;
   }
 
   .post-title {
-    font-size: 2.8rem;
+    font-size: clamp(2em, 6vw, 3.2rem);
     line-height: 1;
   }
 
