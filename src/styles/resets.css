@@ -2,9 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  transition:
-    background var(--transition),
-    color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 body {
@@ -28,6 +26,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+figure {
+  margin: 0;
 }
 
 button {
