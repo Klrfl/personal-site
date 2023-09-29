@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+const { project } = Astro.props;
+---
+
+<div class="project-card">
+  <figure class="project-card__image-container">
+    <a href={project.demo_link}>
+      <Image
+        src={project.image}
+        alt={`Screenshot of my project, ${project.heading}.`}
+        width={900}
+        height={450}
+        format="webp"
+      />
+    </a>
+    <figcaption class="project-text">
+      <h3>{project.heading}</h3>
+      <p>{project.text}</p>
+    </figcaption>
+  </figure>
+
+  <div class="project__links-container">
+    <a href={project.demo_link} class="project__link">demo</a>
+    <a href={project.source_link} class="project__link">source code</a>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    outline: 2px solid var(--outline-color-secondary);
+    background: var(--secondary);
+    border-radius: 0.5em;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+      outline var(--transition),
+      box-shadow var(--transition);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .project-card:hover {
+    outline-color: var(--outline-color);
+    box-shadow: 0 5px 20px -2px var(--outline-color-mute);
+  }
+
+  .project-card a {
+    display: block;
+    color: inherit;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-text {
+    padding: 1rem;
+  }
+
+  .project__links-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .project__link {
+    outline: 2px solid var(--accent);
+    flex: 1 1 0;
+    padding-block: 1rem;
+    text-align: center;
+  }
+
+  a.project__link:hover {
+    background: var(--accent);
+  }
+</style>
