@@ -46,7 +46,7 @@ const skillset = [
 
 const projects = [
   {
-    demo_link: "",
+    demo_link: "https://klrfl.github.io/Sebastian/",
     source_link: "https://github.com/Klrfl/Sebastian",
     image: "/assets/Sebastian.png",
     alt: "Screenshot of Sebastian's landing page",
@@ -115,7 +115,9 @@ const allPosts = await Astro.glob("./posts/*.md");
 const sortedPosts = sortPostsByDate(allPosts, 3);
 ---
 
-<MyLayout title={title}>
+<MyLayout
+  title={title}
+  description="Welcome to Efraim's personal site! Please enjoy.">
   <main class="wrapper">
     <section class="hero">
       <div class="hero__text">
