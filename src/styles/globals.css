@@ -29,8 +29,8 @@
 
   --block-bg-hover: var(--secondary);
 
-  --link-color: rgb(140, 140, 250);
-  --link-color-hover: rgb(150, 150, 255);
+  --link-color: hsl(240, 75%, 85%);
+  --link-color-hover: hsl(240, 60%, 60%);
 
   --transition: 200ms ease;
   --transition-slow: 600ms ease;
@@ -103,4 +103,8 @@ h2 {
 
 p {
   line-height: 1.7;
+}
+
+[data-theme="dark"] img {
+  filter: brightness(0.7);
 }

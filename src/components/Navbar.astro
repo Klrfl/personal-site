@@ -5,32 +5,31 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 
 <nav>
   <section class="logo">
-    <a href="/">
+    <a href="/" aria-label="go back home">
       <i class="fa-solid fa-k"></i>
     </a>
   </section>
 
   <section class="left">
     <ThemeButton />
+    <BurgerMenu />
 
     <ul class="nav-links-wrapper">
-      <div class="nav-links-wrapper__header">
+      <li class="nav-links-wrapper__header">
         <div class="logo">
-          <a href="/">
+          <a href="/" aria-label="go back home">
             <i class="fa-solid fa-k"></i>
           </a>
         </div>
         <button id="close-nav" title="close navbar">
           <i class="fa-solid fa-xmark"></i>
         </button>
-      </div>
+      </li>
 
       <li><a class="nav-links" href="/">Home</a></li>
       <li><a class="nav-links" href="/blog">Blog</a></li>
       <li><a class="nav-links" href="/about">About</a></li>
     </ul>
-
-    <BurgerMenu />
   </section>
 </nav>
 
@@ -83,11 +82,16 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     display: flex;
     flex-direction: column;
 
+    will-change: transform;
     transform: translateY(-100%);
-    transition: transform 200ms ease;
+    visibility: hidden;
+    transition:
+      transform 200ms ease,
+      visibility 200ms ease;
   }
 
   .nav-links-wrapper.active {
+    visibility: visible;
     transform: none;
   }
 
@@ -138,6 +142,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     .nav-links-wrapper {
       background: transparent;
       outline: none;
+      visibility: visible;
       transform: none;
       position: relative;
       flex-direction: row;
