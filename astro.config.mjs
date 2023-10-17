@@ -5,5 +5,5 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://klrfl.netlify.app",
-  integrations: [sitemap()],
+  integrations: ["prettier-plugin-astro", sitemap()],
 });
