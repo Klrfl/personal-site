@@ -19,5 +19,5 @@ export function formatDate(
   },
 ) {
   const date = new Date(inputDate);
-  return Intl.DateTimeFormat(undefined, options).format(date);
+  return Intl.DateTimeFormat("en", options).format(date);
 }
