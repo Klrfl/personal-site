@@ -14,24 +14,20 @@ const { frontmatter } = Astro.props;
       <h1 class="post-title">{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>
 
-      <div class="post-metadata">
-        <p class="">
-          By
-          <a
-            class="post-metadata__author"
-            href=`/authors/${frontmatter.author}`>
-            {frontmatter.author}
-          </a>
-        </p>
-        <p class="post-metadata__date">
+      <p class="post-metadata">
+        <span class="post-metadata__author">
+          By <a href=`/authors/${frontmatter.author}`>{frontmatter.author}</a>
+        </span>
+         -
+        <span class="post-metadata__date">
           {formatDate(frontmatter.pubDate)}
-        </p>
-      </div>
+        </span>
+      </p>
 
       <div class="tags-wrapper">
         <ul class="tags">
           {
-            frontmatter.tags.map((tag) => (
+            frontmatter.tags.map((tag: String) => (
               <li class="tag">
                 <a href={`/tags/${tag}`}>{tag}</a>
               </li>
@@ -58,7 +54,7 @@ const { frontmatter } = Astro.props;
       <slot />
     </article>
   </main>
-  <Footer/>
+  <Footer />
 </MyLayout>
 
 <style>
@@ -76,15 +72,6 @@ const { frontmatter } = Astro.props;
   .post-title {
     font-size: clamp(2em, 6vw, 3.2rem);
     line-height: 1;
-  }
-
-  .post-metadata {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .post-metadata p {
-    margin: 0;
   }
 
   .post-metadata__author {
