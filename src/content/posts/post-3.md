@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/PostLayout.astro"
 title: "Progress on my Astro blog"
 pubDate: 2023-04-23
 description: "How I am doing as of now."

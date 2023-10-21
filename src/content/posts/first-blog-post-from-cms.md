@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: First blog post from CMS
 pubDate: 2023-06-21T13:16:43.964Z
 description: This is the first post written from Decap

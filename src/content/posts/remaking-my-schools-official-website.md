@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: Remaking my school's official website
 pubDate: 2023-06-25T11:59:24.452Z
 description: Sooo, my school's official website is too ugly, and I decided to

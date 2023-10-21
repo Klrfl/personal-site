@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: Progress on smkmetland.net's remake
 pubDate: 2023-07-27T08:57:10.794Z
 description: An update on my attempt remaking smkmetland.net

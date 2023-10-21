@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import { formatDate } from "@/scripts/utils";
 
 const { post } = Astro.props;
-const frontmatter = post.frontmatter;
+const frontmatter = post.data;
 ---
 
 <li class="post-container">
-  <a class="post" href={post.url}>
+  <a class="post" href={`/posts/${post.slug}`}>
     <div class="post__metadata">
       <h3 class="post__title">{frontmatter.title}</h3>
       <p class="post__author-date">
@@ -20,7 +20,7 @@ const frontmatter = post.frontmatter;
       <p class="post__description">{frontmatter.description}</p>
 
       <ul class="post__tag-wrapper">
-        {post.frontmatter.tags.map((tag) => <li class="post__tag">{tag}</li>)}
+        {frontmatter.tags.map((tag) => <li class="post__tag">{tag}</li>)}
       </ul>
     </div>
 

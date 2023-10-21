@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: Post kedua gua
 pubDate: 2022-07-01
 description: Ini adalah post kedua gua di blog ini.

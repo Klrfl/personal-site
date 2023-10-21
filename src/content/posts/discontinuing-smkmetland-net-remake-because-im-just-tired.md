@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: Discontinuing smkmetland.net remake because I'm just.. tired
 pubDate: 2023-09-18T05:22:07.575Z
 description: Update on my smkmetland.net remake project, and a rant

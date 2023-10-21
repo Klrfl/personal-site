@@ -6,6 +6,7 @@ import BlogPost from "@components/BlogPost.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 
 import { sortPostsByDate } from "@/scripts/utils.js";
+import { getCollection } from "astro:content";
 
 const title = "Efraim Munthe | Home";
 
@@ -111,7 +112,7 @@ const projects = [
   },
 ];
 
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await getCollection("posts");
 const sortedPosts = sortPostsByDate(allPosts, 3);
 ---
 

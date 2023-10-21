@@ -1,18 +1,17 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogPost from "@components/BlogPost.astro";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md");
+  const allPosts = await getCollection("posts");
 
   const uniqueAuthors = [
-    ...new Set(allPosts.map((post) => post.frontmatter.author).flat()),
+    ...new Set(allPosts.map((post) => post.data.author).flat()),
   ];
 
   return uniqueAuthors.map((author) => {
-    const filteredPosts = allPosts.filter(
-      (post) => post.frontmatter.author == author
-    );
+    const filteredPosts = allPosts.filter((post) => post.data.author == author);
 
     return {
       params: { author },
@@ -26,10 +25,10 @@ const { posts } = Astro.props;
 ---
 
 <MainLayout title={author} description={`Posts from ${author}`}>
-    <h1>{author}</h1>
-    <p>Posts from {author}</p>
+  <h1>{author}</h1>
+  <p>Posts from {author}</p>
 
-    <ul class="blog-list">
-      {posts.map((post) => <BlogPost post={post} />)}
-    </ul>
+  <ul class="blog-list">
+    {posts.map((post: Object) => <BlogPost post={post} />)}
+  </ul>
 </MainLayout>
