@@ -8,7 +8,7 @@ This project uses the MIT license.
 
 ## 🧞 Commands
 
-This project uses pnpm, so download it first, either locally or globally.
+This project requires at least Node v18.14.1. This project also uses pnpm, so download it first, either locally or globally.
 
 This command installs pnpm globally, if you want to install locally you can omit the `-g` flag.
 
