@@ -1,25 +1,24 @@
-const observerOptions = {
-  rootMargin: "10px",
-  threshold: 0.2,
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+      entry.target.classList.remove("hidden");
+    } else entry.target.classList.add("hidden");
+  });
 };
 
-const mainSectionObserver = new IntersectionObserver(
-  (entries, mainSectionObserver) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
-        entry.target.classList.remove("hidden");
-      } else if (entry.boundingClientRect.top > 0)
-        entry.target.classList.add("hidden");
-    });
-  },
-  observerOptions
-);
+const observerOpts = {
+  root: document.querySelector("body"),
+  rootMargin: "10px 0px",
+  threshold: 0.1,
+};
 
-const mainSections = document.querySelectorAll("section.main-section");
+const observer = new IntersectionObserver(observerCallback, observerOpts);
+
+// attach observer to elements
+const mainSectionEls = document.querySelectorAll("section.main-section");
 
 document.addEventListener("DOMContentLoaded", () => {
-  mainSections.forEach((mainSection) => {
-    mainSection.classList.add("hidden");
-    mainSectionObserver.observe(mainSection);
+  mainSectionEls.forEach((mainSection) => {
+    observer.observe(mainSection);
   });
 });
