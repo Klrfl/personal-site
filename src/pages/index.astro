@@ -125,7 +125,13 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
         <h1>Hello! I'm Efraim.</h1>
         <p>I'm a student who is learning to be a frontend web developer.</p>
       </div>
-      <div class="hero__image"></div>
+      <div class="hero__image">
+        <img
+          src="../assets/f1-75.webp"
+          loading="eager"
+          alt="A gorgeous Ferrari F1 75."
+        />
+      </div>
     </section>
 
     <section class="main-section" id="skills">
@@ -189,7 +195,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
           haven't learned much about them, so I haven't put them into my skills
           yet.
         </p>
-        <CTA href="/about">See more</CTA>
+        <CTA href="/about">See more about me</CTA>
       </div>
     </section>
 
@@ -288,6 +294,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     color: var(--text);
     text-align: center;
     padding-inline: 1em;
+    padding-block: 1rem;
     z-index: 1;
     flex: 1 1 0;
 
@@ -343,14 +350,13 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   .hero__image {
     order: -1;
     flex: 2 1 0;
-    background-image: url(../assets/f1-75.webp);
-    background-size: cover;
-    background-position: center;
     overflow: hidden;
   }
 
   .hero__image > img {
-    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     position: relative;
   }
 
@@ -423,6 +429,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   .form-container :is(label, input, textarea) {
     padding: 1em;
   }
+
   .form-container label {
     display: block;
     padding-inline: 0;
@@ -438,7 +445,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     resize: vertical;
   }
 
-  @media screen and (min-width: 50em) {
+  @media screen and (min-width: 55em) {
     .hero__text {
       padding-inline: 4em 10em;
       text-align: left;
@@ -446,10 +453,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       top: 0;
       bottom: 0;
       clip-path: polygon(100% 0, 70% 100%, 0% 100%, 0 0%);
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
     .hero__text h1 {
@@ -459,7 +462,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     .hero__text p {
       max-width: 40ch;
     }
+  }
 
+  @media screen and (min-width: 50em) {
     .main-section {
       padding-inline: 4em;
     }
