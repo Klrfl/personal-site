@@ -50,7 +50,9 @@ const frontmatter = post.data;
       text-decoration: none;
       color: inherit;
       padding: 1.5rem;
-      transition: background-color var(--transition);
+      transition:
+        background-color var(--transition),
+        box-shadow var(--transition);
 
       display: flex;
       align-items: center;
@@ -62,7 +64,7 @@ const frontmatter = post.data;
     .post:hover {
       background: var(--block-bg-hover);
       color: var(--nav-link-color-hover);
-      box-shadow: 0 5px 20px -2px var(--outline-color-mute);
+      box-shadow: 0 5px 10px var(--outline-color-mute);
     }
 
     .post__metadata {

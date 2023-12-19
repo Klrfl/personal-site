@@ -8,7 +8,7 @@
   --night: #0c0910ff;
 
   --white: #eeeefa;
-  --white-lighter: hsl(240, 10%, 80%);
+  --white-lighter: hsl(240, 10%, 75%);
   --light-grey: #e0e0e4;
   --dark-grey: hsl(240, 25%, 8%);
 
@@ -29,9 +29,6 @@
 
   --block-bg-hover: var(--secondary);
 
-  --link-color: hsl(240, 75%, 85%);
-  --link-color-hover: hsl(240, 60%, 60%);
-
   --transition: 200ms ease;
   --transition-slow: 600ms ease;
 }
@@ -44,6 +41,9 @@ body[data-theme="dark"] {
   --secondary: var(--secondary-dark);
   --navbar-bg: #000a;
 
+  --link-color: hsl(240, 87.5%, 80%);
+  --link-color-hover: hsl(240, 60%, 60%);
+
   --nav-link-color: var(--text);
   --nav-link-color-hover: var(--white);
 }
@@ -55,6 +55,9 @@ body[data-theme="light"] {
 
   --secondary: var(--secondary-light);
   --navbar-bg: #ddd4;
+
+  --link-color: hsl(240, 90%, 40%);
+  --link-color-hover: hsl(240, 60%, 60%);
 
   --nav-link-color: var(--text);
   --nav-link-color-hover: var(--dark-grey);
@@ -82,7 +85,8 @@ a {
 }
 
 a:link {
-  text-decoration: none;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.25rem;
 }
 
 a:hover {

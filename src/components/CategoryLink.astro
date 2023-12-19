@@ -14,9 +14,12 @@ const { tag, amount } = Astro.props;
 
   .tag a {
     color: var(--nav-link-color);
+    text-decoration: none;
     padding: 1rem;
     display: block;
-    transition: background-color var(--transition), color var(--transition);
+    transition:
+      background-color var(--transition),
+      color var(--transition);
   }
 
   .tag:hover {

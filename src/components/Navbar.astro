@@ -37,7 +37,7 @@ import BurgerMenu from "@components/BurgerMenu.astro";
   nav,
   .nav-links-wrapper.active {
     background: var(--navbar-bg);
-    box-shadow: 0 5px 20px -2px var(--outline-color-mute);
+    box-shadow: 0 2px 20px -2px var(--outline-color-mute);
     outline: 2px solid var(--outline-color-mute);
     backdrop-filter: blur(0.4rem);
   }
@@ -116,8 +116,8 @@ import BurgerMenu from "@components/BurgerMenu.astro";
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 0.5rem;
-    height: 100%;
+    height: 0.25rem;
+    width: 100%;
     background: var(--outline-color);
     transform: scale(0);
     transition: transform var(--transition);
@@ -150,11 +150,6 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 
     .nav-links-wrapper__header {
       display: none;
-    }
-
-    .nav-links::before {
-      width: 100%;
-      height: 0.1rem;
     }
   }
 </style>
