@@ -2,6 +2,7 @@
 import MyLayout from "@layouts/MyLayout.astro";
 import Footer from "@/components/Footer.astro";
 import CTA from "@components/CTA.astro";
+import TechChip from "@/components/TechChip.astro";
 import BlogPost from "@components/BlogPost.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 
@@ -9,41 +10,6 @@ import { sortPostsByDate } from "@/scripts/utils.js";
 import { getCollection } from "astro:content";
 
 const title = "Efraim Munthe | Home";
-
-const skillset = [
-  {
-    iconClass: "fa-brands fa-html5",
-    skillname: "HTML",
-  },
-  {
-    iconClass: "fa-brands fa-css3",
-    skillname: "CSS",
-  },
-  {
-    iconClass: "fa-brands fa-sass",
-    skillname: "Sass",
-  },
-  {
-    iconClass: "fa-brands fa-js",
-    skillname: "JavaScript",
-  },
-  {
-    iconClass: "fa-brands fa-vuejs",
-    skillname: "Vue",
-  },
-  {
-    iconClass: "fa-brands fa-git",
-    skillname: "Git",
-  },
-  {
-    iconClass: "fa-brands fa-github",
-    skillname: "Github",
-  },
-  {
-    iconClass: "fa-brands fa-python",
-    skillname: "Python",
-  },
-];
 
 const projects = [
   {
@@ -138,21 +104,33 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       <div class="main-section__text">
         <h2>Skills</h2>
         <p>
-          Here are some technologies/skills I have learned over the last 2 years
-          as a student.
+          In the last 2 and a half years, I have learned and used many different
+          technologies in the frontend world. I am proficient in <TechChip>
+            HTML
+          </TechChip>, <TechChip>CSS</TechChip>, and <TechChip>
+            JavaScript
+          </TechChip>, and have experience using <TechChip
+            href="https://astro.build">
+            Astro
+          </TechChip>, <TechChip href="https://vuejs.org">Vue</TechChip> and
+          more recently <TechChip href="https://tailwindcss.com">
+            Tailwind
+          </TechChip> and <TechChip href="https://react.dev">React</TechChip>.
+          Outside of web development, I have learned a little bit of Python, Go,
+          and C.
         </p>
-      </div>
-      <div class="skills__cards-container">
-        {
-          skillset.map((skill) => (
-            <div class="skill-card">
-              <span class="skill-text">
-                <i class:list={skill.iconClass} />
-                {skill.skillname}
-              </span>
-            </div>
-          ))
-        }
+
+        <p>
+          Even though my learning experience is primarily on the frontend side,
+          I have dabbled a little bit in fullstack PAASes such as <TechChip
+            href="https://firebase.google.com">
+            Firebase
+          </TechChip>, <TechChip href="https://supabase.com">
+            Supabase
+          </TechChip>, and various backend technologies such as <TechChip>
+            Express
+          </TechChip> and <TechChip>PostgreSQL</TechChip>.
+        </p>
       </div>
     </section>
 

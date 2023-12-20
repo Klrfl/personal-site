@@ -1,0 +1,23 @@
+---
+const { href = "#" } = Astro.props;
+---
+
+<a {href}><slot /></a>
+
+<style>
+  a {
+    outline: 1px solid var(--outline-color-mute);
+    color: inherit;
+    padding-inline: 0.5rem;
+    padding-block: 0.15rem;
+    text-decoration: none;
+    background: var(--secondary);
+    border-radius: 0.5rem;
+    display: inline-block;
+    transition: outline var(--transition);
+  }
+
+  a:hover {
+    outline-color: var(--outline-color);
+  }
+</style>
