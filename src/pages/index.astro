@@ -76,6 +76,14 @@ const projects = [
     heading: "Pinia Tasks",
     text: "A classic todo app made with Vue and Pinia for state management, powered by Firebase for authentication and hosting.",
   },
+  {
+    demo_link: "https://supabase-astro-guestbook.netlify.app",
+    source_link: "https://github.com/klrfl/astro-supabase",
+    image: "/assets/ssr-guestbook.png",
+    alt: "home page of my SSR demo website",
+    heading: "Astro SSR demo",
+    text: "This is a website I made with Astro for demonstrating Supabase's new SSR package.",
+  },
 ];
 
 const allPosts = await getCollection("posts");
@@ -231,7 +239,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   .main-section {
-    padding: 4rem 2rem;
+    padding: 2rem 4rem;
     background: var(--background);
     overflow-x: hidden;
 
