@@ -7,7 +7,9 @@ image:
   url: /assets/uploads/nvim.png
   alt: My Neovim startup screen
 tags:
-  - '"personal"'
+  - '"neovim"'
+  - '"successes"'
+  - '"self challenge"'
 ---
 Hello and welcome to my personal blog. In this occassion I want to document my journey using Neovim.
 Honestly I have never thought that you could fall in love with a piece of software
