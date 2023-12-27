@@ -7,9 +7,9 @@ image:
   url: /assets/uploads/nvim.png
   alt: My Neovim startup screen
 tags:
-  - '"neovim"'
-  - '"successes"'
-  - '"self challenge"'
+  - neovim
+  - successes
+  - self challenge
 ---
 Hello and welcome to my personal blog. In this occassion I want to document my journey using Neovim.
 Honestly I have never thought that you could fall in love with a piece of software
@@ -91,8 +91,8 @@ setting up Neovim for Astro, and read documentation very very carefully.
 
 You know what I missed? turns out I needed only two small things:
 
-- I need to install the tsx parser from treesitter
-- and I need to install a prettier plugin for Astro for it to work properly.
+* I need to install the tsx parser from treesitter
+* and I need to install a prettier plugin for Astro for it to work properly.
 
 Yeah, turns out I just didn't bother to read. Definitely a lesson learned the hard
 way there.
@@ -120,6 +120,8 @@ I was getting more and more comfortable using Neovim, and at this point I could
 entirely delete VS Code if I want to.
 
 ## Conclusion
+
+![My Neovim startup screen](/assets/uploads/nvim.png)
 
 So, if you're asking right now, "is it really worth it to try Neovim?" I would
 answer "absolutely!" I think the whole experience of setting up Neovim tailored
