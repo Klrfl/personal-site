@@ -92,7 +92,7 @@ setting up Neovim for Astro, and read documentation very very carefully.
 You know what I missed? turns out I needed only two small things:
 
 * I need to install the tsx parser from treesitter
-* and I need to install a prettier plugin for Astro for it to work properly.
+* and I need to install a special Prettier plugin for Astro for it to work properly.
 
 Yeah, turns out I just didn't bother to read. Definitely a lesson learned the hard
 way there.
