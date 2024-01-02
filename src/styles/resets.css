@@ -2,11 +2,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  transition: background var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 body {
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
 }
