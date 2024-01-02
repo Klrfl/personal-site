@@ -25,8 +25,18 @@ collections:
           required: false,
           fields:
             [
-              { label: "Image URL", name: "url", widget: "image" },
-              { label: "Image alt text", name: "alt", widget: "string" },
+              {
+                label: "Image URL",
+                name: "url",
+                widget: "image",
+                required: false,
+              },
+              {
+                label: "Image alt text",
+                name: "alt",
+                widget: "string",
+                required: false,
+              },
             ],
         }
       - { label: "tags", name: "tags", widget: "list" }
