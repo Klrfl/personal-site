@@ -5,7 +5,7 @@ import BlogPost from "@components/BlogPost.astro";
 import { sortPostsByDate } from "@/scripts/utils";
 import { getCollection } from "astro:content";
 
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection("blog");
 const sortedPosts = sortPostsByDate(allPosts);
 ---
 
