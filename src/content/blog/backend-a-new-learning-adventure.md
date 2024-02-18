@@ -6,7 +6,7 @@ author: Efraim
 tags:
   - self challenge
 ---
-Hello everyone! It's been a while since I last posted here, so, I'm glad to be back here sharing stories on my blog again! (By the way this is the first blog post this year)
+Hello everyone, and welcome to the first blog post in 2024! It's been a while since I last posted here, so, I'm glad to be back here sharing stories on my blog again!
 
 During the past two or three months, I've been learning backend development and created 2 very simple APIs with Go. The first one, which I affectionately named ['Fiber Student API'](https://github.com/klrfl/fiber-student-api), was very very simple. You can use it to do CRUD operations on students' data. Oh, and also I used basic auth to do it. I made with with Fiber, which is probably a bad idea, because by immediately using a framework, I don't understand the fundamentals. I should probably make another one with the `net/http` standard package in the future.
 
