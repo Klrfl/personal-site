@@ -25,14 +25,18 @@ const frontmatter = post.data;
     </div>
 
     <div class="post__image-container">
-      <Image
-        class="post__image"
-        src={frontmatter.image.url}
-        alt={frontmatter.image.alt}
-        width={900}
-        height={450}
-        format="webp"
-      />
+      {
+        frontmatter.image && (
+          <Image
+            class="post__image"
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            width={900}
+            height={450}
+            format="webp"
+          />
+        )
+      }
     </div>
   </a>
 

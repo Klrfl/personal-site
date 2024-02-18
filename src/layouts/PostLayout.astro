@@ -38,14 +38,18 @@ const { frontmatter } = Astro.props;
     </div>
 
     <figure class="header__image-wrapper">
-      <Image
-        class="header__image"
-        src={frontmatter.image.url}
-        alt={frontmatter.image.alt}
-        width={900}
-        height={450}
-        format="webp"
-      />
+      {
+        frontmatter.image && (
+          <Image
+            class="header__image"
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            width={900}
+            height={450}
+            format="webp"
+          />
+        )
+      }
     </figure>
   </header>
 
