@@ -29,10 +29,12 @@ const { posts } = Astro.props;
 ---
 
 <MainLayout title={tag} description={`Posts tagged with ${tag}`}>
-  <h1>{tag}</h1>
-  <p>Posts tagged with {tag}</p>
+  <header class="full-columns">
+    <h1>{tag}</h1>
+    <p>Posts tagged with {tag}</p>
+  </header>
 
-  <ul class="blog-list">
+  <ul class="blog-list full-columns">
     {posts.map((post) => <BlogPost post={post} />)}
   </ul>
 

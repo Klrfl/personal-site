@@ -9,12 +9,35 @@ const { title } = Astro.props;
     <slot />
   </main>
 
-    <Footer />
+  <Footer />
 </MyLayout>
 
-<style>
+<style is:global>
   main {
-    padding: 5rem 2rem;
-    max-width: 85ch;
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      repeat(6, minmax(0, 10rem))
+      minmax(1rem, 1fr);
+
+    gap: 2rem 1rem;
+  }
+
+  main > * {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  .full-columns > * {
+    grid-column: 2 / span 6;
+  }
+
+  main > :first-child {
+    padding-block-start: 5rem;
+  }
+
+  main header > * {
+    grid-column: 1 / -1;
   }
 </style>

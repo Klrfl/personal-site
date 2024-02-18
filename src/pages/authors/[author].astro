@@ -25,10 +25,12 @@ const { posts } = Astro.props;
 ---
 
 <MainLayout title={author} description={`Posts from ${author}`}>
-  <h1>{author}</h1>
-  <p>Posts from {author}</p>
+  <header class="full-columns">
+    <h1>{author}</h1>
+    <p>Posts from {author}</p>
+  </header>
 
-  <ul class="blog-list">
+  <ul class="blog-list full-columns">
     {posts.map((post: Object) => <BlogPost post={post} />)}
   </ul>
 </MainLayout>

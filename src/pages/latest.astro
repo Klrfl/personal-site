@@ -10,12 +10,12 @@ const sortedPosts = sortPostsByDate(allPosts);
 ---
 
 <MainLayout title="Latest Posts" description="Latest posts from Klrfl's blog.">
-  <section class="main-section">
+  <header class="full-columns">
     <h1>Latest Posts</h1>
     <p>Here is the latest blog posts I made.</p>
+  </header>
 
-    <ul class="blog-list">
-      {sortedPosts.map((post: Object) => <BlogPost post={post} />)}
-    </ul>
-  </section>
+  <ul class="blog-list full-columns">
+    {sortedPosts.map((post: Object) => <BlogPost post={post} />)}
+  </ul>
 </MainLayout>
