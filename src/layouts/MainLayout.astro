@@ -14,10 +14,11 @@ const { title } = Astro.props;
 
 <style is:global>
   main {
+    --column-count: 6;
     display: grid;
     grid-template-columns:
       minmax(1rem, 1fr)
-      repeat(6, minmax(0, 10rem))
+      repeat(var(--column-count), minmax(0, 10rem))
       minmax(1rem, 1fr);
 
     gap: 2rem 1rem;
