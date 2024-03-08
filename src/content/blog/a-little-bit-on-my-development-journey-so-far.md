@@ -1,5 +1,5 @@
 ---
-title: A little bit on my development journey so far
+title: "Impostor syndrome: long rambling disguised as a meaningful essay"
 pubDate: 2024-03-08T14:41:05.490Z
 description: Reflecting on my self-taught dev journey
 author: Efraim
