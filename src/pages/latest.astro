@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogPost from "@components/BlogPost.astro";
+import CTA from "@/components/CTA.astro";
 
 import { sortPostsByDate } from "@/scripts/utils";
 import { getCollection } from "astro:content";
@@ -13,6 +14,13 @@ const sortedPosts = sortPostsByDate(allPosts);
   <header class="full-columns">
     <h1>Latest Posts</h1>
     <p>Here is the latest blog posts I made.</p>
+
+    <div class="cta-container">
+      <CTA href="/blog">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>back</span>
+      </CTA>
+    </div>
   </header>
 
   <ul class="blog-list full-columns">
