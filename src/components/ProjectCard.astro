@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 const { project } = Astro.props;
 ---
 
-<div class="project-card">
+<li class="project-card">
   <figure class="project-card__image-container">
     <a href={project.demo_link}>
       <Image
@@ -24,7 +24,7 @@ const { project } = Astro.props;
     <a href={project.demo_link} class="project__link">demo</a>
     <a href={project.source_link} class="project__link">source code</a>
   </div>
-</div>
+</li>
 
 <style>
   .project-card {

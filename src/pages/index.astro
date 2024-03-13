@@ -147,9 +147,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       them.
     </p>
 
-    <div class="projects-container odd-columns">
+    <ul class="projects-container odd-columns">
       {projects.map((project) => <ProjectCard {project} />)}
-    </div>
+    </ul>
   </section>
 
   <section class="main-section full-columns" id="blog">
@@ -303,6 +303,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   .projects-container {
+    padding: 0;
+    margin: 0;
+
     display: grid;
     grid-template-columns: subgrid;
     row-gap: 1rem;
