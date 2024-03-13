@@ -89,15 +89,13 @@ const processedTags = allTags.reduce((acc, tag) => {
   aside {
     grid-area: aside;
   }
+
   .tag-list {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  .main-grid {
-    padding-block-start: 6rem;
-  }
   @media screen and (min-width: 50em) {
     .main-grid {
       grid-template-areas: "main main main main main main main main aside aside aside aside";
