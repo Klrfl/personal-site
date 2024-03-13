@@ -106,62 +106,55 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   </section>
 
   <section class="main-section full-columns" id="skills">
-    <div class="main-section__text">
-      <h2>Skills</h2>
-      <p>
-        In the last 2 and a half years, I have learned and used many different
-        technologies in the frontend world. I am proficient in <TechChip>
-          HTML
-        </TechChip>, <TechChip>CSS</TechChip>, and <TechChip>
-          JavaScript
-        </TechChip>, and have experience using <TechChip
-          href="https://astro.build">
-          Astro
-        </TechChip>, <TechChip href="https://vuejs.org">Vue</TechChip> and more
-        recently <TechChip href="https://tailwindcss.com">Tailwind</TechChip>
-         and <TechChip href="https://react.dev">React</TechChip>. Outside of web
-        development, I have experience writing <TechChip>Lua</TechChip> in
-        Roblox Studio, and I also learned a little bit of <TechChip>
-          Python
-        </TechChip> and <TechChip>C</TechChip>.
-      </p>
+    <h2>Skills</h2>
+    <p>
+      In the last 2 and a half years, I have learned and used many different
+      technologies in the frontend world. I am proficient in <TechChip>
+        HTML
+      </TechChip>, <TechChip>CSS</TechChip>, and <TechChip>
+        JavaScript
+      </TechChip>, and have experience using <TechChip
+        href="https://astro.build">
+        Astro
+      </TechChip>, <TechChip href="https://vuejs.org">Vue</TechChip> and more
+      recently <TechChip href="https://tailwindcss.com">Tailwind</TechChip>
+       and <TechChip href="https://react.dev">React</TechChip>. Outside of web
+      development, I have experience writing <TechChip>Lua</TechChip> in Roblox
+      Studio, and I also learned a little bit of <TechChip>Python</TechChip> and
 
-      <p>
-        Even though my learning experience is primarily on the frontend side, I
-        have experience in fullstack PAASes such as <TechChip
-          href="https://firebase.google.com">
-          Firebase
-        </TechChip> and <TechChip href="https://supabase.com">
-          Supabase
-        </TechChip>, and even backend technologies such as <TechChip
-          href="https://go.dev">
-          Go
-        </TechChip>
-         and <TechChip href="https://postgresql.org">PostgreSQL</TechChip>.
-      </p>
-    </div>
+
+      <TechChip>C</TechChip>.
+    </p>
+
+    <p>
+      Even though my learning experience is primarily on the frontend side, I
+      have experience in fullstack PAASes such as <TechChip
+        href="https://firebase.google.com">
+        Firebase
+      </TechChip> and <TechChip href="https://supabase.com">Supabase</TechChip>,
+      and even backend technologies such as <TechChip href="https://go.dev">
+        Go
+      </TechChip>
+       and <TechChip href="https://postgresql.org">PostgreSQL</TechChip>.
+    </p>
   </section>
 
   <section class="main-section full-columns" id="projects">
-    <div class="main-section__text">
-      <h2>Projects</h2>
-      <p>
-        I strongly believe in learning by doing. So, when I learn a new
-        technology, I always do projects, be it large or small. Here are some of
-        them.
-      </p>
-    </div>
+    <h2>Projects</h2>
+    <p>
+      I strongly believe in learning by doing. So, when I learn a new
+      technology, I always do projects, be it large or small. Here are some of
+      them.
+    </p>
 
-    <div class="projects-container">
+    <div class="projects-container odd-columns">
       {projects.map((project) => <ProjectCard {project} />)}
     </div>
   </section>
 
   <section class="main-section full-columns" id="blog">
-    <div class="main-section__text">
-      <h2>Blog Posts</h2>
-      <p>The newest posts from my personal blog.</p>
-    </div>
+    <h2>Blog Posts</h2>
+    <p>The newest posts from my personal blog.</p>
 
     <div class="blog-posts-container">
       <ul class="blog-list">
@@ -172,27 +165,25 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   </section>
 
   <section class="main-section full-columns" id="about">
-    <div class="main-section__text">
-      <h2>About me</h2>
-      <p>
-        My name is Efraim Munthe, I am a student currently learning about
-        front-end web development and the JAMStack. I also recently got into
-        backend web development, dabbling in NodeJS, PostgreSQL and Express. I
-        haven't learned much about them, so I haven't put them into my skills
-        yet.
-      </p>
+    <h2>About me</h2>
+    <p>
+      My name is Efraim Munthe, I am a student currently learning about
+      front-end web development and the JAMStack. I also recently got into
+      backend web development, dabbling in NodeJS, PostgreSQL and Express. I
+      haven't learned much about them, so I haven't put them into my skills yet.
+    </p>
+
+    <div class="cta-container">
       <CTA href="/about" primary>See more about me</CTA>
     </div>
   </section>
 
   <section class="main-section full-columns" id="contact">
-    <div class="main-section__text">
-      <h2>Contact</h2>
-      <p>
-        You can contact me via email or Discord, but you can message me here
-        directly if you want!
-      </p>
-    </div>
+    <h2>Contact</h2>
+    <p>
+      You can contact me via email or Discord, but you can message me here
+      directly if you want!
+    </p>
 
     <div class="form-container">
       <form action="/form-success" method="POST" data-netlify="true">
