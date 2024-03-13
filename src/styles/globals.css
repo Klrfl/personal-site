@@ -33,6 +33,10 @@
   --transition-slow: 600ms ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body[data-theme="dark"] {
   color-scheme: dark;
   --background: var(--background-dark);
