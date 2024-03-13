@@ -1,14 +1,19 @@
 ---
-const { class: className, href, isButton = false } = Astro.props;
+const {
+  class: className,
+  href,
+  isButton = false,
+  primary = false,
+} = Astro.props;
 ---
 
 {
   isButton ? (
-    <button class:list={["cta", className]}>
+    <button class:list={["cta", { primary: primary }, className]}>
       <slot />
     </button>
   ) : (
-    <a href={href} class:list={["cta", className]}>
+    <a href={href} class:list={["cta", { primary: primary }, className]}>
       <slot />
     </a>
   )
@@ -16,9 +21,9 @@ const { class: className, href, isButton = false } = Astro.props;
 
 <style>
   .cta {
+    outline: 1px solid var(--primary);
+    color: var(--text-dark);
     text-decoration: none;
-    background: var(--primary);
-    color: var(--text-light);
     margin-block: 1rem;
     padding: 1em 2em;
     display: inline-block;
@@ -31,11 +36,23 @@ const { class: className, href, isButton = false } = Astro.props;
       color var(--transition);
   }
 
+  .cta.primary {
+    background: var(--primary);
+    color: var(--text-light);
+  }
+
   .cta:hover,
   .cta:focus-visible {
-    outline: 1px solid var(--primary);
+    background: var(--primary);
+    color: var(--text-light);
     box-shadow: 0px 5px 20px -2px var(--outline-color-mute);
+  }
+
+  .cta.primary:hover,
+  .cta.primary:focus-visible {
     background: transparent;
-    color: var(--text);
+    outline: 1px solid var(--primary);
+    color: var(--text-dark);
+    box-shadow: 0px 5px 20px -2px var(--outline-color-mute);
   }
 </style>
