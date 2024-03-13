@@ -291,60 +291,15 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     display: flex;
     justify-content: center;
     gap: 1rem;
-  }
-
-  /* skills */
-  .skills-section {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%);
-  }
-
-  .skills__cards-container {
-    text-align: center;
-    align-self: stretch;
-
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
   }
 
-  .skill-card {
-    outline: 2px solid var(--outline-color-secondary);
-    background: var(--secondary);
-    font-size: 1.2em;
-    border-radius: 0.5em;
-    padding-block: 2rem;
-    padding-inline: 4rem;
-    max-width: 20ch;
-    overflow: hidden;
-    user-select: none;
-
-    transition:
-      outline var(--transition),
-      box-shadow var(--transition);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 0;
-    position: relative;
-  }
-
-  .skill-text > i {
-    display: block;
-    margin-bottom: 0.5em;
-  }
-
-  .skill-card:hover {
-    outline-color: var(--outline-color);
-    box-shadow: 0 5px 20px -2px var(--outline-color-mute);
   }
 
   #about {
     background: var(--secondary);
   }
 
-  /* projects */
   .projects-container {
     display: grid;
     grid-template-columns: subgrid;
