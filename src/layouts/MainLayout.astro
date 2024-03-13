@@ -37,4 +37,16 @@ const { title } = Astro.props;
   main header > * {
     grid-column: 1 / -1;
   }
+
+  .odd-columns > * {
+    grid-column: span 2;
+
+    @media screen and (width < 50em) {
+      grid-column: span 3;
+    }
+
+    @media screen and (width < 30em) {
+      grid-column: 1/ -1;
+    }
+  }
 </style>
