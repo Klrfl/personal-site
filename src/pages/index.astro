@@ -92,19 +92,19 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
 <MyLayout
   title={title}
-  description="Welcome to Efraim's personal site! Please enjoy.">
-  <main class="wrapper">
+  description="Welcome to Efraim's personal little corner of the internet!">
+  <main>
     <section class="hero">
       <div class="hero__text">
-        <h1>Hello! I'm Efraim.</h1>
-        <p>I'm a student who is learning to be a frontend web developer.</p>
+        <h1>Hello👋 I'm Efraim.</h1>
+        <p>
+          I'm a student, frontend web developer, tech enthusiast and avid
+          learner.
+        </p>
       </div>
-      <div class="hero__image">
-        <img
-          src="../assets/f1-75.webp"
-          loading="eager"
-          alt="A gorgeous Ferrari F1 75."
-        />
+      <div class="hero__cta">
+        <CTA href="#projects">See what i've made</CTA>
+        <CTA href="#contact">Contact me</CTA>
       </div>
     </section>
 
@@ -231,13 +231,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 </MyLayout>
 
 <style>
-  .wrapper {
-    max-height: 100vh;
-    overflow: hidden auto;
-    perspective: 1px;
-    transform-style: preserve-3d;
-  }
-
   .main-section {
     padding: 2rem;
     background: var(--background);
@@ -267,26 +260,16 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   .hero {
-    min-height: 100vh;
+    background: var(--secondary);
+    padding: 5em 10em;
     color: var(--text);
-    transform: translateZ(-2px) scale(3);
-
-    display: flex;
-    flex-direction: column;
   }
 
   .hero__text {
-    background: var(--secondary);
     color: var(--text);
     text-align: center;
-    padding-inline: 1em;
-    padding-block: 1rem;
     z-index: 1;
     flex: 1 1 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   .hero__text h1 {
@@ -298,52 +281,10 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     position: relative;
   }
 
-  .hero__text h1::before,
-  .hero__text h1::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-  }
-
-  .hero__text h1::before {
-    background: var(--secondary);
-    animation: typing 3s steps(18) 1000ms forwards;
-  }
-
-  .hero__text h1::after {
-    width: 0.2rem;
-    top: -5px;
-    animation:
-      typing 3s steps(18) 1000ms forwards,
-      blink 500ms infinite alternate;
-  }
-
-  @keyframes typing {
-    to {
-      left: 100%;
-    }
-  }
-
-  @keyframes blink {
-    from {
-      background: transparent;
-    }
-    to {
-      background: var(--text);
-    }
-  }
-
-  .hero__image {
-    order: -1;
-    flex: 2 1 0;
-    overflow: hidden;
-  }
-
-  .hero__image > img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: relative;
+  .hero__cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
   }
 
   /* skills */
@@ -429,25 +370,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     display: block;
     width: 100%;
     resize: vertical;
-  }
-
-  @media screen and (min-width: 55em) {
-    .hero__text {
-      padding-inline: 4em 10em;
-      text-align: left;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      clip-path: polygon(100% 0, 70% 100%, 0% 100%, 0 0%);
-    }
-
-    .hero__text h1 {
-      margin-inline: 0;
-    }
-
-    .hero__text p {
-      max-width: 40ch;
-    }
   }
 
   @media screen and (min-width: 50em) {
