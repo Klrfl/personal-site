@@ -156,10 +156,11 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     <h2>Blog Posts</h2>
     <p>The newest posts from my personal blog.</p>
 
-    <div class="blog-posts-container">
-      <ul class="blog-list">
-        {sortedPosts.map((post: object) => <BlogPost {post} />)}
-      </ul>
+    <ul class="blog-list">
+      {sortedPosts.map((post: object) => <BlogPost {post} />)}
+    </ul>
+
+    <div class="cta-container">
       <CTA href="/blog">See more blog posts</CTA>
     </div>
   </section>
@@ -185,25 +186,34 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       directly if you want!
     </p>
 
-    <div class="form-container">
-      <form action="/form-success" method="POST" data-netlify="true">
-        <label for="name">Name</label>
-        <input type="text" name="name" placeholder="John Doe" required />
+    <form
+      class="contact-form"
+      action="/form-success"
+      method="POST"
+      data-netlify="true">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="John Doe" required />
 
-        <label for="email">Your Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="johndoe420@mail.com"
-          required
-        />
+      <label for="email">Your Email</label>
+      <input
+        type="email"
+        name="email"
+        placeholder="johndoe420@mail.com"
+        required
+      />
 
-        <label for="message">Your message</label>
-        <textarea id="message" name="message" placeholder="Hi!!!"></textarea>
+      <label for="message">Your message</label>
+      <textarea
+        id="message"
+        name="message"
+        maxlength="2000"
+        minlength="6"
+        placeholder="Hi!!!"></textarea>
 
+      <div class="cta-container">
         <CTA isButton primary>Send a message</CTA>
-      </form>
-    </div>
+      </div>
+    </form>
   </section>
 
   <script>
@@ -312,26 +322,25 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   /* contact */
-  .form-container {
+  .contact-form {
     background: var(--secondary);
     padding: 1em;
-    align-self: stretch;
   }
 
-  .form-container :is(label, input, textarea) {
+  .contact-form :is(label, input, textarea) {
     padding: 1em;
   }
 
-  .form-container label {
+  .contact-form label {
     display: block;
     padding-inline: 0;
   }
 
-  .form-container input {
+  .contact-form input {
     width: 100%;
   }
 
-  .form-container textarea {
+  .contact-form textarea {
     display: block;
     width: 100%;
     resize: vertical;
