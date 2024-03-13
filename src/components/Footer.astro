@@ -1,25 +1,47 @@
+---
+const footerLinks = [
+  {
+    icon: "fa-brands fa-github",
+    href: "https://github.com/klrfl/personal-site",
+    text: "source code on GitHub",
+  },
+  {
+    icon: "fa-brands fa-linkedin",
+    href: "https://linkedin.com/in/efraim-munthe/",
+    text: "Efraim Munthe",
+  },
+  {
+    icon: "fa-solid fa-envelope",
+    href: "mailto:efraimmunthe101@gmail.com",
+    text: "Email me",
+  },
+  {
+    icon: "fa-brands fa-codepen",
+    href: "https://codepen.io/klrfl/",
+    text: "Klrfl",
+  },
+  {
+    icon: "fa-brands fa-discord",
+    href: "https://discordapp.com/users/798010695102365696",
+    text: "Klrfl",
+  },
+];
+---
+
 <footer>
   <div class="footer-text">
     <p>Made by <a href="https://github.com/Klrfl">Klrfl</a>, 2023.</p>
   </div>
   <div class="footer-socials">
     <ul>
-      <li>
-        <i class="fa-brands fa-github"></i>
-        <a href="https://github.com/Klrfl/blog-tutorial">This blog on GitHub</a>
-      </li>
-      <li>
-        <i class="fa-brands fa-codepen"></i>
-        <a href="https://codepen.com/codepen.io/Klrfl">Codepen</a>
-      </li>
-      <li>
-        <i class="fa-solid fa-envelope"></i>
-        <a href="https://mailto:efraimmunthe101@gmail.com">Email me</a>
-      </li>
-      <li>
-        <i class="fa-brands fa-discord"></i>
-        <a href="https://discordapp.com/users/798010695102365696">Discord</a>
-      </li>
+      {
+        footerLinks.map((link) => (
+          <li>
+            <i class={link.icon} />
+            <a href={link.href}>{link.text}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </footer>
