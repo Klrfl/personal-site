@@ -20,4 +20,8 @@ const { href = "#" } = Astro.props;
   a:hover {
     outline-color: var(--outline-color);
   }
+
+  a:focus-visible {
+    outline: 2px solid var(--outline-color);
+  }
 </style>
