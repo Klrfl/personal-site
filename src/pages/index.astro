@@ -1,6 +1,5 @@
 ---
-import MyLayout from "@layouts/MyLayout.astro";
-import Footer from "@/components/Footer.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 import CTA from "@components/CTA.astro";
 import TechChip from "@/components/TechChip.astro";
 import BlogPost from "@components/BlogPost.astro";
@@ -90,132 +89,124 @@ const allPosts = await getCollection("blog");
 const sortedPosts = sortPostsByDate(allPosts, 3);
 ---
 
-<MyLayout
+<MainLayout
   title={title}
   description="Welcome to Efraim's personal little corner of the internet!">
-  <main>
-    <section class="hero">
-      <div class="hero__text">
-        <h1>Hello! I'm Efraim.<span class="hero-wave">👋</span></h1>
-        <p>
-          I'm a student, frontend web developer, tech enthusiast and avid
-          learner.
-        </p>
-      </div>
-      <div class="hero__cta">
-        <CTA href="#projects">See what i've made</CTA>
-        <CTA href="#contact">Contact me</CTA>
-      </div>
-    </section>
+  <section class="hero full-columns">
+    <div class="hero__text">
+      <h1>Hello! I'm Efraim.<span class="hero-wave">👋</span></h1>
+      <p>
+        I'm a student, frontend web developer, tech enthusiast and avid learner.
+      </p>
+    </div>
+    <div class="hero__cta">
+      <CTA href="#projects">See what i've made</CTA>
+      <CTA href="#contact">Contact me</CTA>
+    </div>
+  </section>
 
-    <section class="main-section" id="skills">
-      <div class="main-section__text">
-        <h2>Skills</h2>
-        <p>
-          In the last 2 and a half years, I have learned and used many different
-          technologies in the frontend world. I am proficient in <TechChip>
-            HTML
-          </TechChip>, <TechChip>CSS</TechChip>, and <TechChip>
-            JavaScript
-          </TechChip>, and have experience using <TechChip
-            href="https://astro.build">
-            Astro
-          </TechChip>, <TechChip href="https://vuejs.org">Vue</TechChip> and
-          more recently <TechChip href="https://tailwindcss.com">
-            Tailwind
-          </TechChip> and <TechChip href="https://react.dev">React</TechChip>.
-          Outside of web development, I have learned a little bit of Python, Go,
-          and C.
-        </p>
+  <section class="main-section full-columns" id="skills">
+    <div class="main-section__text">
+      <h2>Skills</h2>
+      <p>
+        In the last 2 and a half years, I have learned and used many different
+        technologies in the frontend world. I am proficient in <TechChip>
+          HTML
+        </TechChip>, <TechChip>CSS</TechChip>, and <TechChip>
+          JavaScript
+        </TechChip>, and have experience using <TechChip
+          href="https://astro.build">
+          Astro
+        </TechChip>, <TechChip href="https://vuejs.org">Vue</TechChip> and more
+        recently <TechChip href="https://tailwindcss.com">Tailwind</TechChip>
+         and <TechChip href="https://react.dev">React</TechChip>. Outside of web
+        development, I have learned a little bit of Python, Go, and C.
+      </p>
 
-        <p>
-          Even though my learning experience is primarily on the frontend side,
-          I have dabbled a little bit in fullstack PAASes such as <TechChip
-            href="https://firebase.google.com">
-            Firebase
-          </TechChip>, <TechChip href="https://supabase.com">
-            Supabase
-          </TechChip>, and various backend technologies such as <TechChip>
-            Express
-          </TechChip> and <TechChip>PostgreSQL</TechChip>.
-        </p>
-      </div>
-    </section>
+      <p>
+        Even though my learning experience is primarily on the frontend side, I
+        have dabbled a little bit in fullstack PAASes such as <TechChip
+          href="https://firebase.google.com">
+          Firebase
+        </TechChip>, <TechChip href="https://supabase.com">Supabase</TechChip>,
+        and various backend technologies such as <TechChip>Express</TechChip>
+         and <TechChip>PostgreSQL</TechChip>.
+      </p>
+    </div>
+  </section>
 
-    <section class="main-section" id="projects">
-      <div class="main-section__text">
-        <h2>Projects</h2>
-        <p>
-          I strongly believe in learning by doing. So, when I learn a new
-          technology, I always do projects, be it large or small. Here are some
-          of them.
-        </p>
-      </div>
+  <section class="main-section full-columns" id="projects">
+    <div class="main-section__text">
+      <h2>Projects</h2>
+      <p>
+        I strongly believe in learning by doing. So, when I learn a new
+        technology, I always do projects, be it large or small. Here are some of
+        them.
+      </p>
+    </div>
 
-      <div class="projects-container">
-        {projects.map((project) => <ProjectCard {project} />)}
-      </div>
-    </section>
+    <div class="projects-container">
+      {projects.map((project) => <ProjectCard {project} />)}
+    </div>
+  </section>
 
-    <section class="main-section" id="blog">
-      <div class="main-section__text">
-        <h2>Blog Posts</h2>
-        <p>The newest posts from my personal blog.</p>
-      </div>
+  <section class="main-section full-columns" id="blog">
+    <div class="main-section__text">
+      <h2>Blog Posts</h2>
+      <p>The newest posts from my personal blog.</p>
+    </div>
 
-      <div class="blog-posts-container">
-        <ul class="blog-list">
-          {sortedPosts.map((post: object) => <BlogPost {post} />)}
-        </ul>
-        <CTA href="/blog">See more blog posts</CTA>
-      </div>
-    </section>
+    <div class="blog-posts-container">
+      <ul class="blog-list">
+        {sortedPosts.map((post: object) => <BlogPost {post} />)}
+      </ul>
+      <CTA href="/blog">See more blog posts</CTA>
+    </div>
+  </section>
 
-    <section class="main-section" id="about">
-      <div class="main-section__text">
-        <h2>About me</h2>
-        <p>
-          My name is Efraim Munthe, I am a student currently learning about
-          front-end web development and the JAMStack. I also recently got into
-          backend web development, dabbling in NodeJS, PostgreSQL and Express. I
-          haven't learned much about them, so I haven't put them into my skills
-          yet.
-        </p>
-        <CTA href="/about">See more about me</CTA>
-      </div>
-    </section>
+  <section class="main-section full-columns" id="about">
+    <div class="main-section__text">
+      <h2>About me</h2>
+      <p>
+        My name is Efraim Munthe, I am a student currently learning about
+        front-end web development and the JAMStack. I also recently got into
+        backend web development, dabbling in NodeJS, PostgreSQL and Express. I
+        haven't learned much about them, so I haven't put them into my skills
+        yet.
+      </p>
+      <CTA href="/about">See more about me</CTA>
+    </div>
+  </section>
 
-    <section class="main-section" id="contact">
-      <div class="main-section__text">
-        <h2>Contact</h2>
-        <p>
-          You can contact me via email or Discord, but you can message me here
-          directly if you want!
-        </p>
-      </div>
+  <section class="main-section full-columns" id="contact">
+    <div class="main-section__text">
+      <h2>Contact</h2>
+      <p>
+        You can contact me via email or Discord, but you can message me here
+        directly if you want!
+      </p>
+    </div>
 
-      <div class="form-container">
-        <form action="/form-success" method="POST" data-netlify="true">
-          <label for="name">Name</label>
-          <input type="text" name="name" placeholder="John Doe" required />
+    <div class="form-container">
+      <form action="/form-success" method="POST" data-netlify="true">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="John Doe" required />
 
-          <label for="email">Your Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="johndoe420@mail.com"
-            required
-          />
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="johndoe420@mail.com"
+          required
+        />
 
-          <label for="message">Your message</label>
-          <textarea id="message" name="message" placeholder="Hi!!!"></textarea>
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" placeholder="Hi!!!"></textarea>
 
-          <CTA isButton={true}>Send a message</CTA>
-        </form>
-      </div>
-    </section>
-    <Footer />
-  </main>
+        <CTA isButton={true}>Send a message</CTA>
+      </form>
+    </div>
+  </section>
 
   <script>
     if (window.netlifyIdentity) {
@@ -228,15 +219,12 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       });
     }
   </script>
-</MyLayout>
+</MainLayout>
 
 <style>
   .main-section {
-    padding: 2rem;
     background: var(--background);
     overflow-x: hidden;
-
-    position: relative;
   }
 
   .main-section.hidden > * {
@@ -252,8 +240,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   .main-section > * {
-    max-width: 100ch;
-    margin: auto;
     transition:
       opacity var(--transition-slow),
       transform var(--transition-slow);
@@ -363,12 +349,11 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   /* projects */
   .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
-    gap: 1.5rem;
+    grid-template-columns: subgrid;
+    row-gap: 1rem;
   }
 
   /* contact */
-
   .form-container {
     background: var(--secondary);
     padding: 1em;
@@ -392,12 +377,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     display: block;
     width: 100%;
     resize: vertical;
-  }
-
-  @media screen and (min-width: 50em) {
-    .main-section {
-      padding: 2rem 4rem;
-    }
   }
 </style>
 
