@@ -101,7 +101,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     </div>
     <div class="hero__cta">
       <CTA href="#projects">See what i've made</CTA>
-      <CTA href="#contact">Contact me</CTA>
+      <CTA href="#contact" primary>Contact me</CTA>
     </div>
   </section>
 
@@ -174,7 +174,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
         haven't learned much about them, so I haven't put them into my skills
         yet.
       </p>
-      <CTA href="/about">See more about me</CTA>
+      <CTA href="/about" primary>See more about me</CTA>
     </div>
   </section>
 
@@ -203,7 +203,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
         <label for="message">Your message</label>
         <textarea id="message" name="message" placeholder="Hi!!!"></textarea>
 
-        <CTA isButton={true}>Send a message</CTA>
+        <CTA isButton primary>Send a message</CTA>
       </form>
     </div>
   </section>
@@ -224,7 +224,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 <style>
   .main-section {
     background: var(--background);
-    overflow-x: hidden;
+    padding-block: 1rem;
   }
 
   .main-section.hidden > * {
