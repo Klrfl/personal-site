@@ -22,7 +22,7 @@ const {
 <style>
   .cta {
     outline: 1px solid var(--primary);
-    color: var(--text-dark);
+    color: var(--text);
     text-decoration: none;
     margin-block: 1rem;
     padding: 1em 2em;
@@ -45,14 +45,15 @@ const {
   .cta:focus-visible {
     background: var(--primary);
     color: var(--text-light);
-    box-shadow: 0px 5px 20px -2px var(--outline-color-mute);
+    box-shadow:
+      1px 1px 2px var(--light-grey),
+      2px 2px 4px var(--outline-color-mute);
   }
 
   .cta.primary:hover,
   .cta.primary:focus-visible {
     background: transparent;
     outline: 1px solid var(--primary);
-    color: var(--text-dark);
-    box-shadow: 0px 5px 20px -2px var(--outline-color-mute);
+    color: var(--text);
   }
 </style>
