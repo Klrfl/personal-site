@@ -22,3 +22,7 @@ Here are some screenshots of the website:
 ![perhotelan page.](/assets/uploads/smkmetland.net-perhotelan.png)
 
 Yeah that's it for all. Thank you for reading. I will provide more updates as I work more on the site.
+
+## Update 4/4/2024
+
+I have more or less finished the remake, and hosted the site on Cloudflare Pages. You can see the [live site here](https://smkmetland.pages.dev).
