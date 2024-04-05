@@ -3,7 +3,10 @@ import Navbar from "@components/Navbar.astro";
 
 import BaseHead from "@components/BaseHead.astro";
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description = "Hello, I'm Efraim. Welcome to my personal little corner of the internet!",
+} = Astro.props;
 ---
 
 <!doctype html>
