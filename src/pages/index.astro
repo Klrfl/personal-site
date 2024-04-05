@@ -10,7 +10,16 @@ import { getCollection } from "astro:content";
 
 const title = "Efraim Munthe | Home";
 
-const projects = [
+interface Project {
+  demo_link?: string;
+  source_link: string;
+  image: string;
+  alt: string;
+  heading: string;
+  text: string;
+}
+
+const projects: Project[] = [
   {
     demo_link: "https://klrfl.github.io/Sebastian/",
     source_link: "https://github.com/Klrfl/Sebastian",
@@ -36,12 +45,12 @@ const projects = [
     text: "Suwit Jawa game I made in JS.",
   },
   {
-    demo_link: "https://porto.lupy.my.id",
-    source_link: "https://github.com/Klrf/pplg-portfolio",
+    demo_link: "https://pplgportfolio.netlify.app",
+    source_link: "https://github.com/Klrfl/pplg-portfolio",
     image: "/assets/X PPLG Portofolio Landing Page.png",
     alt: "PPLG Portfolio collection landing page",
     heading: "PPLG Portfolio landing page.",
-    text: "I designed the grid layout of this landing page",
+    text: "A collection of portfolios of my friends at PPLG. I designed the layout of this landing page, and made the search filter feature.",
   },
   {
     demo_link: "https://klrfl-moviesearch.netlify.app",
@@ -76,12 +85,18 @@ const projects = [
     text: "A classic todo app made with Vue and Pinia for state management, powered by Firebase for authentication and hosting.",
   },
   {
-    demo_link: "https://supabase-astro-guestbook.netlify.app",
     source_link: "https://github.com/klrfl/astro-supabase",
     image: "/assets/ssr-guestbook.png",
     alt: "home page of my SSR demo website",
     heading: "Astro SSR demo",
     text: "This is a website I made with Astro for demonstrating Supabase's new SSR package.",
+  },
+  {
+    source_link: "https://github.com/klrfl/mekdi",
+    image: "/assets/mekdi.png",
+    alt: "Mekdi homepage",
+    heading: "Mekdi",
+    text: "is a small and simple CRUD application, made with Go (no router!) and HTMX.",
   },
 ];
 

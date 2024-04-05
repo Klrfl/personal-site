@@ -1,5 +1,16 @@
 ---
 import { Image } from "astro:assets";
+interface Props {
+  project: {
+    demo_link?: string;
+    source_link: string;
+    image: string;
+    alt: string;
+    heading: string;
+    text: string;
+  };
+}
+
 const { project } = Astro.props;
 ---
 
@@ -21,7 +32,13 @@ const { project } = Astro.props;
   </figure>
 
   <div class="project__links-container">
-    <a href={project.demo_link} class="project__link">demo</a>
+    {
+      project.demo_link && (
+        <a href={project.demo_link} class="project__link">
+          demo
+        </a>
+      )
+    }
     <a href={project.source_link} class="project__link">source code</a>
   </div>
 </li>
@@ -62,6 +79,11 @@ const { project } = Astro.props;
 
   .project-text {
     padding: 1rem;
+  }
+
+  .project-text h3 {
+    margin-block: 0 0.5rem;
+    line-height: 1.2;
   }
 
   .project__links-container {
