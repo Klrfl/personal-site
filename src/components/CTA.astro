@@ -4,16 +4,20 @@ const {
   href,
   isButton = false,
   primary = false,
+  margin = false,
 } = Astro.props;
 ---
 
 {
   isButton ? (
-    <button class:list={["cta", { primary: primary }, className]}>
+    <button
+      class:list={["cta", { primary: primary }, { margin: margin }, className]}>
       <slot />
     </button>
   ) : (
-    <a href={href} class:list={["cta", { primary: primary }, className]}>
+    <a
+      href={href}
+      class:list={["cta", { primary: primary }, { margin: margin }, className]}>
       <slot />
     </a>
   )
@@ -24,7 +28,6 @@ const {
     outline: 1px solid var(--primary);
     color: var(--text);
     text-decoration: none;
-    margin-block: 1rem;
     padding: 1em 2em;
     display: inline-block;
     cursor: pointer;
@@ -39,6 +42,10 @@ const {
   .cta.primary {
     background: var(--primary);
     color: var(--text-light);
+  }
+
+  .cta.margin {
+    margin-block: 1rem;
   }
 
   .cta:hover,
