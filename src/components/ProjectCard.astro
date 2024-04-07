@@ -16,7 +16,7 @@ const { project } = Astro.props;
 
 <li class="project-card">
   <figure class="project-card__image-container">
-    <a href={project.demo_link}>
+    <a href={project.demo_link ?? project.source_link}>
       <Image
         src={project.image}
         alt={project.alt}
