@@ -1,10 +1,16 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
 import { formatDate } from "@/scripts/utils";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+const frontmatter = entry.data;
 ---
 
 <MainLayout title={frontmatter.title} description={frontmatter.description}>
