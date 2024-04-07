@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.0.2",
-    "astro": "^3.3.2"
+    "@fontsource/open-sans": "^5.0.27",
+    "@fontsource/source-code-pro": "^5.0.17",
+    "astro": "^3.3.2",
+    "astro-icon": "^1.1.0"
   },
   "devDependencies": {
+    "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/mdi": "^1.1.65",
     "eslint": "^8.47.0",
     "eslint-plugin-astro": "^0.31.0",
     "prettier": "^3.0.3",
