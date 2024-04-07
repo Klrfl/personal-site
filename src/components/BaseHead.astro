@@ -1,5 +1,7 @@
 ---
 import "@/styles/globals.css";
+import "@fontsource/open-sans";
+import "@fontsource/source-code-pro";
 const { title, description } = Astro.props;
 ---
 
@@ -11,24 +13,3 @@ const { title, description } = Astro.props;
 <title>{title}</title>
 
 <link rel="sitemap" href="/sitemap-index.xml" />
-
-<!-- Source Code Pro -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- Open sans -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- Fontawesome -->
-<link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
-<link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet" />
-<link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
