@@ -33,18 +33,18 @@ const footerLinks = [
   <div class="footer-text">
     <p>Made by <a href="https://github.com/Klrfl">Klrfl</a>, 2023.</p>
   </div>
-  <div class="footer-socials">
-    <ul>
-      {
-        footerLinks.map((link) => (
-          <li>
+  <ul class="footer-socials">
+    {
+      footerLinks.map((link) => (
+        <li>
+          <a href={link.href}>
+            <span> {link.text} </span>
             <Icon name={link.icon} size={28} />
-            <a href={link.href}>{link.text}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </footer>
 
 <style>
@@ -52,19 +52,20 @@ const footerLinks = [
     background: var(--secondary);
     color: var(--text);
     padding: 2rem;
+
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: space-between;
-    flex-direction: column;
   }
 
-  .footer-socials ul {
+  .footer-socials {
     margin: 0;
     padding: 0;
     list-style: none;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
   }
 
@@ -74,30 +75,19 @@ const footerLinks = [
     gap: 0.5rem;
   }
 
-  .footer-socials i {
-    font-size: 1.4rem;
-  }
-
   .footer-socials a {
     color: var(--nav-link-color);
     text-decoration: none;
     display: inline-block;
     padding: 1em 0.25em;
     transition: color var(--transition);
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   .footer-socials a:hover {
     color: var(--nav-link-color-hover);
-  }
-
-  @media screen and (min-width: 50em) {
-    footer {
-      flex-direction: row;
-    }
-
-    .footer-socials ul {
-      flex-direction: row;
-      align-items: center;
-    }
   }
 </style>
