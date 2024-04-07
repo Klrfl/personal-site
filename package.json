@@ -14,7 +14,8 @@
     "@fontsource/open-sans": "^5.0.27",
     "@fontsource/source-code-pro": "^5.0.17",
     "astro": "^3.3.2",
-    "astro-icon": "^1.1.0"
+    "astro-icon": "^1.1.0",
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.1.17",
