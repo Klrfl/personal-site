@@ -12,7 +12,7 @@ const { title, description } = Astro.props;
   <Footer />
 </MyLayout>
 
-<style is:global>
+<style>
   main {
     --column-count: 6;
     display: grid;
@@ -22,8 +22,11 @@ const { title, description } = Astro.props;
       minmax(1rem, 1fr);
 
     gap: 2rem 1rem;
+    overflow-x: hidden;
   }
+</style>
 
+<style is:global>
   main > * {
     grid-column: 1 / -1;
     display: grid;

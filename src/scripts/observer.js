@@ -7,9 +7,7 @@ const observerCallback = (entries, observer) => {
 };
 
 const observerOpts = {
-  root: document.querySelector("body"),
   rootMargin: "10px 0px",
-  threshold: 0.1,
 };
 
 const observer = new IntersectionObserver(observerCallback, observerOpts);
