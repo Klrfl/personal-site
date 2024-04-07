@@ -45,15 +45,20 @@ const {
   .cta:focus-visible {
     background: var(--primary);
     color: var(--text-light);
+    outline: 4px solid var(--primary);
     box-shadow:
       1px 1px 2px var(--light-grey),
       2px 2px 4px var(--outline-color-mute);
   }
 
+  .cta:focus-visible {
+    scale: 1.1;
+  }
+
   .cta.primary:hover,
   .cta.primary:focus-visible {
     background: transparent;
-    outline: 1px solid var(--primary);
+    outline: 4px solid var(--primary);
     color: var(--text);
   }
 </style>

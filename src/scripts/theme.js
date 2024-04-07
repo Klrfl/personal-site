@@ -17,15 +17,15 @@ export function setTheme(targetTheme) {
   document.body.setAttribute(bodyAttribute, targetTheme);
   localStorage.setItem(themeIdentifier, targetTheme);
 
-  const sunIcon = document.querySelector(".fa-sun");
-  const moonIcon = document.querySelector(".fa-moon");
+  const lightIcon = document.querySelector(".icon--light");
+  const darkIcon = document.querySelector(".icon--dark");
 
   if (targetTheme === "dark") {
-    moonIcon.style.display = "block";
-    sunIcon.style.display = "none";
+    darkIcon.style.display = "block";
+    lightIcon.style.display = "none";
   } else {
-    sunIcon.style.display = "block";
-    moonIcon.style.display = "none";
+    lightIcon.style.display = "block";
+    darkIcon.style.display = "none";
   }
 }
 

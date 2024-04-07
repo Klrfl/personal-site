@@ -1,29 +1,30 @@
 ---
+import { Icon } from "astro-icon/components";
 const footerLinks = [
   {
-    icon: "fa-brands fa-github",
+    icon: "mdi:github",
     href: "https://github.com/klrfl/personal-site",
     text: "source code on GitHub",
   },
   {
-    icon: "fa-brands fa-linkedin",
+    icon: "mdi:linkedin",
     href: "https://linkedin.com/in/efraim-munthe/",
-    text: "Efraim Munthe",
+    text: "LinkedIn",
   },
   {
-    icon: "fa-solid fa-envelope",
+    icon: "mdi:envelope",
     href: "mailto:efraimmunthe101@gmail.com",
-    text: "Email me",
+    text: "Email",
   },
   {
-    icon: "fa-brands fa-codepen",
+    icon: "mdi:codepen",
     href: "https://codepen.io/klrfl/",
-    text: "Klrfl",
+    text: "Codepen",
   },
   {
-    icon: "fa-brands fa-discord",
+    icon: "ic:baseline-discord",
     href: "https://discordapp.com/users/798010695102365696",
-    text: "Klrfl",
+    text: "Discord",
   },
 ];
 ---
@@ -37,7 +38,7 @@ const footerLinks = [
       {
         footerLinks.map((link) => (
           <li>
-            <i class={link.icon} />
+            <Icon name={link.icon} size={28} />
             <a href={link.href}>{link.text}</a>
           </li>
         ))

@@ -1,13 +1,12 @@
 ---
 import ThemeButton from "@/components/ThemeButton.astro";
 import BurgerMenu from "@components/BurgerMenu.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <nav>
   <section class="logo">
-    <a href="/" aria-label="go back home">
-      <i class="fa-solid fa-k"></i>
-    </a>
+    <a href="/" aria-label="go back home">Efraim</a>
   </section>
 
   <section class="left">
@@ -16,13 +15,8 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 
     <ul class="nav-links-wrapper">
       <li class="nav-links-wrapper__header">
-        <div class="logo">
-          <a href="/" aria-label="go back home">
-            <i class="fa-solid fa-k"></i>
-          </a>
-        </div>
         <button id="close-nav" title="close navbar">
-          <i class="fa-solid fa-xmark"></i>
+          <Icon name="mdi:close" size={28} />
         </button>
       </li>
 
@@ -97,12 +91,19 @@ import BurgerMenu from "@components/BurgerMenu.astro";
 
   .nav-links-wrapper__header {
     outline: 2px solid var(--outline-color-mute);
+    justify-content: flex-end;
   }
 
   nav > .logo a,
   .nav-links-wrapper__header > *,
   .nav-links {
     padding: 1.5rem;
+  }
+
+  .logo a {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
   }
 
   .nav-links {

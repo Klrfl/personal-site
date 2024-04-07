@@ -1,6 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <button class="theme-toggle" title="toggle site theme">
-  <i class="fa-solid fa-sun"></i>
-  <i class="fa-solid fa-moon"></i>
+  <div class="icon--light">
+    <Icon name="ic:outline-light-mode" />
+  </div>
+  <div class="icon--dark">
+    <Icon name="ic:outline-dark-mode" />
+  </div>
 </button>
 
 <style>
