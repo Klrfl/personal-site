@@ -31,8 +31,8 @@ const frontmatter = post.data;
             class="post__image"
             src={frontmatter.image.url}
             alt={frontmatter.image.alt}
-            width={900}
-            height={450}
+            width={450}
+            height={800}
             format="webp"
           />
         )
@@ -46,23 +46,20 @@ const frontmatter = post.data;
     }
 
     .post-container + .post-container {
-      margin-block-start: 0.5rem;
+      margin-block-start: 1rem;
     }
 
     .post {
       border-bottom: 2px solid var(--outline-color-mute);
       text-decoration: none;
       color: inherit;
-      padding: 1.5rem;
       transition:
         background-color var(--transition),
         box-shadow var(--transition);
 
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
     .post:hover {
@@ -72,7 +69,7 @@ const frontmatter = post.data;
     }
 
     .post__metadata {
-      flex: 2 1 40ch;
+      padding: 2rem;
     }
 
     .post__title {
@@ -111,10 +108,18 @@ const frontmatter = post.data;
     }
 
     .post__image-container {
-      flex: 1 1 200px;
+      order: -1;
+
+      @media screen and (min-width: 50em) {
+        order: 1;
+      }
     }
+
     .post__image {
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/9;
     }
   </style>
 </li>
