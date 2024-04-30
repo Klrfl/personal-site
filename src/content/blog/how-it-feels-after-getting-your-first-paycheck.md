@@ -4,7 +4,7 @@ pubDate: 2024-04-30T09:56:48.692Z
 description: Just for the record, I'm not employed yet, it's a paid gig
 author: Efraim
 tags:
-  - selfchallenge
+  - self challenge
 ---
 About a month a go, a good friend of mine gave me an invite link to a Whatsapp group about web dev. He always had a lot of friends, and so he had a lot of connections too. I quickly joined, and little did I know there would be my first source of income ever.
 
