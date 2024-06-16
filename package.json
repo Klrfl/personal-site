@@ -3,9 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "predev": "pagefind --site dist --output-path ./public/pagefind",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -22,6 +24,7 @@
     "@iconify-json/mdi": "^1.1.65",
     "eslint": "^8.47.0",
     "eslint-plugin-astro": "^0.31.0",
+    "pagefind": "^1.1.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0"
   }
