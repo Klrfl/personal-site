@@ -1,0 +1,21 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Content Manager" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
+    <meta name="robots" content="noindex" />
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <script>
+      import CMS from "decap-cms-app";
+
+      CMS.init();
+    </script>
+  </body>
+</html>

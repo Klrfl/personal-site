@@ -114,6 +114,9 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 <MainLayout
   title={title}
   description="Welcome to Efraim's personal little corner of the internet!">
+  <script
+    slot="script"
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <section class="hero full-columns">
     <div class="hero__text">
       <h1>Hello! I'm Efraim.<span class="hero-wave">👋</span></h1>
@@ -239,6 +242,8 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   </section>
 
   <script>
+    setTimeout(() => console.log("waiting to redirect"), 2000);
+
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", (user) => {
         if (!user) {
