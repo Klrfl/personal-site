@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "./MainLayout.astro";
+
+interface Props {
+  entry: CollectionEntry<"journal">;
+}
+const { entry } = Astro.props;
+const data = entry.data;
+---
+
+<MainLayout title={data.title}>
+  <main class="main-grid">
+    <header class="full-columns">
+      <h1>Day #{data.day} - {data.title}</h1>
+    </header>
+
+    <article class="full-columns">
+      <slot />
+    </article>
+  </main>
+</MainLayout>
