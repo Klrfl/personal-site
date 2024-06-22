@@ -22,6 +22,7 @@ const journalCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     day: z.number(),
+    created_at: z.date(),
     image: z
       .object({
         url: z.string(),

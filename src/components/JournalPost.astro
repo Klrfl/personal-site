@@ -10,7 +10,7 @@ const { entry } = Astro.props;
 
 <li class="journal-entry">
   <h3>
-    <a href={entry.slug}>
+    <a href={`/journal/${entry.slug}`}>
       Day #{entry.data.day} - {entry.data.title}
     </a>
   </h3>

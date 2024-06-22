@@ -1,4 +1,5 @@
 ---
+import JournalLayout from "@/layouts/JournalLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -13,4 +14,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Content />
+<JournalLayout {entry}>
+  <Content />
+</JournalLayout>
