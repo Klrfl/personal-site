@@ -1,0 +1,20 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+const journals = await getCollection("journal");
+---
+
+<MainLayout>
+  <header class="full-columns">
+    <h1>My Daily Journal</h1>
+    <p>My daily on-job training journal. Stay tuned.</p>
+  </header>
+
+  <section class="full-columns">
+    <h2>Journals</h2>
+    <ul class="blog-list">
+      {journals.map((entry) => <li>{entry.data.title}</li>)}
+    </ul>
+  </section>
+</MainLayout>

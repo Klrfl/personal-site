@@ -17,6 +17,21 @@ const blogCollection = defineCollection({
   }),
 });
 
+const journalCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    day: z.number(),
+    image: z
+      .object({
+        url: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
+  journal: journalCollection,
 };

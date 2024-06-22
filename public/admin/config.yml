@@ -41,3 +41,33 @@ collections:
         }
       - { label: "tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "journal"
+    label: "Journal"
+    folder: "src/content/journal"
+    create: true
+    slug: "{{slug}}"
+    fields: 
+      - {name: "title", label: "Title", widget: "string"}
+      - {name: "day", label: "Day", widget: "number"}
+      - {
+          label: "image",
+          name: "image",
+          widget: "object",
+          required: false,
+          fields:
+            [
+              {
+                label: "Image URL",
+                name: "url",
+                widget: "image",
+                required: false,
+              },
+              {
+                label: "Image alt text",
+                name: "alt",
+                widget: "string",
+                required: false,
+              },
+            ],
+        }
+      - {name: "body", label: "Body", widget: "markdown"}
