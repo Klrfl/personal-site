@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  entry: CollectionEntry<"journal">;
+}
+const { entry } = Astro.props;
+---
+
+<li class="journal-entry">
+  <h3>
+    <a href={entry.slug}>
+      Day #{entry.data.day} - {entry.data.title}
+    </a>
+  </h3>
+
+  {
+    entry.data.image && (
+      <Image
+        width={450}
+        height="800"
+        src={entry.data.image.url}
+        alt={entry.data.image.alt}
+      />
+    )
+  }
+</li>
+
+<style>
+  .journal-entry {
+    outline: 1px solid var(--outline-color-mute);
+    padding: 1rem;
+  }
+</style>
