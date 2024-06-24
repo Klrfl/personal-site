@@ -98,6 +98,7 @@ a:hover {
 }
 
 h1 {
+  margin-block: 2rem 0;
   font-size: 3rem;
   line-height: 0.9;
 }

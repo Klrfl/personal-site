@@ -14,8 +14,11 @@ const { title, description } = Astro.props;
 
 <style>
   main {
+    min-height: 80vh;
+
     --column-count: 6;
     display: grid;
+    align-content: start;
     grid-template-columns:
       minmax(1rem, 1fr)
       repeat(var(--column-count), minmax(0, 10rem))
