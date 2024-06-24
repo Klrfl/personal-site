@@ -242,8 +242,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   </section>
 
   <script>
-    setTimeout(() => console.log("waiting to redirect"), 2000);
-
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", (user) => {
         if (!user) {
