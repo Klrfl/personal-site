@@ -70,5 +70,5 @@ collections:
               },
             ],
         }
-      - {name: "created_at", label: "Created at", widget: "date"}
+      - {name: "created_at", label: "Created at", widget: "datetime"}
       - {name: "body", label: "Body", widget: "markdown"}
