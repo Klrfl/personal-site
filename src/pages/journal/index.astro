@@ -15,7 +15,11 @@ const journals = await getCollection("journal");
   <section class="full-columns">
     <h2>Journals</h2>
     <ul class="blog-list">
-      {journals.map((entry) => <JournalPost {entry} />)}
+      {
+        journals.map((entry, index) => (
+          <JournalPost isLast={index === journals.length - 1} {entry} />
+        ))
+      }
     </ul>
   </section>
 </MainLayout>

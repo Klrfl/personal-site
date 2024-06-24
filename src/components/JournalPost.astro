@@ -3,17 +3,27 @@ import type { CollectionEntry } from "astro:content";
 import Image from "astro/components/Image.astro";
 
 interface Props {
+  isLast: boolean;
   entry: CollectionEntry<"journal">;
 }
-const { entry } = Astro.props;
+const { isLast, entry } = Astro.props;
 ---
 
-<li class="journal-entry">
-  <h3>
-    <a href={`/journal/${entry.slug}`}>
-      Day #{entry.data.day} - {entry.data.title}
-    </a>
-  </h3>
+<li class="journal-entry-wrapper">
+  <a class="journal-entry" href={`/journal/${entry.slug}`}>
+    <div class="day">
+      <span class="day__count">
+        #{entry.data.day}
+      </span>
+      {!isLast && <span class="day__line" />}
+    </div>
+    <div class="journal-entry__text">
+      <h3>
+        {entry.data.title}
+      </h3>
+      <p>{entry.data.created_at.toLocaleDateString()}</p>
+    </div>
+  </a>
 
   {
     entry.data.image && (
@@ -29,7 +39,47 @@ const { entry } = Astro.props;
 
 <style>
   .journal-entry {
-    outline: 1px solid var(--outline-color-mute);
-    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+
+    display: flex;
+    position: relative;
+    gap: 1rem;
+  }
+
+  .journal-entry:hover {
+    color: var(--primary);
+  }
+
+  .journal-entry .day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journal-entry .day__count {
+    outline: 2px solid var(--outline-color-secondary);
+    padding: 0.4rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .journal-entry .day__line {
+    background: var(--outline-color-secondary);
+    height: 100%;
+    width: 0.1rem;
+  }
+
+  .journal-entry__text {
+    padding-block: 0 2rem;
+  }
+
+  .journal-entry h3 {
+    margin-block: 0 0.2rem;
+  }
+
+  .journal-entry p {
+    margin-block: 0;
   }
 </style>
