@@ -2,7 +2,6 @@
 import MyLayout from "@layouts/MyLayout.astro";
 import BlogPost from "@components/BlogPost.astro";
 
-import { Icon } from "astro-icon/components";
 import CTA from "@components/CTA.astro";
 import CategoryLink from "@components/CategoryLink.astro";
 import Footer from "@components/Footer.astro";
@@ -28,11 +27,6 @@ const processedTags = allTags.reduce((acc, tag) => {
 ---
 
 <MyLayout title={title} description="Efraim blog">
-  <script
-    slot="script"
-    src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script slot="script" src="/pagefind/pagefind-ui.js"></script>
-
   <main class="main-grid">
     <header>
       <h1>Efraim's Blog</h1>
@@ -42,10 +36,6 @@ const processedTags = allTags.reduce((acc, tag) => {
         front-end web development. Long story short, I heard of Astro and I want
         to be able to make blogs. So, here we are.
       </p>
-
-      <div id="search">
-        <Icon name="mdi:search" class="pagefind-ui__icon" />
-      </div>
     </header>
 
     <section class="main-section blogs">
@@ -73,105 +63,6 @@ const processedTags = allTags.reduce((acc, tag) => {
 
   <Footer />
 </MyLayout>
-
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    new PagefindUI({ element: "#search", showSubResults: true });
-  });
-</script>
-
-<style is:global>
-  #search {
-    position: relative;
-    font-family: inherit;
-  }
-
-  .pagefind-ui__suppressed,
-  .pagefind-ui__hidden {
-    display: none;
-  }
-
-  .pagefind-ui__icon {
-    font-size: 2rem;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-  }
-
-  .pagefind__ui-search-clear {
-    background: red;
-    right: 1rem;
-  }
-
-  .pagefind-ui__search-input {
-    border: none;
-    outline: 2px solid var(--outline-color-mute);
-    padding-inline: 4rem 1rem;
-    padding-block: 1rem;
-    width: 100%;
-    height: 100%;
-  }
-
-  .pagefind-ui__search-input:focus-within {
-    outline: 4px solid var(--outline-color-secondary);
-  }
-
-  .pagefind-ui__drawer {
-    padding: 1rem;
-    padding-block-end: 2rem;
-    outline: 2px solid var(--outline-color-secondary);
-    z-index: 2;
-    box-shadow: 0 2px 8px var(--outline-color-mute);
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    backdrop-filter: blur(0.5rem);
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-  .pagefind-ui__results {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .pagefind-ui__result {
-    background: var(--secondary);
-    display: flex;
-    gap: 0.5em;
-  }
-
-  .pagefind-ui__result-thumb {
-    max-width: 15ch;
-    aspect-ratio: 16/9;
-  }
-
-  .pagefind-ui__result-inner {
-    padding: 1rem;
-  }
-
-  .pagefind-ui__result-inner p {
-    margin-block: 0 0.5rem;
-    font-size: 0.95rem;
-  }
-
-  .pagefind-ui__button {
-    background: var(--secondary);
-    outline: 1px solid var(--primary);
-    margin-block: 1rem;
-    padding: 1em 2em;
-
-    display: inline-block;
-    cursor: pointer;
-  }
-</style>
 
 <style>
   .main-grid {
