@@ -3,7 +3,13 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import JournalPost from "@/components/JournalPost.astro";
 
-const journals = await getCollection("journal");
+const allJournals = await getCollection("journal");
+const journals = allJournals.sort((a, b) => {
+  return (
+    new Date(b.data.created_at).getTime() -
+    new Date(a.data.created_at).getTime()
+  );
+});
 ---
 
 <MainLayout>
