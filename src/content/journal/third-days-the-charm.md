@@ -1,7 +1,7 @@
 ---
 title: Third day's the charm
 day: 3
-created_at: 2024-07-04T07:13:00.000Z
+created_at: 2024-07-03T20:13:00.000Z
 ---
 Today is Wednesday and like yesterday I arrived way too fast. And I also arrived before the janitor. There wasn't a lot of tasks today, just a little bit of Docker and technical support.
 
