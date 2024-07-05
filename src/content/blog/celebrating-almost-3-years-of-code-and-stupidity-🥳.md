@@ -17,7 +17,7 @@ Also I would like to use this occasion to announce a new revamp of my site, whic
 
 ## Search bar
 
-The blog page now has a brand new search bar!! yay!!! Powered by Pagefind, now you can search for blog posts easily.
+The site page now has a brand new search bar at the top!! yay!!! Powered by Pagefind, now you can search for blog posts and all the pages on the site very easily.
 
 ## Decap
 
