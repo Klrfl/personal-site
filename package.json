@@ -18,6 +18,7 @@
     "astro": "^3.3.2",
     "astro-icon": "^1.1.0",
     "decap-cms-app": "^3.1.10",
+    "decap-cms-media-library-uploadcare": "^3.0.2",
     "sharp": "^0.33.3"
   },
   "devDependencies": {
