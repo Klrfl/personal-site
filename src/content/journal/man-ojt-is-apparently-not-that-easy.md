@@ -1,5 +1,5 @@
 ---
-title: "Man OJT is apparently not that easy "
+title: Man, OJT is apparently not that easy...
 day: 9
 created_at: 2024-07-11T20:45:00.000Z
 ---
