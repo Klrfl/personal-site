@@ -10,6 +10,9 @@ media_library:
   name: uploadcare
   config:
     publicKey: e3d7463f1b8b53318662
+  settings:
+    autoFilename: true
+    defaultOperations: '/resize/800x600/'
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import MainLayout from "./MainLayout.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   entry: CollectionEntry<"journal">;
@@ -13,6 +14,21 @@ const data = entry.data;
   <main class="main-grid">
     <header class="full-columns">
       <h1>Day #{data.day} - {data.title}</h1>
+      <p>
+        Written at <time datetime={data.created_at.toLocaleString()}
+          >{new Date(data.created_at).toLocaleString()}</time
+        >
+      </p>
+      {
+        data.image && (
+          <Image
+            src={data.image.url}
+            alt={data.image.alt}
+            width={800}
+            height="600"
+          />
+        )
+      }
     </header>
 
     <article class="full-columns">
@@ -20,3 +36,12 @@ const data = entry.data;
     </article>
   </main>
 </MainLayout>
+
+<style>
+  img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    object-fit: cover;
+    margin-block: 1rem;
+  }
+</style>
