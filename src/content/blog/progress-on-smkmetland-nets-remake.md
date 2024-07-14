@@ -19,7 +19,7 @@ Because of this, I have decided to use another school's articles to fetch from a
 
 Here are some screenshots of the website:
 
-![perhotelan page.](https://ucarecdn.com/8a827613-6bdd-4f8f-9975-d8fe639bee0d/-/resize/800x600/smkmetland.net-perhotelan.png)
+![perhotelan page.](https://ucarecdn.com/478f7e7e-8489-45ec-835b-83d5e956c9ea/-/resize/800x450/smkmetland.net-perhotelan.png)
 
 Yeah that's it for all. Thank you for reading. I will provide more updates as I work more on the site.
 
