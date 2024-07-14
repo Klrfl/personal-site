@@ -4,7 +4,7 @@ pubDate: 2023-12-27T10:03:30.667Z
 description: I present to you my very own tedious but hugely rewarding Neovim journey
 author: Efraim
 image:
-  url: https://ucarecdn.com/04b8d317-80d7-4ab8-baea-de68c7219e61/-/resize/800x600/nvim.png
+  url: https://ucarecdn.com/ccc0bf74-4b7b-4eaf-a253-d604ea3800e4/-/resize/800x450/nvim.png
   alt: My Neovim startup screen
 tags:
   - neovim
@@ -121,7 +121,7 @@ entirely delete VS Code if I want to.
 
 ## Conclusion
 
-![My Neovim startup screen](/assets/uploads/nvim.png)
+![My Neovim startup screen](https://ucarecdn.com/ccc0bf74-4b7b-4eaf-a253-d604ea3800e4/-/resize/800x450/nvim.png)
 
 So, if you're asking right now, "is it really worth it to try Neovim?" I would
 answer "absolutely!" I think the whole experience of setting up Neovim tailored
