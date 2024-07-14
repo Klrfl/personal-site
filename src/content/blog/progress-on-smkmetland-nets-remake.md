@@ -5,7 +5,7 @@ description: An update on my attempt remaking smkmetland.net
 author: Efraim
 image:
   alt: homepage of smkmetland.net remake.
-  url: ""
+  url: https://ucarecdn.com/b6ea0f96-ee82-4a0b-be04-3c506cd8f4c5/-/resize/800x450/
 tags:
   - blog
 ---
