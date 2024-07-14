@@ -4,7 +4,7 @@ pubDate: 2023-12-27T10:03:30.667Z
 description: I present to you my very own tedious but hugely rewarding Neovim journey
 author: Efraim
 image:
-  url: /assets/uploads/nvim.png
+  url: https://ucarecdn.com/04b8d317-80d7-4ab8-baea-de68c7219e61/-/resize/800x600/nvim.png
   alt: My Neovim startup screen
 tags:
   - neovim
