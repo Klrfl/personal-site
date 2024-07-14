@@ -5,7 +5,7 @@ description: Sooo, my school's official website is too ugly, and I decided to
   challenge myself to remake it. It could fail but whatever
 author: Efraim
 image:
-  url: /assets/uploads/screenshot-46-.png
+  url: https://ucarecdn.com/feb4549e-dcb9-4f7f-948c-08301b8dbcc4/-/resize/800x600/-/resize/800x600/screenshot-46-.png
   alt: Screenshot of smkmetland.net landing page.
 tags:
   - self challenge
