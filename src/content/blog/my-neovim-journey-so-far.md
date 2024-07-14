@@ -1,7 +1,7 @@
 ---
 title: My Neovim journey.. so far
 pubDate: 2023-12-27T10:03:30.667Z
-description: I present to you my very own tedious but hugely rewarding Neovim journey
+description: my tedious but hugely rewarding Neovim journey
 author: Efraim
 image:
   url: https://ucarecdn.com/ccc0bf74-4b7b-4eaf-a253-d604ea3800e4/-/resize/800x450/nvim.png
