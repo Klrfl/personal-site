@@ -5,7 +5,7 @@ description: An update on my attempt remaking smkmetland.net
 author: Efraim
 image:
   alt: homepage of smkmetland.net remake.
-  url: /assets/uploads/smkmetland.net-homepage.png
+  url: ""
 tags:
   - blog
 ---
