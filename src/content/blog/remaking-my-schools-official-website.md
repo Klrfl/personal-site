@@ -5,7 +5,7 @@ description: Sooo, my school's official website is too ugly, and I decided to
   challenge myself to remake it. It could fail but whatever
 author: Efraim
 image:
-  url: /assets/uploads/screenshot-46-.png
+  url: https://ucarecdn.com/b2a0ed5c-ba60-4df7-860f-c50cb2d7938c/-/resize/800x450/screenshot-46-.png
   alt: Screenshot of smkmetland.net landing page.
 tags:
   - self challenge
@@ -16,7 +16,7 @@ In this occasion, I want to document something potentially big: I am remaking my
 
 Why am I doing this you ask.. Well as you can read from the title of this blog post, the main reason is because currently the site has many problems, the most apparent one being its ugliness (Looking at this blog site, I guess I'm kind of a hypocrite by saying this, but what do you know I'm a solo dev compared to a whole IT team).
 
-![Screenshot of smkmetland.net landing page.](/assets/uploads/screenshot-46-.png "Screenshot of smkmetland.net landing page.")
+![Screenshot of smkmetland.net landing page.](https://ucarecdn.com/b2a0ed5c-ba60-4df7-860f-c50cb2d7938c/-/resize/800x450/screenshot-46-.png "Screenshot of smkmetland.net landing page.")
 
 [Check it out by yourself](https://smkmetland.net/ppdb).. An ugly website like this is quite tolerable if the school doesn't have too many resources to invest into its website, but the problem is this school clearly has plenty. We pay a decent amount for tuition, and moreover there is an IT major here (that's why I opted to learn here - I want to be a web dev), they could've asked the students to make a good frontend or something. IMO, there is absolutely no excuse for a site like this.
 
