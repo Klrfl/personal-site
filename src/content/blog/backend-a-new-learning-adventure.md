@@ -4,7 +4,7 @@ pubDate: 2024-02-18T08:12:32.266Z
 description: Learning backend development as a frontend developer
 author: Efraim
 image:
-  url: /assets/uploads/abs-app.png
+  url: https://ucarecdn.com/418750ea-8ec7-4c1b-aab1-4dbd079af562/-/resize/800x450/abs-app.png
   alt: HTTPie testing my ABS API.
 tags:
   - self challenge
@@ -25,7 +25,7 @@ So currently I am working on a massively more complicated API for Artisan Bevera
 
 Just to be honest, when making this API, my impostor syndrome kicked in. I chose Fiber *again* for this project, which I know is not the best choice. From what i've read, the Go community also does not like it, because it's built on top of FastHTTP, which is not extensible from Go's built in `net/http` package. Then, I added GORM, which apparently the Go community also doesn't like, citing "unecessary complexity". They prefer writing raw prepared SQL statements. Nevertheless, I will carry on, because delivering an imperfect working MVP is better than not delivering a nonexistent, perfect product, right?
 
-![ABS API from HTTPie.](/assets/uploads/abs-app.png "ABS API from HTTPie.")
+![ABS API from HTTPie.](https://ucarecdn.com/418750ea-8ec7-4c1b-aab1-4dbd079af562/-/resize/800x450/abs-app.png "ABS API from HTTPie.")
 
 Hopefully I can continue this journey and become a fullstack dev soon! Wish me luck.
 

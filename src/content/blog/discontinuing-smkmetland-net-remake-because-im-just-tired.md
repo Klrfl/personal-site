@@ -4,7 +4,7 @@ pubDate: 2023-09-18T05:22:07.575Z
 description: Update on my smkmetland.net remake project, and a rant
 author: Efraim
 image:
-  url: /assets/uploads/mfw.jpg
+  url: https://ucarecdn.com/1c9e7928-8fcb-4507-8d0b-349f5597b6f5/-/resize/800x450/mfw.jpg
   alt: My face when
 tags:
   - blog
