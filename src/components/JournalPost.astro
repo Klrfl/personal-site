@@ -66,9 +66,11 @@ const { isLast, entry } = Astro.props;
 
   .journal-entry .day__count {
     outline: 2px solid var(--outline-color-secondary);
-    padding: 0.4rem;
-    aspect-ratio: 1 / 1;
     border-radius: 50%;
+    width: 3em;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
     text-align: center;
   }
 
