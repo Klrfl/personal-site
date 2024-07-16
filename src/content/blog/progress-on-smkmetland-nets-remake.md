@@ -5,7 +5,7 @@ description: An update on my attempt remaking smkmetland.net
 author: Efraim
 image:
   alt: homepage of smkmetland.net remake.
-  url: /assets/uploads/smkmetland.net-homepage.png
+  url: https://ucarecdn.com/b6ea0f96-ee82-4a0b-be04-3c506cd8f4c5/-/resize/800x450/
 tags:
   - blog
 ---
@@ -19,7 +19,7 @@ Because of this, I have decided to use another school's articles to fetch from a
 
 Here are some screenshots of the website:
 
-![perhotelan page.](/assets/uploads/smkmetland.net-perhotelan.png)
+![perhotelan page.](https://ucarecdn.com/478f7e7e-8489-45ec-835b-83d5e956c9ea/-/resize/800x450/smkmetland.net-perhotelan.png)
 
 Yeah that's it for all. Thank you for reading. I will provide more updates as I work more on the site.
 
