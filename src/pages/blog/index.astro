@@ -41,15 +41,6 @@ const processedTags = allTags.reduce((acc, tag) => {
     <section class="main-section blogs">
       <h2>My recent blogs</h2>
 
-      <ul class="blog-list">
-        {sortedPosts.map((post) => <BlogPost post={post} />)}
-      </ul>
-
-      <CTA href="/latest" margin>See more of my blogs</CTA>
-    </section>
-
-    <aside>
-      <h2>Tags</h2>
       <ul class="tag-list">
         {
           // Object.entries returns an array
@@ -58,7 +49,13 @@ const processedTags = allTags.reduce((acc, tag) => {
           ))
         }
       </ul>
-    </aside>
+
+      <ul class="blog-list">
+        {sortedPosts.map((post) => <BlogPost post={post} />)}
+      </ul>
+
+      <CTA href="/latest" margin>See more of my blogs</CTA>
+    </section>
   </main>
 
   <Footer />
@@ -83,8 +80,7 @@ const processedTags = allTags.reduce((acc, tag) => {
   }
 
   .blogs {
-    max-width: 120ch;
-    grid-column: content-start / 6;
+    grid-column: content-start / span 6;
   }
 
   aside {
@@ -107,7 +103,11 @@ const processedTags = allTags.reduce((acc, tag) => {
 
   .tag-list {
     list-style: none;
-    margin: 0;
+    margin: 1rem 0;
     padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 </style>
