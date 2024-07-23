@@ -57,9 +57,10 @@ const frontmatter = post.data;
         background-color var(--transition),
         box-shadow var(--transition);
 
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
+      @media screen and (min-width: 50em) {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     .post:hover {
@@ -111,6 +112,7 @@ const frontmatter = post.data;
       order: -1;
 
       @media screen and (min-width: 50em) {
+        max-width: 30em;
         order: 1;
       }
     }
