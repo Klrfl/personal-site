@@ -7,8 +7,9 @@ image:
   alt: homepage of smkmetland.net remake.
   url: https://ucarecdn.com/b6ea0f96-ee82-4a0b-be04-3c506cd8f4c5/-/resize/800x450/
 tags:
-  - blog
+  - blabla
 ---
+
 Hello and welcome to my blog! As you have probably known, I am currently attempting to redesign [smkmetland.net](https://smkmetland.net). But of course like all things it doesn't go smoothly at all.
 
 ## THE REAL SITE IS DOWN!!!! and more

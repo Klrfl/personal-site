@@ -8,9 +8,9 @@ image:
   alt: My Neovim startup screen
 tags:
   - neovim
-  - successes
-  - self challenge
+  - blabla
 ---
+
 Hello and welcome to my personal blog. In this occassion I want to document my journey using Neovim.
 Honestly I have never thought that you could fall in love with a piece of software
 (that's probably just a me thing), but here I am.
@@ -91,8 +91,8 @@ setting up Neovim for Astro, and read documentation very very carefully.
 
 You know what I missed? turns out I needed only two small things:
 
-* I need to install the tsx parser from treesitter
-* and I need to install a special Prettier plugin for Astro for it to work properly.
+- I need to install the tsx parser from treesitter
+- and I need to install a special Prettier plugin for Astro for it to work properly.
 
 Yeah, turns out I just didn't bother to read. Definitely a lesson learned the hard
 way there.

@@ -7,8 +7,9 @@ image:
   url: https://ucarecdn.com/09fbe9a7-4590-46d6-bea0-3d7c549ab7ca/-/resize/800x450/go-screenshot.png
   alt: A screenshot of Go code. I don't know what image to include in this post haha
 tags:
-  - self challenge
+  - blabla
 ---
+
 Hello everyone, thanks for joining me in this blog post. Looking back, time flew by so fast, and I want to take a step back and admire how far I have come in this journey. From Python to Javascript to Go and TypeScript, I feel like I am finally stepping in the right direction in life.
 
 I still remember opening PyCharm and getting ready to look at HTML/CSS/JS tutorials back in 2021 - yes, I used PyCharm because that is what Mosh told me to use. I don't have screenshots but I still have the file metadata preserved. The first thing I made was a site dedicated to Sebastian Vettel - don't read it tho, it's too cringy haha.

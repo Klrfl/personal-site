@@ -4,8 +4,9 @@ pubDate: 2024-04-30T09:56:48.692Z
 description: Just for the record, I'm not employed yet, it's a paid gig
 author: Efraim
 tags:
-  - self challenge
+  - blabla
 ---
+
 About a month a go, a good friend of mine gave me an invite link to a Whatsapp group about web dev. He always had a lot of friends, and so he had a lot of connections too. I quickly joined, and little did I know there would be my first source of income ever.
 
 ## Didn't see the gig coming
@@ -51,3 +52,4 @@ I delivered the zip file (yes a zip file, because the client, who is apparently 
 Oh my God, and oh my God it was glorious. Seeing the 2 '100k successfully transfered to your account' notifications really got me going. I can't honestly believe my eyes. I just got paid for doing a static page?? haha.
 
 Anyways, that was my experience getting my first paycheck. Hope you can learn something from this post! Thanks for reading.
+

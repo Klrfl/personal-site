@@ -8,7 +8,9 @@ image:
   alt: HTTPie testing my ABS API.
 tags:
   - self challenge
+  - blabla
 ---
+
 Hello everyone, and welcome to the first blog post in 2024! It's been a while since I last posted here, so, I'm glad to be back here sharing stories on my blog again!
 
 ## Baby steps: CRUD API
@@ -23,7 +25,7 @@ Now I titled the first section 'baby steps: CRUD API' but this next project I'm 
 
 So currently I am working on a massively more complicated API for Artisan Beverage Studio (made with Fiber and GORM and Postgres) where you can order food and drinks, (it doesn't handle payments, it doesn't need to anyway). The authentication scheme still uses JWT but now has the ability to distinguish between an anonymous user, a logged in user, and an admin. For now the repository is private, and I am planning on open-sourcing it after reaching MVP.
 
-Just to be honest, when making this API, my impostor syndrome kicked in. I chose Fiber *again* for this project, which I know is not the best choice. From what i've read, the Go community also does not like it, because it's built on top of FastHTTP, which is not extensible from Go's built in `net/http` package. Then, I added GORM, which apparently the Go community also doesn't like, citing "unecessary complexity". They prefer writing raw prepared SQL statements. Nevertheless, I will carry on, because delivering an imperfect working MVP is better than not delivering a nonexistent, perfect product, right?
+Just to be honest, when making this API, my impostor syndrome kicked in. I chose Fiber _again_ for this project, which I know is not the best choice. From what i've read, the Go community also does not like it, because it's built on top of FastHTTP, which is not extensible from Go's built in `net/http` package. Then, I added GORM, which apparently the Go community also doesn't like, citing "unecessary complexity". They prefer writing raw prepared SQL statements. Nevertheless, I will carry on, because delivering an imperfect working MVP is better than not delivering a nonexistent, perfect product, right?
 
 ![ABS API from HTTPie.](https://ucarecdn.com/418750ea-8ec7-4c1b-aab1-4dbd079af562/-/resize/800x450/abs-app.png "ABS API from HTTPie.")
 
