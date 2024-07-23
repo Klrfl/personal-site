@@ -8,8 +8,9 @@ image:
   url: https://ucarecdn.com/b2a0ed5c-ba60-4df7-860f-c50cb2d7938c/-/resize/800x450/screenshot-46-.png
   alt: Screenshot of smkmetland.net landing page.
 tags:
-  - self challenge
+  - blabla
 ---
+
 In this occasion, I want to document something potentially big: I am remaking my school's website.
 
 ## Why tho?

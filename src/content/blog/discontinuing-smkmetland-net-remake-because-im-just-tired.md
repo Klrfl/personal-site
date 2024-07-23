@@ -7,28 +7,29 @@ image:
   url: https://ucarecdn.com/1c9e7928-8fcb-4507-8d0b-349f5597b6f5/-/resize/800x450/mfw.jpg
   alt: My face when
 tags:
-  - blog
+  - blabla
 ---
+
 Welcome back to my blog! Now if you're reading my blog you might be wondering about my smkmetland.net remake project. Well, I guess an update is overdue. (By the way, I'm writing this blog post while in an exam session so if there's anything amiss, i'll edit it later)
 
 ## An update on smkmetland.net remake project
 
 As you might have probably known, [smkmetland.net](smkmetland.net) has gone live again. But, I will not continue this project for several reasons:
 
-* Lack of access to the raw content via REST API: The content I was able to fetch from the default REST API was already compiled, which means I get this weird soup of unecessary markup from the various WordPress plugins installed. For example, when you view [this post](https://smkmetland.net/ppdb/index.php/2022/12/15/sharing-praktik-baik/) you can see that it has a working, fully functional carousel, but when you fetch the post via the API, you would only get the slides markup without the styles and even the JavaScript.
-* I'm just stuck: the only thing stopping me completing this project besides the raw markup is the fact that I have to choose a headless CMS. Well I suppose this step could be skipped altogether, I already have the markdown files, right?
+- Lack of access to the raw content via REST API: The content I was able to fetch from the default REST API was already compiled, which means I get this weird soup of unecessary markup from the various WordPress plugins installed. For example, when you view [this post](https://smkmetland.net/ppdb/index.php/2022/12/15/sharing-praktik-baik/) you can see that it has a working, fully functional carousel, but when you fetch the post via the API, you would only get the slides markup without the styles and even the JavaScript.
+- I'm just stuck: the only thing stopping me completing this project besides the raw markup is the fact that I have to choose a headless CMS. Well I suppose this step could be skipped altogether, I already have the markdown files, right?
 
 Now with the updates out of the way, I want to rant a bit.
 
 ## Useless projects
 
-I was faced with a dilemma: I was bored. I mean like, really bored. I don't have anything to do at home or school. But yet,  I don't want to do the group projects at school because I think they are utterly useless. No one is working anyway.
+I was faced with a dilemma: I was bored. I mean like, really bored. I don't have anything to do at home or school. But yet, I don't want to do the group projects at school because I think they are utterly useless. No one is working anyway.
 
 Okay, okay, I might need to provide more context here.
 
 So, there's this long term project assigned to us where we have to make an application for our school library. You could use it to lend books, and the library administrator could manage the books in the library more easily. So, the teachers split us into backend and frontend teams. So far so good right?
 
-Here comes the first problem: my classmates... uh.. how should I put this... have less than desirable skills.  Well it's not their fault, the teacher has been slacking off for like the whole year and we actually get **0 knowledge** at school. Everything I have learned, WE have learned, is from YouTube, Google and StackOverflow.
+Here comes the first problem: my classmates... uh.. how should I put this... have less than desirable skills. Well it's not their fault, the teacher has been slacking off for like the whole year and we actually get **0 knowledge** at school. Everything I have learned, WE have learned, is from YouTube, Google and StackOverflow.
 
 The second problem is actually related to the first one, which is about tech stack choice. On the frontend I already know Vue so that's what I ended up using. But guess what, my classmates don't know any framework so there's a significant learning curve if they want to learn Vue. On the backend, I chose to use Supabase because it's relatively easy and everything is already included out of the box, including a database, authentication, an API to fetch from the database, and more.
 
