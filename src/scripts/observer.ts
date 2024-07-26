@@ -13,7 +13,7 @@ const observerOpts = {
 const observer = new IntersectionObserver(observerCallback, observerOpts);
 
 // attach observer to elements
-const mainSectionEls = document.querySelectorAll("section.main-section");
+const mainSectionEls = document.querySelectorAll("section.main-section > *");
 
 document.addEventListener("DOMContentLoaded", () => {
   mainSectionEls.forEach((mainSection) => {
