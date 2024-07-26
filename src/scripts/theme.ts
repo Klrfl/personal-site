@@ -1,7 +1,9 @@
 const themeIdentifier = "klrfl-theme";
 const bodyAttribute = "data-theme";
 
-export function getTheme() {
+type Theme = "dark" | "light";
+
+export function getTheme(): Theme {
   const themePreference = localStorage.getItem(themeIdentifier);
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -10,15 +12,15 @@ export function getTheme() {
     else localStorage.setItem(themeIdentifier, "light");
   }
 
-  return localStorage.getItem(themeIdentifier);
+  return localStorage.getItem(themeIdentifier) as Theme;
 }
 
-export function setTheme(targetTheme) {
+export function setTheme(targetTheme: Theme) {
   document.body.setAttribute(bodyAttribute, targetTheme);
   localStorage.setItem(themeIdentifier, targetTheme);
 
-  const lightIcon = document.querySelector(".icon--light");
-  const darkIcon = document.querySelector(".icon--dark");
+  const lightIcon = document.querySelector<HTMLElement>(".icon--light");
+  const darkIcon = document.querySelector<HTMLElement>(".icon--dark");
 
   if (targetTheme === "dark") {
     darkIcon.style.display = "block";

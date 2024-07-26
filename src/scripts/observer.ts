@@ -1,4 +1,4 @@
-const observerCallback = (entries, observer) => {
+const observerCallback: IntersectionObserverCallback = (entries, _) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
       entry.target.classList.remove("hidden");
