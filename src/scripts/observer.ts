@@ -1,4 +1,4 @@
-const observerCallback = (entries, observer) => {
+const observerCallback: IntersectionObserverCallback = (entries, _) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
       entry.target.classList.remove("hidden");
@@ -13,7 +13,7 @@ const observerOpts = {
 const observer = new IntersectionObserver(observerCallback, observerOpts);
 
 // attach observer to elements
-const mainSectionEls = document.querySelectorAll("section.main-section");
+const mainSectionEls = document.querySelectorAll("section.main-section > *");
 
 document.addEventListener("DOMContentLoaded", () => {
   mainSectionEls.forEach((mainSection) => {

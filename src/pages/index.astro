@@ -260,22 +260,22 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     padding-block: 1rem;
   }
 
-  .main-section.hidden > * {
+  .main-section > .hidden {
     opacity: 0;
   }
 
-  .main-section.hidden:nth-child(even) > * {
-    transform: translateX(50%);
-  }
+  .main-section .hidden {
+    transform: translateX(30%);
 
-  .main-section.hidden:nth-child(odd) > * {
-    transform: translateX(-50%);
+    @media screen and (prefers-reduced-motion) {
+      transform: none;
+    }
   }
 
   .main-section > * {
     transition:
-      opacity var(--transition-slow),
-      transform var(--transition-slow);
+      opacity var(--transition-slow) 200ms,
+      transform var(--transition-slow) 200ms;
   }
 
   .hero {
@@ -373,5 +373,5 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 </style>
 
 <script>
-  import "../scripts/observer.js";
+  import "@/scripts/observer";
 </script>
