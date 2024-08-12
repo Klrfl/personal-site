@@ -85,13 +85,14 @@ foreach ($images as $image) {
 But then an error came out. The `is_deleted` was not there. I swear, I tried to
 `var_dump ` the `$key` from `$images` and all it showed was the image `id` key.
 Why would the hidden field show up, but the checkbox which is not hidden or
-disabled, not? I went semi crazy over this.
+disabled, not? Uhhh this is the worst feeling ever you will encounter when writing
+code. I went semi crazy over this.
 
 After like an hour or two with fruitless debugging, I tried checking one of the
 images. And oh my God it showed up.
 
-Turns out that if a checkbox isn't checked, it will not show up on the
-backend. Only when it is toggled on, then it shows up.
+Turns out that if a checkbox **isn't checked**, it will not show up on the
+backend. Only when it is toggled **on**, then it shows up.
 
 I hope this post saves another beginner like me from wasting countless hours from
 debugging... haha
