@@ -65,7 +65,7 @@ I was really proud of it because I came up with it myself. Not really, I read
 about the array part from [this blog
 post](https://mattstauffer.com/blog/a-little-trick-for-grouping-fields-in-an-html-form/)
 Big thanks, Matt Staufer. If you don't understand how the input transforms into
-an array in the backend, which is crucial for understanding what I mean below,
+an array in the backend, which is crucial for understanding what I did here,
 I recommend reading the post first.
 
 On the backend, we can just loop through the `images` array and check whether
