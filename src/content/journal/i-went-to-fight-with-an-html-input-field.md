@@ -1,5 +1,5 @@
 ---
-title: I fought with an HTML input field today
+title: I got into a fight with an HTML input field today
 day: 29
 created_at: 2024-08-12T20:40:00.000Z
 ---
