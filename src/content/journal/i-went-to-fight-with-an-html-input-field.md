@@ -3,8 +3,9 @@ title: I fought with an HTML input field today
 day: 29
 created_at: 2024-08-12T20:40:00.000Z
 ---
-Today is Monday, and I decided to write a dedicated entry today (which I should)
-because unlike the past few weeks, today I actually did something interesting.
+Today is another Monday, and I decided to write a dedicated entry today (which I should)
+because unlike other Mondays in the past few weeks, today I actually did something interesting , and I feel today really deserves its own post.
+
 Still from last week, I was working on the main site's CMS, which is built with
 CodeIgniter 3 (😭). I continued building the CRUD functionality on the media,
 which involved file input fields.
