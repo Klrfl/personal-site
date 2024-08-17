@@ -1,7 +1,7 @@
 ---
 title: "Wearing a new hat: QA Testing"
 day: 33
-created_at: 2024-08-16T13:31:00.000Z
+created_at: 2024-08-16T20:31:00.000Z
 ---
 Ladies and gentlemen, I announce with pleasure that it is Thursday: today I moved on to a new internal application for managing company licenses and stuff. I was given a new task to test for bugs and unexpected behavior. I was to write down the bugs and its details to a spreadsheet to fix them later. That's what I did all day, nothing more.
 
