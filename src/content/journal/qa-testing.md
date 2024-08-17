@@ -1,5 +1,5 @@
 ---
-title: QA Testing
+title: "Wearing a new hat: QA Testing"
 day: 33
 created_at: 2024-08-18T06:31:00.000Z
 ---
