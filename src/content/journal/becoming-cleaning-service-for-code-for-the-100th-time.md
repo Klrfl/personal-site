@@ -1,7 +1,7 @@
 ---
 title: Becoming cleaning service for code for the 100th time
 day: 30
-created_at: 2024-08-18T06:39:00.000Z
+created_at: 2024-08-13T13:39:00.000Z
 ---
 I continued to work on tasks from yesterday, which is cleaning up the main company website's CMS. I don't know how many times I wrote this already but man do I hate legacy code. That [2024 Stack Overflow Survey result](https://survey.stackoverflow.co/2024/professional-developers/#2-most-common-frustrations) will resonate with me forever now.
 
