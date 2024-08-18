@@ -111,7 +111,7 @@ h1 {
 
 h2 {
   border-bottom: 2px solid var(--primary);
-  margin-block: 2rem 1rem;
+  margin-block: 0;
   padding-block: 0 0.5rem;
   line-height: 1;
 }
