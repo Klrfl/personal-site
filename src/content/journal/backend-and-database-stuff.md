@@ -1,6 +1,6 @@
 ---
 title: Backend AND database stuff
-day: 43
+day: 42
 created_at: 2024-08-29T21:21:00.000Z
 ---
 Like yesterday, there's not a lot to do today. When I do get a task, it's a bit
