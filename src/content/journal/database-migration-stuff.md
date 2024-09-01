@@ -1,7 +1,7 @@
 ---
 title: Database migration stuff
 day: 40
-created_at: 2024-09-01T21:17:00.000Z
+created_at: 2024-08-27T04:17:00.000Z
 ---
 _this post is for today and yesterday, because if I wrote a dedicated post about
 yesterday it would make be really short_
