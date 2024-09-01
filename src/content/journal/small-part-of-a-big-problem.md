@@ -1,6 +1,6 @@
 ---
 title: Small part of a big problem
-day: 44
+day: 43
 created_at: 2024-08-30T21:22:00.000Z
 ---
 Today I was told that I have another task which is to test all modules of an
