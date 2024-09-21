@@ -1,7 +1,7 @@
 ---
 title: Website content updates
 day: 52
-created_at: 2024-09-21T18:41:00.000Z
+created_at: 2024-09-13T01:41:00.000Z
 ---
 Today after I finished pasting the missing error messages and suggestions in the
 spreadsheet, I told sir Adit about it and then proceeded to mostly doing nothing for most of the day, save for working on helping change the company website's content. 
