@@ -3,7 +3,7 @@ title: I am once again fixing bugs (on progress)
 day: 56
 created_at: 2024-09-20T08:21:00.000Z
 ---
-Like I said on (insert link here) day 54, much of the bugs in MPS are related to
+Like I said on (insert link here) day 50, much of the bugs in MPS are related to
 form validation, so it's fairly easy to fix. I implemented validation in both
 the frontend and the backend but only in some pages, because sometimes it is
 just not possible to do both without breaking the apps in some other pages. Let
