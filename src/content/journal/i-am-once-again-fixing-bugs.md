@@ -1,7 +1,7 @@
 ---
 title: I am once again fixing bugs
 day: 56
-created_at: 2024-09-17T18:21:00.000Z
+created_at: 2024-09-17T01:21:00.000Z
 ---
 Like I said on (insert link here) day 53, much of the bugs in MPS are related to
 form validation, so it's fairly easy to fix. I implemented validation in both
