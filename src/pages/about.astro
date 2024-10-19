@@ -1,45 +1,63 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 const title = "Efraim Munthe | About";
-const myName = "Efraim";
-const skills = ["Python", "HTML", "CSS", "JS", "Vue", "Astro"];
+const myName = "Efraim Munthe";
+const skills = [
+  "Git",
+  "HTML",
+  "CSS",
+  "SASS/SCSS",
+  "Tailwind",
+  "JavaScript",
+  "TypeScript",
+  "Go",
+  "Vue",
+  "Nuxt",
+  "React",
+  "Astro",
+  "PostgreSQL",
+  "Python",
+  "Laravel",
+  "PHP",
+  "Firebase",
+  "Supabase",
+];
 ---
 
-<MainLayout title={title} description="A little bit about Efraim">
+<MainLayout title={title} description="A little bit about me">
   <article class="main-section full-columns">
     <h1>About me</h1>
     <p>
-      Hello, my name is {myName}. I am a student from Indonesia currently
-      learning web development. I have 2 years of experience using various
-      technologies such as JavaScript, Vue and Astro.
+      Hello, my name is {myName}. I am a student and tech enthusiast from
+      Indonesia currently learning web development. I have {
+        new Date().getFullYear() - 2021
+      } years of experience using various web technologies to craft beautiful
+      clean and maintainable websites.
     </p>
-    <p>In the frontend space, I have picked up various things, including:</p>
+    <p>
+      When it comes to tools, I am flexible to learning whatever is needed to
+      get the job done. Throughout my career so far in the web development
+      space, I have made various things with several technologies, including:
+    </p>
     <ul>
-      {
-        skills.map((skill) => {
-          return <li>{skill}</li>;
-        })
-      }
+      {skills.map((skill) => <li>{skill}</li>)}
     </ul>
+
     <p>
-      I am also interested in backend web development, so I have learned a
-      little bit of bash scripting. I have learned a little bit about Firebase,
-      PostgreSQL and also Node & Express.
+      In my development, I primarily use VS Code for work, but uses Neovim on
+      WSL for everything else. You can check out my config on <a
+        href="https://github.com/klrfl/nvim-config">Github</a
+      >.
     </p>
 
     <p>
-      In my development, I primarily use VS Code for my code editor, but
-      recently I have gotten into Neovim. I will probably publish my config
-      soon.
-    </p>
-
-    <p>
-      when I'm not coding, I like editing Indonesian Wikipedia articles about
-      Formula One or playing chess.
+      when I'm not coding, I like reading about tech, editing Indonesian
+      Wikipedia articles about Formula One or playing chess.
     </p>
     <p>
       I first got into software development when I was in 9th grade. At the time
       I was looking at Python tutorial videos on YouTube, and out of curiosity I
+
 
       <a href="https://youtu.be/_uQrJ0TkZlc">clicked one of them</a> and learned
       Python. I remember when I first installed Python and Pycharm, then
@@ -50,3 +68,9 @@ const skills = ["Python", "HTML", "CSS", "JS", "Vue", "Astro"];
     </p>
   </article>
 </MainLayout>
+
+<style>
+  ul {
+    column-count: 2;
+  }
+</style>
