@@ -4,12 +4,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
 import { formatDate } from "@/scripts/utils";
+import BlogPost from "@/components/BlogPost.astro";
 
 interface Props {
   entry: CollectionEntry<"blog">;
+  previous: CollectionEntry<"blog">;
+  next: CollectionEntry<"blog">;
 }
 
-const { entry } = Astro.props;
+const { entry, previous, next } = Astro.props;
 const frontmatter = entry.data;
 ---
 
@@ -61,6 +64,15 @@ const frontmatter = entry.data;
   <article class="full-columns">
     <slot />
   </article>
+
+  <aside class="full-columns">
+    <h2>Read more</h2>
+
+    <ul class="blog-list">
+      {previous && <BlogPost post={previous} />}
+      {next && <BlogPost post={next} />}
+    </ul>
+  </aside>
 </MainLayout>
 
 <style>
