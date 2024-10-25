@@ -1,5 +1,5 @@
 ---
-title: I got sick.
+title: So.. I got sick.
 day: 66
 created_at: 2024-10-25T19:05:00.000Z
 ---
