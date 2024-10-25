@@ -1,6 +1,6 @@
 ---
 title: I got sick.
-day: 60
+day: 66
 created_at: 2024-10-25T19:05:00.000Z
 ---
 So yesterday I got sick, and i'm staying home until today. It isn't that serious, just a fever, but parents were so concerned that I was getting DBD (dengue fever) haha.
