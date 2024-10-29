@@ -45,17 +45,14 @@ const frontmatter = post.data;
       list-style: none;
     }
 
-    .post-container + .post-container {
-      margin-block-start: 1rem;
-    }
-
     .post {
-      border-bottom: 2px solid var(--outline-color-mute);
+      border-top: 2px solid var(--outline-color-mute);
       text-decoration: none;
       color: inherit;
       transition:
+        color var(--transition),
         background-color var(--transition),
-        box-shadow var(--transition);
+        box-shadow var(--transition-slow);
 
       @media screen and (min-width: 50em) {
         display: flex;
@@ -66,7 +63,19 @@ const frontmatter = post.data;
     .post:hover {
       background: var(--block-bg-hover);
       color: var(--nav-link-color-hover);
-      box-shadow: 0 5px 10px var(--outline-color-mute);
+
+      @media (prefers-color-scheme: dark) {
+        --shadow-color: 280deg 25% 46%;
+      }
+      @media (prefers-color-scheme: light) {
+        --shadow-color: 10deg 15% 10%;
+      }
+
+      box-shadow:
+        0.5px 0.5px 0.6px hsl(var(--shadow-color) / 0.25),
+        1px 2px 2px hsl(var(--shadow-color) / 0.25),
+        2px 8px 8px hsl(var(--shadow-color) / 0.25),
+        4px 20px 20px hsl(var(--shadow-color) / 0.25);
     }
 
     .post__metadata {
@@ -110,6 +119,7 @@ const frontmatter = post.data;
 
     .post__image-container {
       order: -1;
+      padding-block: 2rem;
 
       @media screen and (min-width: 50em) {
         max-width: 30em;
