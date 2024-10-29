@@ -49,7 +49,7 @@ body[data-theme="dark"] {
   --text: var(--text-dark);
 
   --secondary: var(--secondary-dark);
-  --navbar-bg: #000a;
+  --navbar-bg: #000b;
 
   --link-color: hsl(240, 87.5%, 80%);
   --link-color-hover: hsl(240, 60%, 60%);
