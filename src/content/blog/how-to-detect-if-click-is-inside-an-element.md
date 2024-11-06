@@ -1,6 +1,6 @@
 ---
 title: How to detect if click is inside an element
-pubDate: 2024-11-06T14:33:00.000Z
+pubDate: 2024-11-06T16:02:00.000Z
 description: Detect if your user is clicking inside or outside an element with
   some client-side JavaScript
 author: Efraim
