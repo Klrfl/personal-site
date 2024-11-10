@@ -262,10 +262,7 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
   .main-section > .hidden {
     opacity: 0;
-  }
-
-  .main-section .hidden {
-    transform: translateX(30%);
+    transform: translateY(5%);
 
     @media screen and (prefers-reduced-motion) {
       transform: none;
@@ -274,8 +271,8 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
   .main-section > * {
     transition:
-      opacity var(--transition-slow) 200ms,
-      transform var(--transition-slow) 200ms;
+      opacity var(--transition-slow),
+      transform var(--transition-slow);
   }
 
   .hero {
@@ -333,11 +330,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     text-align: center;
   }
 
-  #projects,
-  #about {
-    background: var(--secondary);
-  }
-
   .projects-container {
     padding: 0;
     margin: 0;
@@ -348,27 +340,20 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
   }
 
   /* contact */
-  .contact-form {
-    background: var(--secondary);
-    padding: 1em;
-  }
-
   .contact-form :is(label, input, textarea) {
-    padding: 1em;
+    display: block;
   }
 
   .contact-form label {
-    display: block;
-    padding-inline: 0;
+    padding: 1rem 0;
   }
 
-  .contact-form input {
+  .contact-form :is(input, textarea) {
     width: 100%;
+    padding: 1rem;
   }
 
   .contact-form textarea {
-    display: block;
-    width: 100%;
     resize: vertical;
   }
 </style>
