@@ -31,8 +31,11 @@ const footerLinks = [
 
 <footer>
   <div class="footer-text">
-    <p>Made by Klrfl, 2023.</p>
-    <p>See more on <a href="https://github.com/Klrfl">my Github</a></p>
+    <p>
+      Made by Klrfl, {new Date().getFullYear()}. See more on <a
+        href="https://github.com/Klrfl">my Github</a
+      >
+    </p>
   </div>
   <ul class="footer-socials">
     {
@@ -58,10 +61,15 @@ const footerLinks = [
     color: var(--text);
     padding: 2rem;
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    @media screen and (min-width: 50em) {
+      grid-template-columns: max-content 1fr;
+      gap: 1rem;
+      justify-items: start;
+    }
   }
 
   .footer-socials {
@@ -72,6 +80,13 @@ const footerLinks = [
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    justify-content: center;
+
+    @media screen and (min-width: 50em) {
+      justify-content: end;
+    }
+
+    justify-self: end;
   }
 
   .footer-socials li {
