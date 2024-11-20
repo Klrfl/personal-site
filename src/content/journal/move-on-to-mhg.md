@@ -1,6 +1,6 @@
 ---
 title: Move on to MHG
-day: 100
+day: 99
 created_at: 2024-11-15T09:57:00.000Z
 ---
 Now we move on to a new project. This time I worked on the frontend of the MHG website, specifically on the /hotels route. There is a whole page which I was instructed to replicate. It was pretty simple: at the top there's your classic navbar, and for the main content, there's a grid of hotel cards with a button that, when clicked, opens a dialog with details about the hotel. And, at the very top of the dialog, there's an auto-scrolling carousel that has four images in each slide. Should be pretty simple to implement right? right?
