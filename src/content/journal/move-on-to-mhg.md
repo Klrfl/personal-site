@@ -12,8 +12,9 @@ I started planning on how I would code this page. Everything I make:
 
 ## implementing a dialog
 
-The dialog can be implemented natively without any libraries now that HTML has this brand new [dialog](<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog >) element, which has HTML attributes to close the dialog without any JavaScript code. But, it also has methods so we can open and close it programatically. It also handles 
+The dialog can be implemented natively without any libraries now that HTML has this brand new [dialog](<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog >) element, which has HTML attributes to close the dialog without any JavaScript code. But, it also has methods so we can open and close it programatically. It also handles
 
+* closing the dialog automatically via form method attributes (on the form or button)
 * escape keys to close the dialog, and
 * focus trap
 
@@ -33,10 +34,10 @@ Styling issues aside, early on I ran to a fairly major problem. I used a library
 
 In a haste I decided to drop the `showModal()` method in favor of `show()`. This method also can create a dialog, but there are differences:
 
-- no `::backdrop` pseudo-element
-- dialog is not put in the top layer
-- no focus trap
-- no escape key handling
+* no `::backdrop` pseudo-element
+* dialog is not put in the top layer
+* no focus trap
+* no escape key handling
 
 At that moment I thought that the ability to just show the lightbox properly outweights all of the aforementioned downsides. So I pushed through...
 
@@ -50,6 +51,16 @@ body::before, body::after {
 
 Yep it used `!important`. Which I promptly overrided with another `!important`. Sorry 😭
 
-That's just the styling, on the interactivity side I also needed to recreate focus trap, and handle escape keys, which was a nightmare.
+That's just the styling, on the interactivity side I also needed to recreate focus trap and handle escape keys, which was a nightmare.
 
-It took two days but all the issues were successfully ironed out and the dialog was, at last, usable.
+It took two days but all the issues (except one) were successfully ironed out and the dialog was, at last, usable.
+
+## Course correction
+
+On the next day after successfully implemented the dialog, I tested and played around with it until eventually I noticed that I didn't implement focus trap properly, and the user can easily tab their way out of the dialog. At that point, I regretted my decision of not using \`showModal\` and decided to refactor everything. But the results were clear: the style sheet was smaller than what I started with, and I had less JavaScript too, since I didn't have to attach an event listener for things like the escape key and the close dialog.
+
+Now we're back to square one with the lightbox problem. How did I manage to fix it? At first I tried to automatically go full screen when the lightbox appears, but after some testing, it's apparently very unstable. When the user closes the lightbox, the user will get out of full screen and see the lightbox go under the dialog. Very frustating!
+
+With some hacking I found that Photoswipe has an option that allows you to append the lightbox to an element of your choice, so I tried to append it to the dialog. After some promises and also trial and error, it worked!
+
+The way I wrote it I made it seem very straightforward, when in reality it's a lot of googling and trial & error... It took me way longer to fix it than you reading this post! After almost a whole day and a plethora of styling issues, I successfully reimplemented the dialog, this time, correctly.
