@@ -1,4 +1,9 @@
 ---
+interface Props {
+  tag: string;
+  amount: unknown;
+}
+
 const { tag, amount } = Astro.props;
 ---
 
@@ -9,24 +14,22 @@ const { tag, amount } = Astro.props;
 <style>
   .tag {
     margin-block-end: 0.5rem;
-    outline: 2px solid var(--outline-color-secondary);
   }
 
   .tag a {
     color: var(--nav-link-color);
     text-decoration: none;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: block;
+    outline: 2px solid var(--outline-color-secondary);
     transition:
+      outline-color var(--transition),
       background-color var(--transition),
       color var(--transition);
   }
 
-  .tag:hover {
-    outline-color: var(--outline-color);
-  }
-
   .tag a:hover {
+    outline-color: var(--outline-color);
     background: var(--block-bg-hover);
     color: var(--nav-link-color-hover);
   }
