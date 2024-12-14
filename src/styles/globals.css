@@ -32,6 +32,7 @@
   --transition: 200ms ease;
   --transition-slow: 600ms ease;
 }
+
 @media (prefers-reduced-motion) {
   * {
     transform: none;
@@ -110,10 +111,16 @@ h1 {
 }
 
 h2 {
-  border-bottom: 2px solid var(--primary);
-  margin-block: 0;
-  padding-block: 0 0.5rem;
-  line-height: 1;
+  position: relative;
+}
+
+h2::before {
+  content: "#";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(-120%);
+  color: hsl(from var(--primary) h s l / 0.6);
 }
 
 [data-theme="dark"] img {
