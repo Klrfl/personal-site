@@ -22,15 +22,7 @@ const frontmatter = entry.data;
       <h1 class="post-title">{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>
 
-      <p class="post-metadata">
-        <span class="post-metadata__author">
-          By <a href=`/authors/${frontmatter.author}`>{frontmatter.author}</a>
-        </span>
-         -
-        <span class="post-metadata__date">
-          {formatDate(frontmatter.pubDate)}
-        </span>
-      </p>
+      <p class="post-date">{formatDate(frontmatter.pubDate)}</p>
 
       <div class="tags-wrapper">
         <ul class="tags">
@@ -106,8 +98,8 @@ const frontmatter = entry.data;
     line-height: 1;
   }
 
-  .post-metadata__author {
-    font-weight: bold;
+  .post-date {
+    margin-block: 0;
   }
 
   .tags {
