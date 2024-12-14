@@ -45,9 +45,9 @@ const frontmatter = entry.data;
       </div>
     </div>
 
-    <figure class="header__image-wrapper">
-      {
-        frontmatter.image && (
+    {
+      frontmatter.image && (
+        <figure class="header__image-wrapper">
           <Image
             class="header__image"
             src={frontmatter.image.url}
@@ -56,9 +56,9 @@ const frontmatter = entry.data;
             height={450}
             format="webp"
           />
-        )
-      }
-    </figure>
+        </figure>
+      )
+    }
   </header>
 
   <article class="full-columns">
@@ -79,6 +79,15 @@ const frontmatter = entry.data;
   .header__text {
     padding: 2rem;
     grid-column: 1 / 5;
+  }
+
+  header:not(:has(.header__text + .header__image-wrapper)) .header__text {
+    grid-column: 2 / span 6;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .header__image-wrapper {
