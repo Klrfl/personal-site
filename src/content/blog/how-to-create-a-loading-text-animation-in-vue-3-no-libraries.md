@@ -6,7 +6,6 @@ author: Efraim
 tags:
   - vue
   - tutorial
-  - ""
 ---
 Hello and welcome to my first article written in 2025! Today I'm so proud of myself of making a commit of something really great something really useful and definitely productive and not a waste of my time, which is this loading text animation.
 
