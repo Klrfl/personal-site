@@ -77,5 +77,47 @@ export function useLoadingText(params: LoadingTextParams) {
 }
 ```
 
-* todo
-* todo
+Next, we will use `setTimeout` to append dots to the `finalText`:
+
+```ts
+// .. rest of your useLoadingText code
+
+  watch(params.isLoading, (newIsLoading) => {
+    setInterval(() => {
+      finalText.value += '.'
+    }, 500) // add dots every 500ms
+    
+
+   finalText.value = newIsLoading.value ? pLoadingText.value : pText.value
+  })
+```
+
+we will now store the timeout ID returned by `setInterval` and pass it to `clearInterval` to stop the dots from adding infinitely.
+
+```ts
+// ... rest of your useLoadingText code
+
+let timeoutID: NodeJS.Timeout | undefined
+
+watch(params.isLoading, (newIsLoading) => {
+    timeoutID = setInterval(() => {
+      finalText.value += '.'
+    }, 500) // add dots every 500ms
+    
+
+   finalText.value = newIsLoading.value ? pLoadingText.value : pText.value
+  })
+```
+
+But when doing this we notice that the `finalText` will be appended infinitely, and only after stopping the isLoading the `finalText` comes back to its initial state. So for the solution, we will store how many dots have been appended, and when it's already three, we set it back to the `loadingText` without the dots.
+
+```ts
+// .. rest of your useLoadingText code
+watch(params.isLoading, (newIsLoading) => {
+  setTimeout(() => {
+    finalText.value += '.'
+  }, 500) // add dots every 500ms
+
+ finalText.value = newIsLoading.value ? pLoadingText.value : pText.value
+})
+```
