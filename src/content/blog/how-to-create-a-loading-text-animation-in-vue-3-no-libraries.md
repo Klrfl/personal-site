@@ -10,7 +10,7 @@ tags:
 
 Hello and welcome to my first article written in 2025! Today I'm so proud of myself of making a commit of something really great something really useful and definitely productive and not a waste of my time, which is this loading text animation.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ebOLV6TglWM?si=j95YPg7a3fYbI0Rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" style="width:100%; min-height: 60vh" src="https://www.youtube.com/embed/ebOLV6TglWM?si=j95YPg7a3fYbI0Rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 It's beautiful isn't it? 🥹
 
