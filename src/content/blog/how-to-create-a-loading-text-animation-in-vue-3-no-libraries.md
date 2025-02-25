@@ -141,3 +141,64 @@ watch(params.isLoading, (newIsLoading) => {
   finalText.value = newIsLoading.value ? pLoadingText.value : pText.value;
 });
 ```
+
+now we put it all together:
+
+```ts
+// composables/index.ts
+import { ref, toRef, type MaybeRefOrGetter } from "vue";
+
+interface LoadingTextParams {
+  isLoading: MaybeRefOrGetter<boolean>;
+  text: MaybeRefOrGetter<string>;
+  loadingText: MaybeRefOrGetter<string>;
+}
+
+export function useLoadingText(params: LoadingTextParams) {
+  const pText = toRef(params.text);
+  const pLoadingText = toRef(params.loadingText);
+  const finalText = ref(params.text);
+
+  watch(params.isLoading, (newIsLoading) => {
+    if (newIsLoading) {
+      timeoutID = setInterval(() => {
+        finalText.value += ".".repeat(repeatAmount.value);
+        repeatAmount.value += 1;
+        if (repeatAmount.value > 3) repeatAmount.value = 0;
+      }, 500); // add dots every 500ms
+
+      return;
+    }
+
+    clearInterval(timeoutID);
+    timeoutID = undefined;
+
+    finalText.value = newIsLoading.value ? pLoadingText.value : pText.value;
+  });
+
+  return { loadingText: finalText };
+}
+```
+
+## test it out
+
+Now we have put together a simple composable to render a loading text! You can test it in a vue page like so:
+
+```vue
+<script setup lang="ts">
+import { ref } from "vue";
+import { useLoadingText } from "@/composables/";
+
+const isLoading = ref(false);
+
+const { loadingText } = useLoadingText(isLoading, "let's load", "loading");
+</script>
+
+<template>
+  <h1>{{ loadingText }}</h1>
+  <button @click="isLoading = true">Let's load</button>
+  <button @click="isLoading = false">Stop loading</button>
+</template>
+```
+
+have fun using it in your projects!
