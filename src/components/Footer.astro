@@ -50,9 +50,17 @@ const footerLinks = [
     }
   </ul>
 
-  <div id="wcb" class="carbonbadge"></div>
-  <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer
-  ></script>
+  {
+    import.meta.env.PROD && (
+      <>
+        <div id="wcb" class="carbonbadge" />
+        <script
+          src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
+          defer
+        />
+      </>
+    )
+  }
 </footer>
 
 <style>
