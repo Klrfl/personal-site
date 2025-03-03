@@ -31,15 +31,15 @@ export function setTheme(targetTheme: Theme) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("astro:page-load", () => {
   const theme = getTheme();
   setTheme(theme);
-});
 
-const button = document.querySelector(".theme-toggle");
+  const button = document.querySelector(".theme-toggle");
 
-button.addEventListener("click", () => {
-  const theme = getTheme();
-  if (theme === "dark") setTheme("light");
-  else setTheme("dark");
+  button.addEventListener("click", () => {
+    const theme = getTheme();
+    if (theme === "dark") setTheme("light");
+    else setTheme("dark");
+  });
 });
