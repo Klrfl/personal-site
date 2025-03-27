@@ -248,19 +248,21 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
       </div>
     </form>
   </section>
-
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </MainLayout>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<script src="../scripts/observer.ts"></script>
 
 <style>
   .main-section {
@@ -376,7 +378,3 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
     resize: vertical;
   }
 </style>
-
-<script>
-  import "@/scripts/observer";
-</script>
