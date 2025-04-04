@@ -1,22 +1,25 @@
-const observerCallback: IntersectionObserverCallback = (entries, _) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
-      entry.target.classList.remove("hidden");
-    } else entry.target.classList.add("hidden");
-  });
-};
+import { animate, inView, stagger } from "motion";
 
-const observerOpts = {
-  rootMargin: "10px 0px",
-};
+const targets = document.querySelectorAll(".main-section ul > *");
+const noAnimationsPlease = window.matchMedia(
+  "(prefers-reduced-motion)",
+).matches;
 
-const observer = new IntersectionObserver(observerCallback, observerOpts);
-
-// attach observer to elements
-const mainSectionEls = document.querySelectorAll("section.main-section > *");
-
-document.addEventListener("DOMContentLoaded", () => {
-  mainSectionEls.forEach((mainSection) => {
-    observer.observe(mainSection);
-  });
-});
+if (!noAnimationsPlease) {
+  inView(
+    targets,
+    (e) => {
+      e.classList.toggle("hidden");
+      animate(
+        e,
+        { y: ["50%", 0], opacity: [0, 1] },
+        {
+          type: "spring",
+          stiffness: 50,
+          delay: stagger(0.3, { startDelay: 0.2 }),
+        },
+      );
+    },
+    { margin: "0% 0% 20px 0%" },
+  );
+}
