@@ -43,3 +43,5 @@ document.addEventListener("astro:page-load", () => {
     else setTheme("dark");
   });
 });
+
+document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
