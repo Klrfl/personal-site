@@ -18,10 +18,15 @@ const {
   <body>
     <Navbar />
     <slot />
-    <script
-      defer
-      is:inline
-      src="https://cloud.umami.is/script.js"
-      data-website-id="3548c951-5cf3-4726-829c-b1da48c638f5"></script>
+    {
+      import.meta.env.PROD && (
+        <script
+          defer
+          is:inline
+          src="https://cloud.umami.is/script.js"
+          data-website-id="3548c951-5cf3-4726-829c-b1da48c638f5"
+        />
+      )
+    }
   </body>
 </html>
