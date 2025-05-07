@@ -23,24 +23,7 @@ import { Icon } from "astro-icon/components";
 
 <script is:inline slot="script" src="/pagefind/pagefind-ui.js"></script>
 
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    new PagefindUI({ element: "#search", showSubResults: true });
-
-    const searchBtnEl = document.querySelector(".btn--search");
-    const searchCloseBtnEl = document.querySelector(".btn--close");
-    const searchDialogEl =
-      document.querySelector<HTMLDialogElement>(".search-dialog");
-
-    searchBtnEl.addEventListener("click", () => {
-      searchDialogEl.showModal();
-    });
-
-    searchCloseBtnEl.addEventListener("click", () => {
-      searchDialogEl.close();
-    });
-  });
-</script>
+<script src="../scripts/search.ts"></script>
 
 <style>
   .btn--search,
