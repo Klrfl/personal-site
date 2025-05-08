@@ -39,6 +39,14 @@ import { Icon } from "astro-icon/components";
     backdrop-filter: blur(0.4rem);
   }
 
+  /**
+  * Chromium browsers doesn't support nested backdrop-filter 
+  * https://havn.blog/2024/03/14/chromium-and-nested.html
+  * */
+  nav:has(.active) {
+    backdrop-filter: none;
+  }
+
   nav {
     color: var(--text);
 
