@@ -22,7 +22,6 @@ const sortedPosts = sortPostsByDate(allPosts, 3);
 
 const { locale } = Astro.params;
 const t = useTranslations(locale);
-const title = t("page.home.title");
 
 interface Project {
   demo_link?: string;
@@ -132,7 +131,7 @@ const projects: Project[] = [
 ---
 
 <MainLayout
-  title={title}
+  title={t("page.home.title")}
   description="Welcome to Efraim's personal little corner of the internet!">
   <script
     slot="script"
@@ -149,7 +148,7 @@ const projects: Project[] = [
   </section>
 
   <section class="main-section full-columns" id="skills">
-    <h2>Skills</h2>
+    <h2>{t("page.home.skills.title")}</h2>
     <p>
       In the last 2 and a half years, I have learned and used many different
       technologies in the frontend world. I am proficient in <TechChip>
@@ -183,12 +182,11 @@ const projects: Project[] = [
   </section>
 
   <section class="main-section full-columns" id="projects">
-    <h2>Projects</h2>
-    <p>
-      I strongly believe in learning by doing. So, when I learn a new
-      technology, I always do projects, be it large or small. Here are some of
-      them.
-    </p>
+    <h2>
+      {t("page.home.projects.title")}
+    </h2>
+
+    <p>{t("page.home.projects.p")}</p>
 
     <ul class="projects-container odd-columns">
       {projects.map((project) => <ProjectCard {project} />)}
@@ -196,8 +194,8 @@ const projects: Project[] = [
   </section>
 
   <section class="main-section full-columns" id="blog">
-    <h2>Blog Posts</h2>
-    <p>The newest posts from my personal blog.</p>
+    <h2>{t("page.home.blog.title")}</h2>
+    <p>{t("page.home.blog.p")}</p>
 
     <ul class="blog-list">
       {
@@ -212,43 +210,37 @@ const projects: Project[] = [
 
     <div class="cta-container">
       <CTA href={getRelativeLocaleUrl(locale, "blog")} margin>
-        See more blog posts
+        {t("page.home.blog.more-cta")}
       </CTA>
     </div>
   </section>
 
   <section class="main-section full-columns" id="about">
-    <h2>About me</h2>
-    <p>
-      My name is Efraim Munthe, I am a student currently learning about
-      front-end web development and the JAMStack. I also recently got into
-      backend web development, dabbling in NodeJS, PostgreSQL and Express. I
-      haven't learned much about them, so I haven't put them into my skills yet.
-    </p>
+    <h2>{t("page.home.about.title")}</h2>
+    <p>{t("page.home.about.p")}</p>
 
     <div class="cta-container">
       <CTA href={getRelativeLocaleUrl(locale, "about")} primary margin>
-        See more about me
+        {t("page.home.about.more-cta")}
       </CTA>
     </div>
   </section>
 
   <section class="main-section full-columns" id="contact">
-    <h2>Contact</h2>
-    <p>
-      You can contact me via email or Discord, but you can message me here
-      directly if you want!
-    </p>
+    <h2>
+      {t("page.home.contact.title")}
+    </h2>
+    <p>{t("page.home.contact.p")}</p>
 
     <form
       class="contact-form"
       action="/form-success"
       method="POST"
       data-netlify="true">
-      <label for="name">Name</label>
+      <label for="name">{t("page.home.contact.label-name")}</label>
       <input type="text" name="name" placeholder="John Doe" required />
 
-      <label for="email">Your Email</label>
+      <label for="email">{t("page.home.contact.label-email")}</label>
       <input
         type="email"
         name="email"
@@ -256,7 +248,7 @@ const projects: Project[] = [
         required
       />
 
-      <label for="message">Your message</label>
+      <label for="message">{t("page.home.contact.label-message")}</label>
       <textarea
         id="message"
         name="message"
@@ -265,7 +257,9 @@ const projects: Project[] = [
         placeholder="Hi!!!"></textarea>
 
       <div class="cta-container">
-        <CTA isButton primary margin>Send a message</CTA>
+        <CTA isButton primary margin>
+          {t("page.home.contact.send-cta")}
+        </CTA>
       </div>
     </form>
   </section>
