@@ -8,10 +8,21 @@ import ProjectCard from "@/components/ProjectCard.astro";
 
 import { sortPostsByDate } from "@/scripts/utils.js";
 import { getCollection } from "astro:content";
-import { languages } from "@/i18n";
+import { languages, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-const title = "Efraim Munthe | Home";
+export const getStaticPaths = (() => {
+  return languages.map(({ id }) => ({
+    params: { locale: id },
+  }));
+}) satisfies GetStaticPaths;
+
+const allPosts = await getCollection("blog");
+const sortedPosts = sortPostsByDate(allPosts, 3);
+
+const { locale } = Astro.params;
+const t = useTranslations(locale);
+const title = t("page.home.title");
 
 interface Project {
   demo_link?: string;
@@ -118,17 +129,6 @@ const projects: Project[] = [
     text: "Velvet cup is an ecommerce app where you can order coffee, tea, croissant, and other delicious menu items. Built with Astro and Vue, fully integrated with my own custom fork of the official Midtrans client.",
   },
 ];
-
-const allPosts = await getCollection("blog");
-const sortedPosts = sortPostsByDate(allPosts, 3);
-
-export const getStaticPaths = (() => {
-  return languages.map(({ id }) => ({
-    params: { locale: id },
-  }));
-}) satisfies GetStaticPaths;
-
-const { locale } = Astro.params;
 ---
 
 <MainLayout
@@ -139,14 +139,12 @@ const { locale } = Astro.params;
     src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <section class="hero full-columns">
     <div class="hero__text">
-      <h1>Hello! I'm Efraim.<span class="hero-wave">👋</span></h1>
-      <p>
-        I'm a student, frontend web developer, tech enthusiast and avid learner.
-      </p>
+      <h1>{t("page.home.hero.greeting")} <span class="hero-wave">👋</span></h1>
+      <p>{t("page.home.hero.p")}</p>
     </div>
     <div class="hero__cta">
-      <CTA href="#projects">See what i've made</CTA>
-      <CTA href="#contact" primary>Contact me</CTA>
+      <CTA href="#projects">{t("page.home.hero.projects")}</CTA>
+      <CTA href="#contact" primary>{t("page.home.hero.contact")}</CTA>
     </div>
   </section>
 

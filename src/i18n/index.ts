@@ -30,6 +30,13 @@ export const ui = {
     "nav.link.about": "About",
     "nav.link.blog": "Blog",
     "nav.link.journal": "Journal",
+
+    "page.home.title": "Efraim Munthe | Home",
+    "page.home.hero.greeting": "Hello! I'm Efraim.",
+    "page.home.hero.p":
+      "I'm a student, web developer, tech enthusiast and avid learner.",
+    "page.home.hero.projects": "See what I've made",
+    "page.home.hero.contact": "Contact me",
   },
 
   id: {
@@ -47,5 +54,12 @@ export const ui = {
     "nav.link.about": "Tentang saya",
     "nav.link.blog": "Blog",
     "nav.link.journal": "Jurnal",
+
+    "page.home.title": "Efraim Munthe | Beranda",
+    "page.home.hero.greeting": "Halo! Nama saya Efraim.",
+    "page.home.hero.p":
+      "Saya adalah seorang pengembang web, penggemar teknologi dan pelajar.",
+    "page.home.hero.projects": "Lihat yang saya buat",
+    "page.home.hero.contact": "Hubungi saya",
   },
 };
