@@ -1,7 +1,15 @@
 ---
+import type { GetStaticPaths } from "astro";
 import MyLayout from "@layouts/MyLayout.astro";
 import CTA from "@components/CTA.astro";
+import { languages } from "@/i18n";
 const title = "Success!";
+
+export const getStaticPaths = (() => {
+  return languages.map(({ id }) => ({ params: { locale: id } }));
+}) satisfies GetStaticPaths;
+
+// const {locale} = Astro.params
 ---
 
 <MyLayout title={title} description="Form has been sent">

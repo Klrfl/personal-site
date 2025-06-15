@@ -7,5 +7,11 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://munthe.dev",
   integrations: [sitemap(), icon()],
+  i18n: {
+    locales: ["en", "id"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
 });
-

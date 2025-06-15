@@ -3,11 +3,19 @@ import ThemeButton from "@/components/ThemeButton.astro";
 import BurgerMenu from "@/components/BurgerMenu.astro";
 import SearchBar from "@/components/SearchBar.astro";
 import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { languages } from "@/i18n";
+
+const { locale } = Astro.props;
 ---
 
 <nav>
   <section class="logo">
     <a href="/" aria-label="go back home">Efraim</a>
+  </section>
+
+  <section class="lang-picker">
+    {languages.map((lang) => <a href={`/${lang.id}`}>{lang.emoji}</a>)}
   </section>
 
   <section class="left">
@@ -22,10 +30,23 @@ import { Icon } from "astro-icon/components";
         </button>
       </li>
 
-      <li><a class="nav-links" href="/">Home</a></li>
-      <li><a class="nav-links" href="/blog">Blog</a></li>
-      <li><a class="nav-links" href="/journal">Journal</a></li>
-      <li><a class="nav-links" href="/about">About</a></li>
+      <li>
+        <a class="nav-links" href={getRelativeLocaleUrl(locale, "/")}>Home</a>
+      </li>
+      <li>
+        <a class="nav-links" href={getRelativeLocaleUrl(locale, "blog")}>Blog</a
+        >
+      </li>
+      <li>
+        <a class="nav-links" href={getRelativeLocaleUrl(locale, "journal")}
+          >Journal</a
+        >
+      </li>
+      <li>
+        <a class="nav-links" href={getRelativeLocaleUrl(locale, "about")}
+          >About</a
+        >
+      </li>
     </ul>
   </section>
 </nav>
@@ -62,7 +83,6 @@ import { Icon } from "astro-icon/components";
   .nav-links-wrapper__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   nav a {
@@ -163,5 +183,11 @@ import { Icon } from "astro-icon/components";
     .nav-links-wrapper__header {
       display: none;
     }
+  }
+
+  .lang-picker {
+    margin-left: auto;
+    display: flex;
+    gap: 0.5rem;
   }
 </style>

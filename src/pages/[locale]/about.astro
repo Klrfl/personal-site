@@ -1,5 +1,7 @@
 ---
+import type { GetStaticPaths } from "astro";
 import MainLayout from "@layouts/MainLayout.astro";
+import { languages } from "@/i18n";
 const title = "Efraim Munthe | About";
 const myName = "Efraim Munthe";
 const skills = [
@@ -22,6 +24,12 @@ const skills = [
   "Firebase",
   "Supabase",
 ];
+
+export const getStaticPaths = (() => {
+  return languages.map(({ id }) => ({
+    params: { locale: id },
+  }));
+}) satisfies GetStaticPaths;
 ---
 
 <MainLayout title={title} description="A little bit about me">

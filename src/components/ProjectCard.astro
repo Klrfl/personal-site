@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import placeholder from "../assets/placeholder.jpeg";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   project: {
@@ -46,10 +47,14 @@ const projectImagePath = images[`/src/assets/${project.image}`];
       project.demo_link && (
         <a href={project.demo_link} class="project__link">
           demo
+          <Icon name="mdi:external-link" />
         </a>
       )
     }
-    <a href={project.source_link} class="project__link">source code</a>
+    <a href={project.source_link} class="project__link">
+      source code
+      <Icon name="mdi:external-link" />
+    </a>
   </div>
 </li>
 
@@ -74,9 +79,11 @@ const projectImagePath = images[`/src/assets/${project.image}`];
   }
 
   .project-card a {
-    display: block;
+    display: flex;
+    gap: 0.5rem;
+    flex: 1 1 0;
+    justify-content: center;
     text-decoration: none;
-    color: inherit;
   }
 
   .project-card img {
@@ -101,8 +108,7 @@ const projectImagePath = images[`/src/assets/${project.image}`];
   }
 
   .project__link {
-    outline: 2px solid var(--accent);
-    flex: 1 1 0;
+    color: inherit;
     padding-block: 1rem;
     text-align: center;
     transition: background-color 200ms ease;
@@ -110,6 +116,7 @@ const projectImagePath = images[`/src/assets/${project.image}`];
 
   a.project__link:hover,
   .project__link:focus-visible {
-    background: var(--primary);
+    background: var(--secondary);
+    color: var(--link-color);
   }
 </style>

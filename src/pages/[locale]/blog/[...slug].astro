@@ -2,14 +2,29 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { sortPostsByDate } from "@/scripts/utils";
 import PostLayout from "@/layouts/PostLayout.astro";
+import { languages } from "@/i18n";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
 
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
+  const tempPaths = blogEntries.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
     props: { entry, blogEntries },
   }));
+
+  // TODO: get blog posts based on current language
+  const paths = languages
+    .map((lang) => {
+      return tempPaths.map((path) => ({
+        ...path,
+        params: { ...path.params, locale: lang.id },
+      }));
+    })
+    .flat();
+
+  return paths;
 }
 
 interface Props {

@@ -6,6 +6,8 @@ const {
   title,
   description = "Hello, I'm Efraim. Welcome to my personal little corner of the internet!",
 } = Astro.props;
+
+const { locale } = Astro.params;
 ---
 
 <!doctype html>
@@ -16,7 +18,7 @@ const {
   </head>
 
   <body>
-    <Navbar />
+    <Navbar {locale} />
     <slot />
     {
       import.meta.env.PROD && (
