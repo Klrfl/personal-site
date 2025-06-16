@@ -1,6 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import { formatDate } from "@/scripts/utils";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  slug: string;
+}
 
 // get the slug from props, because Astro's i18n
 // utils here doesn't behave correctly

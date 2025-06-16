@@ -58,7 +58,14 @@ const t = useTranslations(locale);
       </ul>
 
       <ul class="blog-list">
-        {sortedPosts.map((post) => <BlogPost post={post} />)}
+        {
+          sortedPosts.map((post) => (
+            <BlogPost
+              post={post}
+              slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
+            />
+          ))
+        }
       </ul>
 
       <CTA href="/latest" margin>See more of my blogs</CTA>
