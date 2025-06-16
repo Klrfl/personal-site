@@ -1,0 +1,16 @@
+---
+lang: 'id'
+---
+
+import ProjectCard from "@/components/ProjectCard.astro"
+import projects from '@/content/projects/id.json'
+
+<section class="main-section full-columns" id="projects">
+  ## Proyek saya
+  Saya sangat percaya bahwa praktek secara langsung sangat penting untuk mempelajari hal-hal yang baru dengan efektif. Berikut adalah beberapa proyek yang saya buat saat mempelajari berbagai teknologi baru.
+
+  <ul class="projects-container odd-columns">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </ul>
+</section>
+

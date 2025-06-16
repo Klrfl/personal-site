@@ -2,13 +2,8 @@
 import type { GetStaticPaths } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import CTA from "@components/CTA.astro";
-import BlogPost from "@components/BlogPost.astro";
-import ProjectCard from "@/components/ProjectCard.astro";
 
-import { sortPostsByDate } from "@/scripts/utils.js";
-import { getCollection } from "astro:content";
 import { languages, useTranslations } from "@/i18n";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 export const getStaticPaths = (() => {
   return languages.map(({ id }) => ({
@@ -16,120 +11,11 @@ export const getStaticPaths = (() => {
   }));
 }) satisfies GetStaticPaths;
 
-const allPosts = await getCollection("blog");
-const sortedPosts = sortPostsByDate(allPosts, 3);
-
 const { locale } = Astro.params;
 const homeSections = Object.values(
   import.meta.glob("@/content/home/**/*.mdx", { eager: true }),
 ).filter((s) => s.frontmatter.lang === locale);
 const t = useTranslations(locale);
-
-interface Project {
-  demo_link?: string;
-  source_link: string;
-  image: string;
-  alt: string;
-  heading: string;
-  text: string;
-}
-
-const projects: Project[] = [
-  {
-    source_link: "https://github.com/Klrfl/Sebastian-Sidebar",
-    demo_link: "https://klrfl.github.io/Sebastian-Sidebar",
-    image: "Sebastian Sidebar.png",
-    alt: "Screenshot of Sebastian Sidebar's landing page",
-    heading: "Sebastian Sidebar",
-    text: "This is an improved version of my first static site. Looks quite similar.",
-  },
-  {
-    demo_link: "https://klrfl.github.io/suwit-jawa",
-    source_link: "https://github.com/Klrfl/suwit-jawa",
-    image: "Suwit Jawa by Klrfl.png",
-    alt: "Screenshot of my Suwit Jawa game",
-    heading: "Suwit Jawa in JS",
-    text: "Suwit Jawa game I made in JS.",
-  },
-  {
-    demo_link: "https://pplgportfolio.netlify.app",
-    source_link: "https://github.com/Klrfl/pplg-portfolio",
-    image: "X PPLG Portofolio Landing Page.png",
-    alt: "PPLG Portfolio collection landing page",
-    heading: "PPLG Portfolio landing page.",
-    text: "A collection of portfolios of my friends at PPLG. I designed the layout of this landing page, and made the search filter feature.",
-  },
-  {
-    demo_link: "https://klrfl-moviesearch.netlify.app",
-    source_link: "https://github.com/Klrfl/movie-search",
-    image: "react-movie-search.png",
-    alt: "Screenshot of my first React app, React Movie Search",
-    heading: "React Movie Search",
-    text: "I was bored and decided to learn React. This is just some simple API fetching stuff.",
-  },
-  {
-    demo_link: "https://klrfl-url-shortener.netlify.app",
-    source_link: "https://github.com/Klrfl/url-shortener",
-    image: "url-shortener.png",
-    alt: "Screenshot of my URL Shortener app.",
-    heading: "Vue URL Shortener",
-    text: "My first Vue project I used to get to know the Vue router and state management (spoiler alert: there was no state management).",
-  },
-  {
-    demo_link: "https://telltime.netlify.app",
-    source_link: "https://github.com/klrfl/TellTime",
-    image: "telltime.png",
-    alt: "Screenshot of TellTime",
-    heading: "TellTime",
-    text: "My project-based learning application. It's a timer app with a clock, timer, and stopwatch.",
-  },
-  {
-    demo_link: "https://pinia-tasks-2b2da.web.app/",
-    source_link: "https://github.com/Klrfl/pinia-tasks",
-    image: "pinia-tasks.png",
-    alt: "Home page of Pinia Tasks",
-    heading: "Pinia Tasks",
-    text: "A classic todo app made with Vue and Pinia for state management, powered by Firebase for authentication and hosting.",
-  },
-  {
-    source_link: "https://github.com/klrfl/mekdi",
-    image: "mekdi.png",
-    alt: "Mekdi homepage",
-    heading: "Mekdi",
-    text: "is a small and simple CRUD application, made with Go (no router!) and HTMX.",
-  },
-  {
-    source_link: "https://github.com/pplg-smkmetland/metschoo-library",
-    demo_link: "https://metschoo-lib-preview.netlify.app",
-    image: "metschoo-library-new.png",
-    alt: "Metschoo library homepage",
-    heading: "Metschoo Library",
-    text: "(WIP) Metschoo Library is a SPA made with Vue and Supabase to manage borrowings in the SMK Metland library.",
-  },
-  {
-    demo_link: "https://feedback.munthe.dev/",
-    source_link: "https://github.com/klrfl/product-feedback",
-    image: "product-feedback.png",
-    alt: "Product feedback landing page",
-    heading: "Product Feedback",
-    text: "Post your suggestions to improve the app on this app! This is my first fully self-hosted (as in set up everything by myself) project, made possible by Astro, Kysely and better-auth.",
-  },
-  {
-    demo_link: "https://notia.munthe.dev/",
-    source_link: "https://github.com/klrfl/notia",
-    image: "notia.png",
-    alt: "Notia's homepage",
-    heading: "Notia",
-    text: "A simple no-hassle local-only notetaking app",
-  },
-  {
-    source_link: "https://github.com/klrfl/velvet-cup",
-    image: "velvet-cup.png",
-    alt: "Velvet Cup's homepage",
-    heading: "Velvet Cup",
-    text: "Velvet cup is an ecommerce app where you can order coffee, tea, croissant, and other delicious menu items. Built with Astro and Vue, fully integrated with my own custom fork of the official Midtrans client.",
-  },
-];
 ---
 
 <MainLayout
@@ -150,51 +36,6 @@ const projects: Project[] = [
   </section>
 
   {homeSections.map(({ Content }) => <Content />)}
-
-  <section class="main-section full-columns" id="projects">
-    <h2>
-      {t("page.home.projects.title")}
-    </h2>
-
-    <p>{t("page.home.projects.p")}</p>
-
-    <ul class="projects-container odd-columns">
-      {projects.map((project) => <ProjectCard {project} />)}
-    </ul>
-  </section>
-
-  <section class="main-section full-columns" id="blog">
-    <h2>{t("page.home.blog.title")}</h2>
-    <p>{t("page.home.blog.p")}</p>
-
-    <ul class="blog-list">
-      {
-        sortedPosts.map((post) => (
-          <BlogPost
-            {post}
-            slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
-          />
-        ))
-      }
-    </ul>
-
-    <div class="cta-container">
-      <CTA href={getRelativeLocaleUrl(locale, "blog")} margin>
-        {t("page.home.blog.more-cta")}
-      </CTA>
-    </div>
-  </section>
-
-  <section class="main-section full-columns" id="about">
-    <h2>{t("page.home.about.title")}</h2>
-    <p>{t("page.home.about.p")}</p>
-
-    <div class="cta-container">
-      <CTA href={getRelativeLocaleUrl(locale, "about")} primary margin>
-        {t("page.home.about.more-cta")}
-      </CTA>
-    </div>
-  </section>
 
   <section class="main-section full-columns" id="contact">
     <h2>
@@ -249,7 +90,7 @@ const projects: Project[] = [
 
 <script src="@/scripts/observer.ts"></script>
 
-<style>
+<style is:global>
   .main-section {
     background: var(--background);
     padding-block: 2.5rem;

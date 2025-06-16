@@ -1,0 +1,18 @@
+---
+lang: 'en'
+---
+
+import CTA from '@/components/CTA.astro';
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+export const locale = 'en';
+
+<section class="main-section full-columns" id="about">
+  ## About me
+  {/* TODO: update */}
+ My name is Efraim Munthe, I am a student currently learning about front-end web development and the JAMStack. I also recently got into backend web development, dabbling in NodeJS, PostgreSQL and Express. I haven't learned much about them, so I haven't put them into my skills yet.
+
+  <div class="cta-container">
+    <CTA href={getRelativeLocaleUrl(locale, "about")} primary margin>Learn more</CTA>
+  </div>
+</section>

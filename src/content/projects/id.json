@@ -1,0 +1,96 @@
+[
+  {
+    "source_link": "https://github.com/Klrfl/Sebastian-Sidebar",
+    "demo_link": "https://klrfl.github.io/Sebastian-Sidebar",
+    "image": "Sebastian Sidebar.png",
+    "alt": "Screenshot of Sebastian Sidebar's landing page",
+    "heading": "Sebastian Sidebar",
+    "text": "Versi yang lebih baru dari website statis pertama saya."
+  },
+  {
+    "demo_link": "https://klrfl.github.io/suwit-jawa",
+    "source_link": "https://github.com/Klrfl/suwit-jawa",
+    "image": "Suwit Jawa by Klrfl.png",
+    "alt": "Screenshot of my Suwit Jawa game",
+    "heading": "Suwit Jawa in JS",
+    "text": "Suwit Jawa game I made in JS."
+  },
+  {
+    "demo_link": "https://pplgportfolio.netlify.app",
+    "source_link": "https://github.com/Klrfl/pplg-portfolio",
+    "image": "X PPLG Portofolio Landing Page.png",
+    "alt": "PPLG Portfolio collection landing page",
+    "heading": "PPLG Portfolio landing page.",
+    "text": "A collection of portfolios of my friends at PPLG. I designed the layout of this landing page, and made the search filter feature."
+  },
+  {
+    "demo_link": "https://klrfl-moviesearch.netlify.app",
+    "source_link": "https://github.com/Klrfl/movie-search",
+    "image": "react-movie-search.png",
+    "alt": "Screenshot of my first React app, React Movie Search",
+    "heading": "React Movie Search",
+    "text": "I was bored and decided to learn React. This is just some simple API fetching stuff."
+  },
+  {
+    "demo_link": "https://klrfl-url-shortener.netlify.app",
+    "source_link": "https://github.com/Klrfl/url-shortener",
+    "image": "url-shortener.png",
+    "alt": "Screenshot of my URL Shortener app.",
+    "heading": "Vue URL Shortener",
+    "text": "My first Vue project I used to get to know the Vue router and state management (spoiler alert: there was no state management)."
+  },
+  {
+    "demo_link": "https://telltime.netlify.app",
+    "source_link": "https://github.com/klrfl/TellTime",
+    "image": "telltime.png",
+    "alt": "Screenshot of TellTime",
+    "heading": "TellTime",
+    "text": "My project-based learning application. It's a timer app with a clock, timer, and stopwatch."
+  },
+  {
+    "demo_link": "https://pinia-tasks-2b2da.web.app/",
+    "source_link": "https://github.com/Klrfl/pinia-tasks",
+    "image": "pinia-tasks.png",
+    "alt": "Home page of Pinia Tasks",
+    "heading": "Pinia Tasks",
+    "text": "A classic todo app made with Vue and Pinia for state management, powered by Firebase for authentication and hosting."
+  },
+  {
+    "source_link": "https://github.com/klrfl/mekdi",
+    "image": "mekdi.png",
+    "alt": "Mekdi homepage",
+    "heading": "Mekdi",
+    "text": "is a small and simple CRUD application, made with Go (no router!) and HTMX."
+  },
+  {
+    "source_link": "https://github.com/pplg-smkmetland/metschoo-library",
+    "demo_link": "https://metschoo-lib-preview.netlify.app",
+    "image": "metschoo-library-new.png",
+    "alt": "Metschoo library homepage",
+    "heading": "Metschoo Library",
+    "text": "(WIP) Metschoo Library is a SPA made with Vue and Supabase to manage borrowings in the SMK Metland library."
+  },
+  {
+    "demo_link": "https://feedback.munthe.dev/",
+    "source_link": "https://github.com/klrfl/product-feedback",
+    "image": "product-feedback.png",
+    "alt": "Product feedback landing page",
+    "heading": "Product Feedback",
+    "text": "Post your suggestions to improve the app on this app! This is my first fully self-hosted (as in set up everything by myself) project, made possible by Astro, Kysely and better-auth."
+  },
+  {
+    "demo_link": "https://notia.munthe.dev/",
+    "source_link": "https://github.com/klrfl/notia",
+    "image": "notia.png",
+    "alt": "Notia's homepage",
+    "heading": "Notia",
+    "text": "A simple no-hassle local-only notetaking app"
+  },
+  {
+    "source_link": "https://github.com/klrfl/velvet-cup",
+    "image": "velvet-cup.png",
+    "alt": "Velvet Cup's homepage",
+    "heading": "Velvet Cup",
+    "text": "Velvet cup is an ecommerce app where you can order coffee, tea, croissant, and other delicious menu items. Built with Astro and Vue, fully integrated with my own custom fork of the official Midtrans client."
+  }
+]

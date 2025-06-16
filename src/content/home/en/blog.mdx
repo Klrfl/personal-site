@@ -1,0 +1,35 @@
+---
+lang: 'en'
+---
+
+import BlogPost from "@/components/BlogPost.astro";
+import CTA from "@/components/CTA.astro";
+
+import { sortPostsByDate } from "@/scripts/utils.js";
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+{/* TODO: add lang prop to blog posts, filter by language */}
+export const locale = 'en';
+export const allPosts = await getCollection("blog");
+export const sortedPosts = sortPostsByDate(allPosts, 3);
+
+<section class="main-section full-columns" id="blog">
+  ## Blog
+  The newest posts from my personal blog.
+
+  <ul class="blog-list">
+    {
+      sortedPosts.map((post) => (
+        <BlogPost
+          post={post}
+          slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
+        />
+      ))
+    }
+  </ul>   
+
+  <div class="cta-container">
+    <CTA href={getRelativeLocaleUrl(locale, "blog")} margin>See more posts</CTA>
+  </div>
+</section>
