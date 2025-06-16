@@ -4,14 +4,23 @@ order: 2
 ---
 
 import ProjectCard from "@/components/ProjectCard.astro"
-import projects from '@/content/projects/en.json'
+import { getCollection } from "astro:content"
+
+export const projects = await getCollection("projects")
 
 <section class="main-section full-columns" id="projects">
   ## Projects
-  I strongly believe in learning by doing to acquire new skills effectively. So, when I learn a new technology, I always do projects, be it large or small. Here are some of them.
+
+  I strongly believe in learning by doing to acquire new skills
+  effectively. So, when I learn a new technology, I always do projects,
+  be it large or small. Here are some of them.
 
   <ul class="projects-container odd-columns">
-    {projects.map((project) => <ProjectCard project={project} />)}
+    {
+      projects
+        .sort((a, b) => a.data.order - b.data.order)
+        .map(({data}) => <ProjectCard project={data} />)
+    }
   </ul>
 </section>
 

@@ -33,7 +33,24 @@ const journalCollection = defineCollection({
   }),
 });
 
+const projects = defineCollection({
+  loader: glob({
+    pattern: "**/*.json",
+    base: "src/content/projects",
+  }),
+  schema: z.object({
+    source_link: z.string().optional(),
+    demo_link: z.string().optional(),
+    image: z.string().optional(),
+    alt: z.string().optional(),
+    heading: z.string(),
+    text: z.string(),
+    order: z.number().positive(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   journal: journalCollection,
+  projects,
 };

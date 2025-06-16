@@ -1,0 +1,9 @@
+{
+  "source_link": "https://github.com/pplg-smkmetland/metschoo-library",
+  "demo_link": "https://metschoo-lib-preview.netlify.app",
+  "image": "metschoo-library-new.png",
+  "alt": "Metschoo library homepage",
+  "heading": "Metschoo Library",
+  "text": "(WIP) Metschoo Library is a SPA made with Vue and Supabase to manage borrowings in the SMK Metland library.",
+  "order": 10
+}

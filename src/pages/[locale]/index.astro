@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import CTA from "@components/CTA.astro";
 
 import { languages, useTranslations } from "@/i18n";
+import { getCollection } from "astro:content";
 
 export const getStaticPaths = (() => {
   return languages.map(({ id }) => ({
@@ -12,6 +13,7 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { locale } = Astro.params;
+
 const homeSections = Object.values(
   import.meta.glob("@/content/home/**/*.mdx", { eager: true }),
 )

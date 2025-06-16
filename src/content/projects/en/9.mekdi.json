@@ -1,0 +1,8 @@
+{
+  "source_link": "https://github.com/klrfl/mekdi",
+  "image": "mekdi.png",
+  "alt": "Mekdi homepage",
+  "heading": "Mekdi",
+  "text": "is a small and simple CRUD application, made with Go (no router!) and HTMX.",
+  "order": 9
+}

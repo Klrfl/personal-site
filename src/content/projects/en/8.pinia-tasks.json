@@ -1,0 +1,9 @@
+{
+  "demo_link": "https://pinia-tasks-2b2da.web.app/",
+  "source_link": "https://github.com/Klrfl/pinia-tasks",
+  "image": "pinia-tasks.png",
+  "alt": "Home page of Pinia Tasks",
+  "heading": "Pinia Tasks",
+  "text": "A classic todo app made with Vue and Pinia for state management, powered by Firebase for authentication and hosting.",
+  "order": 8
+}
