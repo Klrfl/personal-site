@@ -45,31 +45,24 @@ const t = useTranslations(locale);
       <p>{t("page.blog.p")}</p>
     </header>
 
-    <section class="main-section blogs">
-      <h2>My recent blogs</h2>
+    <ul class="tag-list">
+      {
+        Object.entries(processedTags).map(([tag, amount]) => (
+          <CategoryLink {tag} {amount} />
+        ))
+      }
+    </ul>
 
-      <ul class="tag-list">
-        {
-          // Object.entries returns an array
-          Object.entries(processedTags).map(([tag, amount]) => (
-            <CategoryLink {tag} {amount} />
-          ))
-        }
-      </ul>
-
-      <ul class="blog-list">
-        {
-          sortedPosts.map((post) => (
-            <BlogPost
-              post={post}
-              slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
-            />
-          ))
-        }
-      </ul>
-
-      <CTA href="/latest" margin>See more of my blogs</CTA>
-    </section>
+    <ul class="blog-list">
+      {
+        sortedPosts.map((post) => (
+          <BlogPost
+            post={post}
+            slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
+          />
+        ))
+      }
+    </ul>
   </main>
 
   <Footer />
@@ -89,16 +82,8 @@ const t = useTranslations(locale);
       minmax(1rem, 1fr);
   }
 
-  header {
+  .main-grid > * {
     grid-column: content-start / content-end;
-  }
-
-  .blogs {
-    grid-column: content-start / span 6;
-  }
-
-  aside {
-    grid-column: 6 / content-end;
   }
 
   @media screen and (width <= 50em) {
@@ -107,11 +92,6 @@ const t = useTranslations(locale);
         [gutter-start] 1rem
         [content-start] 1fr [content-end] 1rem [gutter-end];
       gap: 0;
-    }
-
-    .blogs,
-    aside {
-      grid-column: content-start / content-end;
     }
   }
 
