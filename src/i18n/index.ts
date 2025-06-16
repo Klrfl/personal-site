@@ -46,6 +46,13 @@ export const ui = {
     "page.home.contact.label-email": "Your email",
     "page.home.contact.label-message": "Your message",
     "page.home.contact.send-cta": "Send message",
+
+    "page.blog.title": "Efraim's Blog",
+    "page.blog.p":
+      "Welcome to my blog, where I write about my yappings and sometimes useful insight into the world of web dev.",
+
+    "page.journal.title": "Journal",
+    "page.journal.p": "My (not-so) daily on-job training journal.",
   },
 
   id: {
@@ -78,5 +85,12 @@ export const ui = {
     "page.home.contact.label-email": "Email anda",
     "page.home.contact.label-message": "Pesan anda",
     "page.home.contact.send-cta": "Kirim pesan",
+
+    "page.blog.title": "Blog Efraim Punya",
+    "page.blog.p":
+      "Selamat datang di blog saya, dimana saya menulis hal-hal tidak penting yang terkadang berguna di dunia pengembangan web.",
+
+    "page.journal.title": "Jurnal",
+    "page.journal.p": "Jurnal keseharian PKL saya.",
   },
 };

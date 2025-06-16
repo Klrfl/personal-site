@@ -9,7 +9,7 @@ import Footer from "@components/Footer.astro";
 
 import { sortPostsByDate } from "@/scripts/utils";
 import { getCollection } from "astro:content";
-import { languages } from "@/i18n";
+import { languages, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const title = "Efraim Munthe | Blog";
@@ -35,17 +35,14 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { locale } = Astro.params;
+const t = useTranslations(locale);
 ---
 
 <MyLayout title={title} description="Efraim blog">
   <main class="main-grid">
     <header>
-      <h1>Efraim's Blog</h1>
-      <p>
-        Welcome to my blog, where you will read about my yappings and sometimes
-        useful insight into the world of web dev. Might consider posting
-        tutorials soon here.. stay tuned.
-      </p>
+      <h1>{t("page.blog.title")}</h1>
+      <p>{t("page.blog.p")}</p>
     </header>
 
     <section class="main-section blogs">

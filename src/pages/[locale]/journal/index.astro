@@ -1,7 +1,9 @@
 ---
+import type { GetStaticPaths } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import JournalPost from "@/components/JournalPost.astro";
+import { useTranslations, languages } from "@/i18n";
 
 const allJournals = await getCollection("journal");
 const journals = allJournals.sort((a, b) => {
@@ -10,12 +12,21 @@ const journals = allJournals.sort((a, b) => {
     new Date(a.data.created_at).getTime()
   );
 });
+
+export const getStaticPaths = (() => {
+  return languages.map((lang) => ({
+    params: { locale: lang.id },
+  }));
+}) satisfies GetStaticPaths;
+
+const { locale } = Astro.params;
+const t = useTranslations(locale);
 ---
 
 <MainLayout title="Efraim Munthe | Journal">
   <header class="full-columns">
-    <h1>My Daily Journal</h1>
-    <p>My daily on-job training journal.</p>
+    <h1>{t("page.journal.title")}</h1>
+    <p>{t("page.journal.p")}</p>
   </header>
 
   <section class="full-columns">
