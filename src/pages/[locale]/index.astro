@@ -14,7 +14,9 @@ export const getStaticPaths = (() => {
 const { locale } = Astro.params;
 const homeSections = Object.values(
   import.meta.glob("@/content/home/**/*.mdx", { eager: true }),
-).filter((s) => s.frontmatter.lang === locale);
+)
+  .filter((s) => s.frontmatter.lang === locale)
+  .sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 const t = useTranslations(locale);
 ---
 
