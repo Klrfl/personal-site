@@ -11,7 +11,7 @@ const { locale } = Astro.params;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <BaseHead title={title} description={description} />
     <slot name="script" />
