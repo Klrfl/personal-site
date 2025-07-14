@@ -42,10 +42,10 @@ const projects = defineCollection({
     source_link: z.string().optional(),
     demo_link: z.string().optional(),
     image: z.string().optional(),
+    order: z.number().positive(),
     alt: z.string().optional(),
     heading: z.string(),
     text: z.string(),
-    order: z.number().positive(),
   }),
 });
 

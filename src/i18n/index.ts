@@ -12,7 +12,7 @@ export const languages = [
     label: "Bahasa Indonesia",
     emoji: "🇮🇩",
   },
-];
+] as const;
 
 export const ui = {
   en: {

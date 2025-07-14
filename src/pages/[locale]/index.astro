@@ -4,7 +4,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import CTA from "@components/CTA.astro";
 
 import { languages, useTranslations } from "@/i18n";
-import { getCollection } from "astro:content";
 
 export const getStaticPaths = (() => {
   return languages.map(({ id }) => ({
@@ -79,18 +78,6 @@ const t = useTranslations(locale);
     </form>
   </section>
 </MainLayout>
-
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
 
 <script src="@/scripts/observer.ts"></script>
 
