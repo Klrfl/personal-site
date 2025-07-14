@@ -1,14 +1,21 @@
 ---
 import JournalLayout from "@/layouts/JournalLayout.astro";
 import { getCollection } from "astro:content";
+import { languages } from "@/i18n";
+import type { GetStaticPaths } from "astro";
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const journals = await getCollection("journal");
-  return journals.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
-}
+
+  return languages
+    .map((lang) => {
+      return journals.map((j) => ({
+        params: { locale: lang.id, slug: j.slug },
+        props: { entry: j },
+      }));
+    })
+    .flat();
+}) satisfies GetStaticPaths;
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();

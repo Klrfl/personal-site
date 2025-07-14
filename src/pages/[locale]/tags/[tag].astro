@@ -4,6 +4,8 @@ import BlogPost from "@components/BlogPost.astro";
 
 import CTA from "@components/CTA.astro";
 import { getCollection } from "astro:content";
+import { languages } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
@@ -12,7 +14,7 @@ export async function getStaticPaths() {
     ...new Set(allPosts.map((post) => post.data.tags).flat()),
   ];
 
-  return uniqueTags.map((tag) => {
+  const tempPaths = uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
       post.data.tags.includes(tag),
     );
@@ -22,9 +24,16 @@ export async function getStaticPaths() {
       props: { posts: filteredPosts },
     };
   });
+
+  return languages.flatMap((lang) => {
+    return tempPaths.map((t) => ({
+      ...t,
+      params: { ...t.params, locale: lang.id },
+    }));
+  });
 }
 
-const { tag } = Astro.params;
+const { tag, locale } = Astro.params;
 const { posts } = Astro.props;
 ---
 
@@ -35,7 +44,11 @@ const { posts } = Astro.props;
   </header>
 
   <ul class="blog-list full-columns">
-    {posts.map((post) => <BlogPost post={post} />)}
+    {
+      posts.map((post) => (
+        <BlogPost post={post} slug={getRelativeLocaleUrl(locale)} />
+      ))
+    }
   </ul>
 
   <CTA href="/latest" margin>See more of my blogs</CTA>

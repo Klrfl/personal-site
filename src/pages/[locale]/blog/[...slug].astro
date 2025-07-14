@@ -15,14 +15,12 @@ export async function getStaticPaths() {
   }));
 
   // TODO: get blog posts based on current language
-  const paths = languages
-    .map((lang) => {
-      return tempPaths.map((path) => ({
-        ...path,
-        params: { ...path.params, locale: lang.id },
-      }));
-    })
-    .flat();
+  const paths = languages.flatMap((lang) => {
+    return tempPaths.map((path) => ({
+      ...path,
+      params: { ...path.params, locale: lang.id },
+    }));
+  });
 
   return paths;
 }
