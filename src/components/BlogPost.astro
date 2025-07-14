@@ -1,13 +1,21 @@
 ---
 import { Image } from "astro:assets";
 import { formatDate } from "@/scripts/utils";
+import type { CollectionEntry } from "astro:content";
 
-const { post } = Astro.props;
+interface Props {
+  post: CollectionEntry<"blog">;
+  slug: string;
+}
+
+// get the slug from props, because Astro's i18n
+// utils here doesn't behave correctly
+const { post, slug } = Astro.props;
 const frontmatter = post.data;
 ---
 
 <li class="post-container">
-  <a class="post" href={`/blog/${post.slug}`}>
+  <a class="post" href={slug}>
     <div class="post__metadata">
       <h3 class="post__title">{frontmatter.title}</h3>
       <p class="post__author-date">

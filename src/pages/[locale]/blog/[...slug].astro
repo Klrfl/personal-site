@@ -1,0 +1,42 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import { sortPostsByDate } from "@/scripts/utils";
+import PostLayout from "@/layouts/PostLayout.astro";
+import { languages } from "@/i18n";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+
+  const tempPaths = blogEntries.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: { entry, blogEntries },
+  }));
+
+  // TODO: get blog posts based on current language
+  const paths = languages.flatMap((lang) => {
+    return tempPaths.map((path) => ({
+      ...path,
+      params: { ...path.params, locale: lang.id },
+    }));
+  });
+
+  return paths;
+}
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+  blogEntries: CollectionEntry<"blog">[];
+}
+
+const { entry, blogEntries } = Astro.props;
+
+const prevIndex = sortPostsByDate(blogEntries).indexOf(entry) - 1;
+const [previous, next] = [blogEntries[prevIndex], blogEntries[prevIndex + 2]];
+const { Content } = await entry.render();
+---
+
+<PostLayout entry={entry} previous={previous} next={next}>
+  <Content />
+</PostLayout>

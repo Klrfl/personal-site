@@ -2,23 +2,10 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<button id="open-nav" title="open navbar">
-  <Icon name="mdi:hamburger-menu" size={28} />
-</button>
-
 <style>
-  #open-nav {
-    padding: 1.5rem;
-    grid-column-end: 13;
-  }
-
   @media screen and (min-width: 50em) {
     #open-nav {
       display: none;
     }
   }
 </style>
-
-<script>
-  import "../scripts/navbar.js";
-</script>

@@ -1,0 +1,9 @@
+{
+  "demo_link": "https://klrfl-url-shortener.netlify.app",
+  "source_link": "https://github.com/Klrfl/url-shortener",
+  "image": "url-shortener.png",
+  "alt": "Screenshot of my URL Shortener app.",
+  "heading": "Vue URL Shortener",
+  "text": "My first Vue project I used to get to know the Vue router and state management (spoiler alert: there was no state management).",
+  "order": 5
+}

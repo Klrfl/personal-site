@@ -1,17 +1,20 @@
 ---
 import { Icon } from "astro-icon/components";
+import { useTranslations } from "@/i18n";
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
 ---
 
-<button class="btn--search" title="open search bar">
+<button class="btn--search" title={t("nav.open-search")}>
   <Icon name="mdi:search" size={25} />
 </button>
 
 <dialog class="search-dialog">
   <section class="search-dialog__info">
-    <p>
-      Press <kbd>Esc</kbd> or click on the close button to close this dialog.
-    </p>
-    <button class="btn--close" title="close search bar">
+    <p>{t("nav.search-info")}</p>
+
+    <button class="btn--close" title={t("nav.close-search")}>
       <Icon name="mdi:close" size={25} />
     </button>
   </section>
@@ -23,12 +26,12 @@ import { Icon } from "astro-icon/components";
 
 <script is:inline slot="script" src="/pagefind/pagefind-ui.js"></script>
 
-<script src="../scripts/search.ts"></script>
+<script src="@/scripts/search.ts"></script>
 
 <style>
   .btn--search,
   .btn--close {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .search-dialog__info {

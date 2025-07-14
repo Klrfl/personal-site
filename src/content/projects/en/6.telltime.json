@@ -1,0 +1,9 @@
+{
+  "demo_link": "https://telltime.netlify.app",
+  "source_link": "https://github.com/klrfl/TellTime",
+  "image": "telltime.png",
+  "alt": "Screenshot of TellTime",
+  "heading": "TellTime",
+  "text": "My project-based learning application. It's a timer app with a clock, timer, and stopwatch.",
+  "order": 6
+}

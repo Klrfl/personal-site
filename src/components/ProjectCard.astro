@@ -1,18 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
-import placeholder from "../assets/placeholder.jpeg";
+import placeholder from "@/assets/placeholder.jpeg";
 import { Icon } from "astro-icon/components";
+import type { InferEntrySchema } from "astro:content";
 
 interface Props {
-  project: {
-    demo_link?: string;
-    source_link: string;
-    image: string;
-    alt: string;
-    heading: string;
-    text: string;
-  };
+  project: InferEntrySchema<"projects">;
 }
 
 const { project } = Astro.props;
@@ -30,7 +24,7 @@ const projectImagePath = images[`/src/assets/${project.image}`];
         src={typeof projectImagePath === "function"
           ? projectImagePath()
           : placeholder}
-        alt={project.alt}
+        alt={project.alt ?? ""}
         width={800}
         height={450}
         format="webp"

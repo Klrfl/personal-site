@@ -1,0 +1,9 @@
+{
+  "demo_link": "https://feedback.munthe.dev/",
+  "source_link": "https://github.com/klrfl/product-feedback",
+  "image": "product-feedback.png",
+  "alt": "Product feedback landing page",
+  "heading": "Product Feedback",
+  "text": "Post your suggestions to improve the app on this app! This is my first fully self-hosted (as in set up everything by myself) project, made possible by Astro, Kysely and better-auth.",
+  "order": 11
+}

@@ -1,0 +1,107 @@
+---
+import type { GetStaticPaths } from "astro";
+import MyLayout from "@layouts/MyLayout.astro";
+import BlogPost from "@components/BlogPost.astro";
+
+import CTA from "@components/CTA.astro";
+import CategoryLink from "@components/CategoryLink.astro";
+import Footer from "@components/Footer.astro";
+
+import { sortPostsByDate } from "@/scripts/utils";
+import { getCollection } from "astro:content";
+import { languages, useTranslations } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const title = "Efraim Munthe | Blog";
+
+const allPosts = await getCollection("blog");
+const sortedPosts = sortPostsByDate(allPosts);
+
+const allTags = allPosts.map((post) => post.data.tags).flat();
+
+const processedTags = allTags.reduce((acc, tag) => {
+  const value = acc[tag] || 0;
+
+  return {
+    ...acc,
+    [tag]: value + 1,
+  };
+}, {});
+
+export const getStaticPaths = (() => {
+  return languages.map(({ id }) => ({
+    params: { locale: id },
+  }));
+}) satisfies GetStaticPaths;
+
+const { locale } = Astro.params;
+const t = useTranslations(locale);
+---
+
+<MyLayout title={title} description="Efraim blog">
+  <main class="main-grid">
+    <header>
+      <h1>{t("page.blog.title")}</h1>
+      <p>{t("page.blog.p")}</p>
+    </header>
+
+    <ul class="tag-list">
+      {
+        Object.entries(processedTags).map(([tag, amount]) => (
+          <CategoryLink {tag} {amount} />
+        ))
+      }
+    </ul>
+
+    <ul class="blog-list">
+      {
+        sortedPosts.map((post) => (
+          <BlogPost
+            post={post}
+            slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
+          />
+        ))
+      }
+    </ul>
+  </main>
+
+  <Footer />
+</MyLayout>
+
+<style>
+  .main-grid {
+    display: grid;
+    gap: 1rem;
+
+    --column-count: 6;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      [content-start]
+      repeat(var(--column-count), minmax(0, 10rem))
+      [content-end]
+      minmax(1rem, 1fr);
+  }
+
+  .main-grid > * {
+    grid-column: content-start / content-end;
+  }
+
+  @media screen and (width <= 50em) {
+    .main-grid {
+      grid-template-columns:
+        [gutter-start] 1rem
+        [content-start] 1fr [content-end] 1rem [gutter-end];
+      gap: 0;
+    }
+  }
+
+  .tag-list {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>

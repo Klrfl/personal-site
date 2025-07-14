@@ -1,0 +1,55 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import BlogPost from "@components/BlogPost.astro";
+
+import CTA from "@components/CTA.astro";
+import { getCollection } from "astro:content";
+import { languages } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  const tempPaths = uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag),
+    );
+
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+
+  return languages.flatMap((lang) => {
+    return tempPaths.map((t) => ({
+      ...t,
+      params: { ...t.params, locale: lang.id },
+    }));
+  });
+}
+
+const { tag, locale } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<MainLayout title={tag} description={`Posts tagged with ${tag}`}>
+  <header class="full-columns">
+    <h1>{tag}</h1>
+    <p>Posts tagged with {tag}</p>
+  </header>
+
+  <ul class="blog-list full-columns">
+    {
+      posts.map((post) => (
+        <BlogPost post={post} slug={getRelativeLocaleUrl(locale)} />
+      ))
+    }
+  </ul>
+
+  <CTA href="/latest" margin>See more of my blogs</CTA>
+</MainLayout>

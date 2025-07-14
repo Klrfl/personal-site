@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import MyLayout from "@layouts/MyLayout.astro";
+import CTA from "@components/CTA.astro";
+import { languages } from "@/i18n";
+const title = "Success!";
+
+export const getStaticPaths = (() => {
+  return languages.map(({ id }) => ({ params: { locale: id } }));
+}) satisfies GetStaticPaths;
+
+// const {locale} = Astro.params
+---
+
+<MyLayout title={title} description="Form has been sent">
+  <main>
+    <h1>{title}</h1>
+    <p>You can go back to home now.</p>
+    <CTA href="/" margin>Go back home</CTA>
+  </main>
+</MyLayout>
+
+<style>
+  main {
+    max-width: 85ch;
+    padding: 15rem 2rem;
+    margin: auto;
+    text-align: center;
+  }
+</style>

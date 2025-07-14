@@ -1,0 +1,8 @@
+{
+  "source_link": "https://github.com/klrfl/velvet-cup",
+  "image": "velvet-cup.png",
+  "alt": "Velvet Cup's homepage",
+  "heading": "Velvet Cup",
+  "text": "Velvet cup is an ecommerce app where you can order coffee, tea, croissant, and other delicious menu items. Built with Astro and Vue, fully integrated with my own custom fork of the official Midtrans client.",
+  "order": 12
+}

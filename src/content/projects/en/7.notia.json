@@ -1,0 +1,9 @@
+{
+  "demo_link": "https://notia.munthe.dev/",
+  "source_link": "https://github.com/klrfl/notia",
+  "image": "notia.png",
+  "alt": "Notia's homepage",
+  "heading": "Notia",
+  "text": "A simple no-hassle local-only notetaking app",
+  "order": 7
+}

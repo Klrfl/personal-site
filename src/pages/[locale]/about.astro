@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from "astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { languages } from "@/i18n";
+
+export const getStaticPaths = (() => {
+  const aboutPages = Object.values(
+    import.meta.glob("@/content/about/**/*.mdx", {
+      eager: true,
+    }),
+  );
+
+  return languages.map(({ id }) => {
+    return {
+      params: { locale: id },
+      props: {
+        page: aboutPages.find((page) => page.frontmatter.lang === id),
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<MainLayout
+  title={page.frontmatter.title}
+  description={page.frontmatter.description}>
+  <article class="main-section full-columns">
+    <page.Content />
+  </article>
+</MainLayout>
+
+<style is:global>
+  ul {
+    column-count: 2;
+  }
+</style>
