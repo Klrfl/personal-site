@@ -9,7 +9,6 @@ image:
   alt: four Github Actions runs. Only the most recent one is successful
 tags:
   - tips
-  - ""
 ---
 So after taking a break for a while (procrastinating), I decided to work on my Velvet Cup app again. The app's CI flow was working fine, but the last step was failing with the message `pm2: command not found`. So the whole time I had to restart the app by manually SSHing into my EC2 instance after a deployment.
 
