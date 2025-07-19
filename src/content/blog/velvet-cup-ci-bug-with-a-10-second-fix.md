@@ -4,7 +4,7 @@ pubDate: 2025-07-19T13:46:00.000Z
 description: In hindsight, the solution was pretty simple
 author: Efraim
 image:
-  url: https://ucarecdn.com/718468d3-d67e-460c-be6c-5f7333f26f71/-/resize/800x450/Screenshot
+  url: https://ucarecdn.com/718468d3-d67e-460c-be6c-5f7333f26f71/-/crop/585x345/0,0/-/preview/-/resize/800x450/-/resize/800x450/Screenshot
     from 2025-07-19 11-20-20.png
   alt: four Github Actions runs. Only the most recent one is successful
 tags:
