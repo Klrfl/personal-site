@@ -10,20 +10,45 @@ image:
 tags:
   - tips
 ---
-So after taking a break for a while (procrastinating), I decided to work on my Velvet Cup app again. The app's CI flow was working fine, but the last step was failing with the message `pm2: command not found`. So the whole time I had to restart the app by manually SSHing into my EC2 instance after a deployment.
+So after taking a break for a while (procrastinating), I decided to work on my Velvet Cup app again. The app's CI flow was working fine, but the last step was always failing with the message `pm2: command not found`. So the whole time I had to restart the app by manually SSHing into my EC2 instance after a deployment.
 
-After fixing it it became clear in hindsight that the problem was quite simple: a non-interactive terminal session and an interactive one is different. Let me explain.
+After fixing the problem, it became clear in hindsight that it actually was quite simple: a non-interactive terminal session and an interactive one is different. Let me explain.
 
-The idea of the last CI step was to run `pm2 restart` after copying the app so that the new version of the app would be served, otherwise the old static assets are used and the frontend would not work at all. So I looked up on DuckDuckGo (yes I don't use google) how to ssh into a remote machine in a Github Actions runner. The ssh worked, but the command didn't, it always throws code 1 and a message: `pm2: command not found`. 
+The idea of the last CI step was to run `pm2 restart` after copying the app so that the new version of the app would be served - otherwise the old static assets are used and the frontend would not work at all. So I looked up on DuckDuckGo (yes I don't use Google) how to ssh into a remote machine in a Github Actions runner. The ssh worked, but the command didn't, it always throws code 1 and a message: `pm2: command not found`. 
 
-It was really weird, the command **definitely** exists. So my intuition was to check for the location of the command with `which`, interactively and through Actions, and see if they're any different. I checked for other commands as well like `pnpm` and `fnm` - they don't exist too.
+It was really weird, the command **definitely** exists. So my intuition was to check for the location of the command with `which`, interactively and through Actions, and see if they're any different: they are! the `ssh` command running in different environments has different results too. I checked for other commands as well like `pnpm` and `fnm` - and just as I suspected, they don't exist too when I checked in Actions.
 
-So my suspicion rose and I checked the $PATH variable, which you would know is crucial to set after installing a program if you have worked with the terminal before. It was different, the non-interactive ssh session printed out a shorter $PATH. And the final stackoverflow question to end it all:[^1] I looked up why the $PATH is different in programmatic sessions (i used this term because I didn't know about 'interactive' or 'non-interactive' sessions). The answer was that there was five lines of shell script at the very top of the .bashrc file (which is used for configuring the shell) that checks whether the session is interactive or not. The path for `pnpm` and `fnm` was set at the very bottom, so the commands would only execute *if* the session was interactive.
+So I continued the investigation and checked the $PATH variable, which you would know is crucial to set after installing a program if you have worked with the terminal before. It was different, the non-interactive ssh session printed out a shorter $PATH. And the final stackoverflow question to end it all:[^1] I looked up why the $PATH is different in programmatic sessions (i used this term because I didn't know about 'interactive' or 'non-interactive' sessions). The answer was that there was five lines of shell script at the very top of the .bashrc file (which is used for configuring the shell) that checks whether the session is interactive or not. The path for `pnpm` and `fnm` was set at the very bottom, so the commands would only execute *if* the session was interactive.
 
-The solution is very very simple: move up the $PATH definition for `fnm` and `pnpm` up above the check. Editing the .bashrc file took me like 10 seconds.
+The solution is very very simple: move up the $PATH definition for `fnm` and `pnpm` up above the check. Editing the .bashrc file took me like 10 seconds. Here's how the final .bashrc (first 25 lines) looks like now:
+
+```sh
+# fnm
+FNM_PATH="/home/ubuntu/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# pnpm
+export PNPM_HOME="/home/ubuntu/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+```
 
 After triggering another CI run, the deploy was successful! It was time consuming, but the experience is certainly very rewarding.
 
 Hope this post can help your own debugging journey!
+
+## External links
 
 [^1] [How do I set $PATH such that `ssh user@host command` works? - stackoverflow](https://stackoverflow.com/questions/940533/how-do-i-set-path-such-that-ssh-userhost-command-works)
