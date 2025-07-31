@@ -20,52 +20,68 @@ const t = useTranslations(locale);
   <section class="left">
     <button class="nav-btn theme-toggle" title={t("nav.theme-toggle")}>
       <div class="icon--light">
-        <Icon name="material-symbols:light-mode-outline" size={28} />
+        <Icon name="material-symbols:light-mode-outline" size={24} />
       </div>
       <div class="icon--dark">
-        <Icon name="material-symbols:dark-mode-outline" size={28} />
+        <Icon name="material-symbols:dark-mode-outline" size={24} />
       </div>
     </button>
 
     <SearchBar {locale} />
 
     <button class="nav-btn" id="open-nav" title={t("nav.open-nav")}>
-      <Icon name="material-symbols:menu-rounded" size={28} />
+      <Icon name="material-symbols:menu-rounded" size={24} />
     </button>
 
     <ul class="nav-links-wrapper">
       <li class="nav-links-wrapper__header">
         <button class="nav-btn" id="close-nav" title={t("nav.close-nav")}>
-          <Icon name="material-symbols:close-rounded" size={28} />
+          <Icon name="material-symbols:close-rounded" size={24} />
         </button>
       </li>
 
       <li>
-        <a class="nav-links" href={getRelativeLocaleUrl(locale, "/")}>
+        <a class="nav-link" href={getRelativeLocaleUrl(locale, "/")}>
           {t("nav.link.home")}
         </a>
       </li>
 
       <li>
-        <a class="nav-links" href={getRelativeLocaleUrl(locale, "blog")}>
+        <a class="nav-link" href={getRelativeLocaleUrl(locale, "blog")}>
           {t("nav.link.blog")}
         </a>
       </li>
 
       <li>
-        <a class="nav-links" href={getRelativeLocaleUrl(locale, "journal")}>
+        <a class="nav-link" href={getRelativeLocaleUrl(locale, "journal")}>
           {t("nav.link.journal")}
         </a>
       </li>
 
       <li>
-        <a class="nav-links" href={getRelativeLocaleUrl(locale, "about")}>
+        <a class="nav-link" href={getRelativeLocaleUrl(locale, "about")}>
           {t("nav.link.about")}
         </a>
       </li>
     </ul>
   </section>
 </nav>
+
+<style is:global>
+  nav .nav-btn {
+    padding: 1rem;
+
+    @media (min-width: 50em) {
+      padding: 1.5rem;
+    }
+
+    transition: color 500ms ease;
+  }
+
+  nav .nav-btn:is(:hover, :focus-visible) {
+    color: var(--nav-link-color-hover);
+  }
+</style>
 
 <style>
   nav,
@@ -141,17 +157,8 @@ const t = useTranslations(locale);
     justify-content: flex-end;
   }
 
-  .nav-links-wrapper__header > *,
-  .nav-links {
+  .nav-links-wrapper__header > * {
     padding: 1.5rem;
-  }
-
-  .nav-btn {
-    padding: 1rem;
-  }
-
-  .nav-btn:is(:hover, :focus-visible) {
-    color: var(--primary);
   }
 
   #open-nav {
@@ -166,13 +173,14 @@ const t = useTranslations(locale);
     text-decoration-color: var(--accent);
   }
 
-  .nav-links {
+  .nav-link {
+    padding: 1.5rem 2rem;
     text-align: right;
     color: var(--nav-link-color);
     transition: color var(--transition);
   }
 
-  .nav-links::before {
+  .nav-link::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -184,17 +192,16 @@ const t = useTranslations(locale);
     transition: transform var(--transition);
   }
 
-  .nav-links:focus::before {
+  .nav-link:focus::before {
     transform: scale(1);
   }
 
   @media (hover: hover) {
-    .nav-links:hover,
-    nav button:hover {
+    .nav-link:hover {
       color: var(--nav-link-color-hover);
     }
 
-    .nav-links:hover::before {
+    .nav-link:hover::before {
       transform: scale(1);
     }
   }

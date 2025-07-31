@@ -6,16 +6,16 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<button class="btn--search" title={t("nav.open-search")}>
-  <Icon name="material-symbols:search-rounded" size={28} />
+<button class="nav-btn btn--search" title={t("nav.open-search")}>
+  <Icon name="material-symbols:search-rounded" size={24} />
 </button>
 
 <dialog class="search-dialog">
   <section class="search-dialog__info">
     <p>{t("nav.search-info")}</p>
 
-    <button class="btn--close" title={t("nav.close-search")}>
-      <Icon name="material-symbols:close-rounded" size={28} />
+    <button class="nav-btn btn--close" title={t("nav.close-search")}>
+      <Icon name="material-symbols:close-rounded" size={24} />
     </button>
   </section>
 
@@ -33,11 +33,6 @@ const t = useTranslations(locale);
 <script src="@/scripts/search.ts"></script>
 
 <style>
-  .btn--search,
-  .btn--close {
-    padding: 1rem;
-  }
-
   .search-dialog__info {
     display: flex;
     justify-content: space-between;
