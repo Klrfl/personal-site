@@ -18,25 +18,25 @@ const t = useTranslations(locale);
   </section>
 
   <section class="left">
-    <button class="nav-btn" title={t("nav.theme-toggle")}>
+    <button class="nav-btn theme-toggle" title={t("nav.theme-toggle")}>
       <div class="icon--light">
-        <Icon name="ic:outline-light-mode" size={25} />
+        <Icon name="material-symbols:light-mode-outline" size={28} />
       </div>
       <div class="icon--dark">
-        <Icon name="ic:outline-dark-mode" size={25} />
+        <Icon name="material-symbols:dark-mode-outline" size={28} />
       </div>
     </button>
 
     <SearchBar {locale} />
 
     <button class="nav-btn" id="open-nav" title={t("nav.open-nav")}>
-      <Icon name="mdi:hamburger-menu" size={28} />
+      <Icon name="material-symbols:menu-rounded" size={28} />
     </button>
 
     <ul class="nav-links-wrapper">
       <li class="nav-links-wrapper__header">
         <button class="nav-btn" id="close-nav" title={t("nav.close-nav")}>
-          <Icon name="mdi:close" size={28} />
+          <Icon name="material-symbols:close-rounded" size={28} />
         </button>
       </li>
 
@@ -222,6 +222,6 @@ const t = useTranslations(locale);
 </style>
 
 <script>
-  import "@/scripts/navbar.js";
+  import "@/scripts/navbar";
   import "@/scripts/theme";
 </script>

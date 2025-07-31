@@ -51,6 +51,4 @@ After triggering another CI run, the deploy was successful! It was time consumin
 
 Hope this post can help your own debugging journey!
 
-## External links
-
 [^1]: [How do I set $PATH such that `ssh user@host command` works? - stackoverflow](https://stackoverflow.com/questions/940533/how-do-i-set-path-such-that-ssh-userhost-command-works)

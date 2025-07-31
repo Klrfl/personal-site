@@ -24,8 +24,8 @@
     "sharp": "^0.33.3"
   },
   "devDependencies": {
-    "@iconify-json/ic": "^1.1.17",
-    "@iconify-json/mdi": "^1.1.65",
+    "@iconify-json/fa7-brands": "^1.2.0",
+    "@iconify-json/material-symbols": "^1.2.30",
     "eslint": "^8.47.0",
     "eslint-plugin-astro": "^0.31.0",
     "pagefind": "^1.1.0",

@@ -7,7 +7,7 @@ const t = useTranslations(locale);
 ---
 
 <button class="btn--search" title={t("nav.open-search")}>
-  <Icon name="mdi:search" size={25} />
+  <Icon name="material-symbols:search-rounded" size={28} />
 </button>
 
 <dialog class="search-dialog">
@@ -15,12 +15,16 @@ const t = useTranslations(locale);
     <p>{t("nav.search-info")}</p>
 
     <button class="btn--close" title={t("nav.close-search")}>
-      <Icon name="mdi:close" size={25} />
+      <Icon name="material-symbols:close-rounded" size={28} />
     </button>
   </section>
 
   <div id="search">
-    <Icon name="mdi:search" class="pagefind-ui__icon" size={30} />
+    <Icon
+      name="material-symbols:search-rounded"
+      class="pagefind-ui__icon"
+      size={28}
+    />
   </div>
 </dialog>
 
@@ -31,7 +35,7 @@ const t = useTranslations(locale);
 <style>
   .btn--search,
   .btn--close {
-    padding: 1.2rem;
+    padding: 1rem;
   }
 
   .search-dialog__info {
