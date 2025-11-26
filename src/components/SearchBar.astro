@@ -12,7 +12,7 @@ const t = useTranslations(locale);
 
 <dialog class="search-dialog">
   <section class="search-dialog__info">
-    <p>{t("nav.search-info")}</p>
+    <p set:html={t("nav.search-info")} />
 
     <button class="nav-btn btn--close" title={t("nav.close-search")}>
       <Icon name="material-symbols:close-rounded" size={24} />
