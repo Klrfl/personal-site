@@ -18,8 +18,7 @@ const frontmatter = post.data;
   <a class="post" href={slug}>
     <div class="post__metadata">
       <h3 class="post__title">{frontmatter.title}</h3>
-      <p class="post__author-date">
-        <span class="post__author">{frontmatter.author}</span>
+      <p class="post__date">
         <span class="post__pub-date">
           {formatDate(frontmatter.pubDate)}
         </span>
@@ -95,12 +94,12 @@ const frontmatter = post.data;
       line-height: 1;
     }
 
-    .post__author-date {
+    .post__date {
       margin-block: 0.4em;
       font-size: 0.85em;
     }
 
-    .post__author-date > * {
+    .post__date > * {
       display: block;
     }
 

@@ -2,7 +2,7 @@
 title: How to create a loading text animation in Vue 3 (no libraries!)
 pubDate: 2025-02-24T20:23:00.000Z
 description: create a composable that returns a reactive loading text
-author: Efraim
+lang: en
 tags:
   - vue
   - tutorial

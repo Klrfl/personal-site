@@ -2,7 +2,7 @@
 title: Celebrating almost 3 years of code and stupidity. 🥳
 pubDate: 2024-06-18T10:50:00.000Z
 description: Announcing site revamp and my plans for the future
-author: Efraim
+lang: en
 image:
   url: https://ucarecdn.com/09fbe9a7-4590-46d6-bea0-3d7c549ab7ca/-/resize/800x450/go-screenshot.png
   alt: A screenshot of Go code. I don't know what image to include in this post haha

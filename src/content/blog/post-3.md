@@ -2,7 +2,8 @@
 title: "Progress on my Astro blog"
 pubDate: 2023-04-23
 description: "How I am doing as of now."
-author: "Efraim"
+lang: en
+is_archived: true
 image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "Thumbnail of Astro rays."

@@ -2,7 +2,7 @@
 title: Progress on smkmetland.net's remake
 pubDate: 2023-07-27T08:57:10.794Z
 description: An update on my attempt remaking smkmetland.net
-author: Efraim
+lang: en
 image:
   alt: homepage of smkmetland.net remake.
   url: https://ucarecdn.com/b6ea0f96-ee82-4a0b-be04-3c506cd8f4c5/-/resize/800x450/
