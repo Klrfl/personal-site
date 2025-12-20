@@ -2,7 +2,7 @@
 title: "Backend: A new learning adventure"
 pubDate: 2024-02-18T08:12:32.266Z
 description: Learning backend development as a frontend developer
-author: Efraim
+lang: en
 image:
   url: https://ucarecdn.com/418750ea-8ec7-4c1b-aab1-4dbd079af562/-/resize/800x450/abs-app.png
   alt: HTTPie testing my ABS API.

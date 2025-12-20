@@ -3,7 +3,7 @@ title: Remaking my school's official website
 pubDate: 2023-06-25T11:59:24.452Z
 description: Sooo, my school's official website is too ugly, and I decided to
   challenge myself to remake it. It could fail but whatever
-author: Efraim
+lang: en
 image:
   url: https://ucarecdn.com/b2a0ed5c-ba60-4df7-860f-c50cb2d7938c/-/resize/800x450/screenshot-46-.png
   alt: Screenshot of smkmetland.net landing page.

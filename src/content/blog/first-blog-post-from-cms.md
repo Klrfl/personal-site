@@ -2,7 +2,7 @@
 title: First blog post from CMS
 pubDate: 2023-06-21T13:16:43.964Z
 description: This is the first post written from Decap
-author: Efraim
+lang: en
 image:
   url: /assets/uploads/screenshot-45-.png
   alt: screenshot of an error on my blog. Idk what the frick it means

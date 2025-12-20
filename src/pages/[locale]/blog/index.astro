@@ -14,10 +14,16 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 const title = "Efraim Munthe | Blog";
 
-const allPosts = await getCollection("blog");
-const sortedPosts = sortPostsByDate(allPosts);
+const { locale } = Astro.params;
+const t = useTranslations(locale);
 
-const allTags = allPosts.map((post) => post.data.tags).flat();
+const allPosts = await getCollection(
+  "blog",
+  (p) => !p.data.is_archived && p.data.lang === locale,
+);
+const posts = sortPostsByDate(allPosts);
+
+const allTags = posts.map((post) => post.data.tags).flat();
 
 const processedTags = allTags.reduce((acc, tag) => {
   const value = acc[tag] || 0;
@@ -33,9 +39,6 @@ export const getStaticPaths = (() => {
     params: { locale: id },
   }));
 }) satisfies GetStaticPaths;
-
-const { locale } = Astro.params;
-const t = useTranslations(locale);
 ---
 
 <MyLayout title={title} description="Efraim blog">
@@ -55,7 +58,7 @@ const t = useTranslations(locale);
 
     <ul class="blog-list">
       {
-        sortedPosts.map((post) => (
+        posts.map((post) => (
           <BlogPost
             post={post}
             slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
