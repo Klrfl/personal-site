@@ -104,9 +104,15 @@ const t = useTranslations(locale);
     color: var(--text);
 
     user-select: none;
-    position: sticky;
-    width: 100%;
     top: 0;
+
+    @media screen and (min-width: 50em) {
+      max-width: 80rem;
+      margin-inline: auto;
+      margin-block: 1rem;
+      top: 1rem;
+    }
+
     z-index: 10;
   }
 
