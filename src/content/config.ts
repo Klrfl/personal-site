@@ -5,10 +5,10 @@ const blogCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    pubDate: z.date(),
+    pubDate: z.coerce.date(),
     description: z.string(),
     lang: z.enum(["id", "en"]),
-    is_archived: z.boolean().optional(),
+    is_archived: z.boolean().optional().default(false),
     image: z
       .object({
         url: z.string(),

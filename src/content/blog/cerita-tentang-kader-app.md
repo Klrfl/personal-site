@@ -1,6 +1,6 @@
 ---
 title: "Menyelesaikan masalah maba lewat aplikasi sendiri"
-pubDate: 2026-01-01T10:46:13:+0700
+pubDate: 2026-01-01T07:25:42.000Z
 description: Perjalanan membuat Kader App
 is_archived: false
 lang: id
