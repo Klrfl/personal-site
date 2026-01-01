@@ -1,6 +1,6 @@
 ---
 title: "How I made an app to solve a problem at college"
-pubDate: 2026-01-01T10:46:13:+0700
+pubDate: 2026-01-01T07:25:42.000Z
 description: The story of how I made Kader App
 is_archived: false
 lang: en
