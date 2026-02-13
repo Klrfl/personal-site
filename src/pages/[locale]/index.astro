@@ -29,7 +29,7 @@ const t = useTranslations(locale);
     src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <section class="hero full-columns">
     <div class="hero__text">
-      <h1>{t("page.home.hero.greeting")} <span class="hero-wave">👋</span></h1>
+      <h1>{t("page.home.hero.greeting")}</h1>
       <p>{t("page.home.hero.p")}</p>
     </div>
     <div class="hero__cta">
@@ -103,7 +103,7 @@ const t = useTranslations(locale);
   }
 
   .hero {
-    padding-block: 12rem;
+    padding-block: 10rem 5rem;
     color: var(--text);
 
     background-size: 120vh;
@@ -124,10 +124,11 @@ const t = useTranslations(locale);
     text-align: center;
     z-index: 1;
     flex: 1 1 0;
+    margin-inline: 5rem;
   }
 
   .hero__text h1 {
-    font-size: min(2.5rem, 8vmin);
+    font-size: min(4.5rem, 8vmin);
 
     line-height: 0.9;
     margin-inline: auto;
@@ -135,10 +136,13 @@ const t = useTranslations(locale);
     position: relative;
   }
 
-  .hero-wave {
+  /* hand wave */
+  .hero__text h1::after {
+    content: "👋";
+    size: 5rem;
+    position: absolute;
     animation: wave 1200ms cubic-bezier(0.22, 0.61, 0.36, 1) 1000ms;
     transform-origin: 65% 75%;
-    display: inline-block;
   }
 
   @keyframes wave {

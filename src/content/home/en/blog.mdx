@@ -12,7 +12,9 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 {/* TODO: add lang prop to blog posts, filter by language */}
 export const locale = 'en';
-export const allPosts = await getCollection("blog");
+export const allPosts = await getCollection("blog", 
+  (p) => !p.data.is_archived && p.data.lang === locale,
+);
 export const sortedPosts = sortPostsByDate(allPosts, 3);
 
 <section class="main-section full-columns" id="blog">

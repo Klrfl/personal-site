@@ -10,7 +10,7 @@
   --white: #eeeefa;
   --white-lighter: hsl(240, 10%, 75%);
   --light-grey: #e0e0e4;
-  --dark-grey: hsl(240, 25%, 8%);
+  --dark-grey: hsl(240, 40%, 11%);
 
   --background-dark: var(--night);
   --text-dark: var(--white-lighter);
