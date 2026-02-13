@@ -32,7 +32,7 @@ export const ui = {
     "nav.link.journal": "Journal",
 
     "page.home.title": "Efraim Munthe | Home",
-    "page.home.hero.greeting": "Hello! I'm Efraim.",
+    "page.home.hero.greeting": "Hello! I'm Efraim Munthe.",
     "page.home.hero.p":
       "I'm a student, web developer, tech enthusiast and avid learner.",
     "page.home.hero.projects": "See what I've made",
@@ -72,7 +72,7 @@ export const ui = {
     "nav.link.journal": "Jurnal",
 
     "page.home.title": "Efraim Munthe | Beranda",
-    "page.home.hero.greeting": "Halo! Nama saya Efraim.",
+    "page.home.hero.greeting": "Halo! saya Efraim Munthe.",
     "page.home.hero.p":
       "Saya adalah seorang pengembang web, penggemar teknologi dan pelajar.",
     "page.home.hero.projects": "Lihat yang saya buat",
