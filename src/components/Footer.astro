@@ -1,5 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import notByAI from "@/assets/Developed-By-a-Human-Not-By-AI-Badge-white.png";
+
 const footerLinks = [
   {
     icon: "fa7-brands:github",
@@ -50,72 +53,77 @@ const footerLinks = [
     }
   </ul>
 
-  {
-    import.meta.env.PROD && (
-      <>
-        <div id="wcb" class="carbonbadge" />
-        <script
-          src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
-          defer
-        />
-      </>
-    )
-  }
+  <Image
+    src={notByAI}
+    width={150}
+    alt="this website was developed by a human, not by AI">
+    {
+      import.meta.env.PROD && (
+        <>
+          <div id="wcb" class="carbonbadge" />
+          <script
+            src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
+            defer
+          />
+        </>
+      )
+    }
+  </Image>
+
+  <style>
+    footer {
+      background: var(--secondary);
+      color: var(--text);
+      padding: 2rem;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+      @media screen and (min-width: 50em) {
+        grid-template-columns: max-content 1fr;
+        gap: 1rem;
+        justify-items: start;
+      }
+    }
+
+    .footer-socials {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+
+      @media screen and (min-width: 50em) {
+        justify-content: end;
+      }
+
+      justify-self: end;
+    }
+
+    .footer-socials li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-socials a {
+      color: var(--nav-link-color);
+      text-decoration: none;
+      display: inline-block;
+      padding: 1em 0.25em;
+      transition: color var(--transition);
+
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .footer-socials a:hover {
+      color: var(--nav-link-color-hover);
+    }
+  </style>
 </footer>
-
-<style>
-  footer {
-    background: var(--secondary);
-    color: var(--text);
-    padding: 2rem;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-
-    @media screen and (min-width: 50em) {
-      grid-template-columns: max-content 1fr;
-      gap: 1rem;
-      justify-items: start;
-    }
-  }
-
-  .footer-socials {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-
-    @media screen and (min-width: 50em) {
-      justify-content: end;
-    }
-
-    justify-self: end;
-  }
-
-  .footer-socials li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .footer-socials a {
-    color: var(--nav-link-color);
-    text-decoration: none;
-    display: inline-block;
-    padding: 1em 0.25em;
-    transition: color var(--transition);
-
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .footer-socials a:hover {
-    color: var(--nav-link-color-hover);
-  }
-</style>
