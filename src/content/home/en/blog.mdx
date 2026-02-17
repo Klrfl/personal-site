@@ -10,10 +10,8 @@ import { sortPostsByDate } from "@/scripts/utils.js";
 import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-{/* TODO: add lang prop to blog posts, filter by language */}
-export const locale = 'en';
 export const allPosts = await getCollection("blog", 
-  (p) => !p.data.is_archived && p.data.lang === locale,
+  (p) => !p.data.is_archived && p.data.lang === frontmatter.lang,
 );
 export const sortedPosts = sortPostsByDate(allPosts, 3);
 
@@ -26,13 +24,13 @@ export const sortedPosts = sortPostsByDate(allPosts, 3);
       sortedPosts.map((post) => (
         <BlogPost
           post={post}
-          slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
+          slug={getRelativeLocaleUrl(frontmatter.lang, `blog/${post.slug}`)}
         />
       ))
     }
   </ul>   
 
   <div class="cta-container">
-    <CTA href={getRelativeLocaleUrl(locale, "blog")} margin>See more posts</CTA>
+    <CTA href={getRelativeLocaleUrl(frontmatter.lang, "blog")} margin>See more posts</CTA>
   </div>
 </section>
