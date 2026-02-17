@@ -1,5 +1,5 @@
 ---
-import type { GetStaticPaths } from "astro";
+import type { GetStaticPaths, MarkdownInstance } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import CTA from "@components/CTA.astro";
 
@@ -13,11 +13,14 @@ export const getStaticPaths = (() => {
 
 const { locale } = Astro.params;
 
+type HomeSection = MarkdownInstance<{ lang: "id" | "en"; order: number }>;
+
 const homeSections = Object.values(
-  import.meta.glob("@/content/home/**/*.mdx", { eager: true }),
+  import.meta.glob<HomeSection>("@/content/home/**/*.mdx", { eager: true }),
 )
   .filter((s) => s.frontmatter.lang === locale)
   .sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
 const t = useTranslations(locale);
 ---
 
