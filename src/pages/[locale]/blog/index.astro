@@ -3,7 +3,6 @@ import type { GetStaticPaths } from "astro";
 import MyLayout from "@layouts/MyLayout.astro";
 import BlogPost from "@components/BlogPost.astro";
 
-import CTA from "@components/CTA.astro";
 import CategoryLink from "@components/CategoryLink.astro";
 import Footer from "@components/Footer.astro";
 
@@ -61,7 +60,7 @@ export const getStaticPaths = (() => {
         posts.map((post) => (
           <BlogPost
             post={post}
-            slug={getRelativeLocaleUrl(locale, `blog/${post.slug}`)}
+            slug={getRelativeLocaleUrl(locale, `blog/${post.id}`)}
           />
         ))
       }
