@@ -11,20 +11,20 @@ import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 export const allPosts = await getCollection("blog", 
-  (p) => !p.data.is_archived && p.data.lang === frontmatter.lang,
+  (p) => !p.data.is_archived && p.data.lang === 'id',
 );
 export const sortedPosts = sortPostsByDate(allPosts, 3);
 
 <section class="main-section full-columns" id="blog">
   ## Blog
-  Tulisan terbaru dari blog saya.
+  Tulisan terbaru dari blog saya. {frontmatter.lang}
 
   <ul class="blog-list">
     {
       sortedPosts.map((post) => (
         <BlogPost
           post={post}
-          slug={getRelativeLocaleUrl(frontmatter.lang, `blog/${post.slug}`)}
+          slug={getRelativeLocaleUrl(frontmatter.lang, `blog/${post.id}`)}
         />
       ))
     }

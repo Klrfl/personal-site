@@ -12,11 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/mdx": "^7.0.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/open-sans": "^5.0.27",
     "@fontsource/source-code-pro": "^5.0.17",
-    "astro": "^5.4.1",
+    "astro": "^7.0.6",
     "astro-icon": "^1.1.0",
     "decap-cms-app": "^3.1.10",
     "decap-cms-media-library-uploadcare": "^3.0.2",
