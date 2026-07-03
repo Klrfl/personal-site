@@ -9,7 +9,7 @@ const { isLast, entry } = Astro.props;
 ---
 
 <li class="journal-entry-wrapper">
-  <a class="journal-entry" href={`/journal/${entry.slug}`}>
+  <a class="journal-entry" href={`/journal/${entry.id}`}>
     <div class="day">
       <span class="day__count">
         #{entry.data.day}
