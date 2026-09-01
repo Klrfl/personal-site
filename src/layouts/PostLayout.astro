@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 
 import { formatDate } from "@/scripts/utils";
 import BlogPost from "@/components/BlogPost.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props {
   entry: CollectionEntry<"blog">;
@@ -61,8 +62,22 @@ const frontmatter = entry.data;
     <h2>Read more</h2>
 
     <ul class="blog-list">
-      {previous && <BlogPost post={previous} />}
-      {next && <BlogPost post={next} />}
+      {
+        previous && (
+          <BlogPost
+            slug={getRelativeLocaleUrl(frontmatter.lang, `blog/${previous.id}`)}
+            post={previous}
+          />
+        )
+      }
+      {
+        next && (
+          <BlogPost
+            slug={getRelativeLocaleUrl(frontmatter.lang, `blog/${next.id}`)}
+            post={next}
+          />
+        )
+      }
     </ul>
   </aside>
 </MainLayout>
