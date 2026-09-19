@@ -1,10 +1,12 @@
 ---
-import CTA from "./CTA.astro";
 import type { HTMLAttributes } from "astro/types";
+import CTA from "./CTA.astro";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { nanoid } from "astro:schema";
 
 type Props = HTMLAttributes<"img">;
-const { src, alt = "a picture", id } = Astro.props;
+const { src, alt = "a picture", id = nanoid().toString() } = Astro.props;
 ---
 
 <figure class="image-container">
@@ -16,7 +18,14 @@ const { src, alt = "a picture", id } = Astro.props;
 
   <dialog id={id}>
     <Image class="image" src={src} height={900} width={1600} alt={alt} />
-    <CTA isButton commandfor={id} command="close">Close</CTA>
+    <CTA
+      isButton
+      commandfor={id}
+      command="close"
+      class="image-zoom-close"
+      icon="material-symbols:close-rounded">
+      Close
+    </CTA>
   </dialog>
 </figure>
 
