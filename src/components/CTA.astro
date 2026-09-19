@@ -5,13 +5,15 @@ const {
   isButton = false,
   primary = false,
   margin = false,
+  ...rest
 } = Astro.props;
 ---
 
 {
   isButton ? (
     <button
-      class:list={["cta", { primary: primary }, { margin: margin }, className]}>
+      class:list={["cta", { primary: primary }, { margin: margin }, className]}
+      {...rest}>
       <slot />
     </button>
   ) : (

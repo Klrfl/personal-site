@@ -1,0 +1,55 @@
+---
+import CTA from "./CTA.astro";
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+
+type Props = HTMLAttributes<"img">;
+const { src, alt = "a picture", id } = Astro.props;
+---
+
+<figure class="image-container">
+  <CTA isButton command="show-modal" commandfor={id} class="image-zoom-toggle">
+    Zoom on image
+  </CTA>
+
+  <Image class="image" src={src} height={450} width={800} alt={alt} />
+
+  <dialog id={id}>
+    <Image class="image" src={src} height={900} width={1600} alt={alt} />
+    <CTA isButton commandfor={id} command="close">Close</CTA>
+  </dialog>
+</figure>
+
+<style>
+  .image-container {
+    position: relative;
+  }
+
+  .image-zoom-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .image-container:hover .image-zoom-toggle {
+    opacity: 1;
+  }
+
+  .image-container dialog::backdrop {
+    backdrop-filter: blur(0.2rem);
+    background: #2224;
+  }
+
+  .image-container dialog,
+  .image {
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  .image {
+    width: 100%;
+  }
+</style>
