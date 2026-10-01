@@ -1,0 +1,50 @@
+---
+title: "membuka jalur input baru dari aplikasi menuju otak"
+pubDate: 2026-09-19
+description: tugas IMK
+is_archived: false
+lang: id
+tags:
+  - blog
+  - tugas
+---
+
+Dalam berinteraksi sehari-hari dengan komputer, kita tentu sudah biasa menggunakan berbagai perangkat yang merangsang sebagian dari panca indra. Pengeras suara dan mikrofon memungkinkan kita mendengar dan merekam suara, layar memungkinkan kita melihat gambar, layar dan kamera memungkinkan kita melihat dan merekam gambar, sedangkan papan ketik memungkinkan kita untuk menulis secara digital.
+
+Namun, belum ada perangkat serupa yang dapat merangsang indra penciuman. Adanya perangkat ini memungkinkan berbagai penerapan, misalnya ujicoba sampel parfum daring sebelum membeli, atau pengalaman permainan video yang lebih immersive.
+
+Sebenarnya konsep ini sudah ada, namun bentuknya besar dan belum praktis digunakan. Ada model yang dirancang untuk digunakan di dalam ruangan bioskop, ada juga yang dirancang untuk pemakaian pribadi, namun memerlukan cartridge yang memiliki bau-bauan spesifik di dalamnya. Jadi, perangkat hanya dapat menghasilkan bau-bauan tertentu. Mau mencium bau lain? Ganti dulu botolnya.
+
+Perangkat ini kuberi nama Olfaktor, diambil dari nama sistem penciuman manusia (*olfactory system* dalam bahasa Inggris).
+
+## perangkat
+
+komponen Olfaktor antara lain:
+- *on-board fan*, untuk menyebarkan bau yang dihasilkan ke udara
+- *smell cartridge*, botol kecil tempat cairan bau disimpan
+- *injection chamber*, tempat konsentrasi sementara bau yang dihasilkan sebelum disebar ke udara
+
+perangkat ini idealnya kecil dan ramping, dan bisa dibawa pengguna kemanapun.  
+
+Sebagai bonus, berikut visi saya tentang bagaimana kemungkinan rupa Olfaktor di masa depan: 
+
+![Gambar konsep olfaktor](https://ucarecdn.com/b2a0ed5c-ba60-4df7-860f-c50cb2d7938c/-/resize/800x450/screenshot-46-.png "Hasil gambar sendiri. No AI")
+
+## cara kerja
+
+Seperti perangkat lainnya, aplikasi yang berjalan akan meminta akses kepada sistem operasi untuk menggunakan Olfaktor. Sistem operasi akan memberikan sinyal kepada Olfaktor. Sinyal ini berisi berbagai informasi yang penting, seperti berapa lama bau harus dihasilkan, bau apa yang diinginkan oleh komputer dan seberapa intens bau yang dihasilkan. Mikrokontroler di atas Olfaktor akan menghitung campuran bahan kimia yang tepat dari botol-botol yang tersedia untuk menghasilkan bau yang diinginkan tersebut. Setelah didapatkan ramuan yang pas, maka isi dari botol tersebut akan disemprotkan ke injection chamber, dan didistribusikan ke udara oleh on-board fan.
+
+Untuk menghasilkan bau yang diinginkan, akan dicampurkan cairan dari *smell cartridge* yang terpasang di dalam perangkat. Jumlah cairan yang dicampur dikendalikan oleh mikrokontroler, mirip seperti bagaimana piksel di layar LCD "mencampurkan" warna merah, biru, dan hijau dengan intensitas tertentu untuk menghasilkan warna apapun yang diinginkan.
+
+on-board fan hanya akan menyala ketika bau ingin dikeluarkan untuk menghemat penggunaan daya.
+
+## kesimpulan
+
+Tentu saja banyak aspek dari perangkat ini yang belum bisa diimplementasikan mengingat keterbatasan teori dan teknologi. Contohnya, saat ini belum ada cara untuk membuat senyawa kimia "fundamental" yang dapat digunakan untuk menghasilkan bau lain.Di masa depan, ketika kemajuan teknologi sudah cukup pesat, dengan dibarengi riset di bidang kimia dan sistem penciuman manusia yang cukup mumpuni, prinsip kerja perangkat ini mungkin dapat didemonstrasikan secara konkrit. 
+
+Terima kasih sudah membaca.
+
+
+## pranala luar
+- [ulasan Olorama, sebuah perangkat simulasi bau (via YouTube)](https://www.youtube.com/watch?v=i-2JysPiT-w)
+- [analisis tentang olfactory cinema, konsep menonton film dengan rangsangan bau (via sciendo.com)](https://sciendo.com/pdf/10.2478/ausfm-2014-0029)
