@@ -1,9 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import CTA from "./CTA.astro";
-import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { nanoid } from "astro:schema";
+import { nanoid } from "nanoid";
 
 type Props = HTMLAttributes<"img">;
 const { src, alt = "a picture", id = nanoid().toString() } = Astro.props;
@@ -58,7 +57,14 @@ const { src, alt = "a picture", id = nanoid().toString() } = Astro.props;
     border: none;
   }
 
+  .image-container dialog {
+    width: clamp(1rem, 100vw, 150ch);
+    margin-inline: auto;
+  }
+
   .image {
     width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
   }
 </style>
