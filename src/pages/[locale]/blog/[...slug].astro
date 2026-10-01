@@ -1,9 +1,9 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry, render } from "astro:content";
 import { sortPostsByDate } from "@/scripts/utils";
 import PostLayout from "@/layouts/PostLayout.astro";
+import Picture from "@/components/Picture.astro";
 import { languages } from "@/i18n";
-import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -38,5 +38,5 @@ const { Content } = await render(entry);
 ---
 
 <PostLayout entry={entry} previous={previous} next={next}>
-  <Content />
+  <Content components={{ img: Picture }} />
 </PostLayout>
