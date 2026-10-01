@@ -13,10 +13,10 @@ const { src, alt = "a picture", id = nanoid().toString() } = Astro.props;
     Zoom on image
   </CTA>
 
-  <Image class="image" src={src} height={450} width={800} alt={alt} />
+  <Image class="image-preview" src={src} height={450} width={800} alt={alt} />
 
   <dialog id={id}>
-    <Image class="image" src={src} height={900} width={1600} alt={alt} />
+    <Image class="image-real" src={src} height={900} width={1600} alt={alt} />
     <CTA
       isButton
       commandfor={id}
@@ -58,11 +58,11 @@ const { src, alt = "a picture", id = nanoid().toString() } = Astro.props;
   }
 
   .image-container dialog {
-    width: clamp(1rem, 100vw, 150ch);
+    width: clamp(1rem, 100vw, 175ch);
     margin-inline: auto;
   }
 
-  .image {
+  .image-preview {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
